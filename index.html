@@ -63,7 +63,6 @@
 
         </section>
 
-
         <section class="header-center">
 
             <div class="dh-homePage">
@@ -264,35 +263,35 @@
 
         <section class="container-carousel">
 
-                <div class="slider-carousel">
+            <div class="slider-carousel">
                 <!-- radio buttons -->
                 <input type="radio" name="radio-carousel-btn" id="radio1-carousel">
                 <input type="radio" name="radio-carousel-btn" id="radio2-carousel">
                 <input type="radio" name="radio-carousel-btn" id="radio3-carousel">
                 <input type="radio" name="radio-carousel-btn" id="radio4-carousel">
                 <input type="radio" name="radio-carousel-btn" id="radio5-carousel">
-    
+
                 <!-- img slides carousel -->
                 <div class="slideCarousel firstSlide">
                     <img src="img/games/carousel/0.png" alt="Counter Strike: Global Offensive">
                 </div>
-    
+
                 <div class="slideCarousel">
                     <img src="img/games/carousel/1.png" alt="FIFA 22">
                 </div>
-    
+
                 <div class="slideCarousel">
                     <img src="img/games/carousel/2.png" alt="Grand Theft Auto V">
                 </div>
-    
+
                 <div class="slideCarousel">
                     <img src="img/games/carousel/3.png" alt="Grand Theft Auto V">
                 </div>
-    
+
                 <div class="slideCarousel">
                     <img src="img/games/carousel/4.png" alt="God of War">
                 </div>
-    
+
                 <!-- automatic navigation -->
                 <div class="navigation-auto">
                     <div class="auto-btn1"></div>
@@ -301,7 +300,7 @@
                     <div class="auto-btn4"></div>
                     <div class="auto-btn5"></div>
                 </div>
-    
+
                 <!-- manual navigation -->
                 <div class="navigation-manual-carousel">
                     <label for="radio1-carousel" class="manual-btn"></label>
@@ -310,9 +309,9 @@
                     <label for="radio4-carousel" class="manual-btn"></label>
                     <label for="radio5-carousel" class="manual-btn"></label>
                 </div>
-    
+
             </div>
-    
+
         </section>
 
         <section class="maisPopulares">
@@ -844,50 +843,27 @@
                 <span>Lançamentos</span>
             </h3>
 
-            <div class="slide-lancamentos">
-                <div class="banner-lancamento" id="wall-1">
-                    <div>
-                        <a href="#wall-3" class="prev-wall"> <img src="img/icons/arrow_back_ios_white_24dp.svg" alt="">
-                        </a>
+            <div class="slider-lancamentos">
+                <div>
+                    <input type="radio" name="back-btn" id="prevBtn-lancamentos">
+                    <input type="radio" name="next-btn" id="nextBtn-lancamentos">
 
+                    <div class="bannerLancamento">
                         <img src="img/games/lancamentos/theLastOfUs-part2.png" alt="The Last Of Us Part II">
-                        <a href=""><span>COMPRE AGORA</span></a>
-
-                        <a href="#wall-2" class="next-wall"> <img src="img/icons/arrow_forward_ios_white_24dp.svg"
-                                alt=""> </a>
-
                     </div>
-                </div>
 
-                <div class="banner-lancamento" id="wall-2">
-                    <div>
-                        <a href="#wall-1" class="prev-wall"> <img src="img/icons/arrow_back_ios_white_24dp.svg" alt="">
-                        </a>
-
+                    <div class="bannerLancamento">
                         <img src="img/games/lancamentos/cod-coldWar.jpg" alt="Call of Duty: Cold War">
-                        <a href="" class="buy-btn-lancamentos"><span>COMPRE AGORA</span></a>
-
-                        <a href="#wall-3" class="next-wall"> <img src="img/icons/arrow_forward_ios_white_24dp.svg"
-                                alt=""> </a>
                     </div>
-                </div>
 
-                <div class="banner-lancamento" id="wall-3">
-                    <div>
-                        <a href="#wall-2" class="prev-wall"> <img src="img/icons/arrow_back_ios_white_24dp.svg" alt="">
-                        </a>
-
+                    <div class="bannerLancamento">
                         <img src="img/games/lancamentos/fifa22.png" alt="FIFA 2022">
-                        <a href="" class="buy-btn-lancamentos"><span>COMPRE AGORA</span></a>
-
-                        <a href="#wall-1" class="next-wall"> <img src="img/icons/arrow_forward_ios_white_24dp.svg"
-                                alt=""> </a>
                     </div>
-                </div>
 
-                <script> window.location = "#wall-1"; </script>
+                </div>
 
             </div>
+
         </section>
 
     </main>
@@ -996,10 +972,10 @@
     <!-- Carrossel de imagens -->
     <script type="text/javascript">
         var counter = 1;
-        setInterval(function(){
+        setInterval(function () {
             document.getElementById('radio' + counter + '-carousel').checked = true;
             counter++;
-            if(counter > 5) {
+            if (counter > 5) {
                 counter = 1
             }
         }, 4000);
