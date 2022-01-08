@@ -1,0 +1,1 @@
+exibe página de venda da categoria clicada
