@@ -14,7 +14,7 @@ header { background-color:#1a1a1a; }
 section.overheader {
     background-color:#1a1a1a;
     width: 100%;
-    height: auto;
+    height: 2rem;
     display: flex;
     justify-content: space-around;
     box-sizing: border-box;
@@ -22,7 +22,6 @@ section.overheader {
     align-items: center;
     gap: 3rem;
     border-bottom: solid 1px rgba(255, 255, 255, 0.219);
-
 }
 
 .overheader div {
@@ -37,7 +36,7 @@ section.overheader {
     align-items: center;
     color: white;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     opacity: 76%;
 }
@@ -56,48 +55,40 @@ div.overheader-options { gap: 4em; }
 
 #country-origin {
     width: auto;
-    height: 18px;
+    height: 20px;
     border-radius: 5px;
     margin-left: 10px;
-
 }
 
-@media (max-width: 425px) {
+@media (max-width: 400px) {
+    .overheader-options a { font-size: 12px; }
+
+    #country-origin { display: none; }
+
+    section.overheader {
+        justify-content: center;
+        gap: 1rem
+    }
+}
+
+@media (max-width: 540px) {
+    #send-email { display: none;}
+    #loginHidden { display: inline-flex}
     #whatsapp { display: none;}
 }
 
-@media (max-width: 535px) {
-    #send-email { display: none;}
-    #loginHidden { display: inline-flex}
-}
-
-@media (max-width: 630px) {
+@media (max-width: 740px) {
     #segurancaGarantida { display: none;}
-
 }
 
-@media (max-width: 775px) {
-
-    section.overheader div > #country-origin {
-        width: auto;
-        height: 14px;
-        transition: .3s;
-    }
-    div.overheader-options a { font-size: 10px;}
-    div.overheader-options img { height: 14px; transition: .3s;}
-
-    section.overheader {
-        height: 20px;
-        transition: all .5s;
-    }
-}
-
-@media (max-width: 850px) {
+@media (max-width: 910px) {
     div.overheader-options {
         gap: 2.5rem;
         transition: all .2s;
     }
+
     #country-origin { margin-right: 1.2rem; }
+
     div.overheader-options { margin-left: 1.2rem; }
 
     #supportHidden {
@@ -108,16 +99,14 @@ div.overheader-options { gap: 4em; }
 }
 
 @media (max-width: 1090px) {
-    section.overheader {
-        height: 25px;
-    }
+
     .overheader a {
-        font-size: 10px;
-        transition: all .2s;
+        font-size: 13px;
+        transition: all .4s;
     }
     #country-origin {
         width: auto;
-        height: 16px;
+        height: 18px;
     }
 }
 
@@ -127,20 +116,25 @@ div.overheader-options { gap: 4em; }
         transition: all .5s;
         height: 2rem;
     }
+
     #country-origin { margin-right: 3rem; height: 20px;}
+
     div.overheader-options { margin-left: 3rem; }
+    
     div.overheader-options a { font-size: 14px; transition: all .5s;}
 }
 
 @media (min-width: 1700px) {
-    section.overheader { 
-        height: 2.5rem
-    }
+
+    section.overheader { height: 2.5rem }
+
     #country-origin {
         margin-right: 5rem;
         height: 25px;
     }
+
     div.overheader-options { margin-left: 5rem; }
+
     div.overheader-options a { font-size: 16px }
 }
 
@@ -165,12 +159,14 @@ section.header-center {
     margin-left: 3rem;
     margin-right: 2rem;
 }
+
 .dh-homePage a {
     display: flex;
     align-items: center;
     text-align: center;
     gap: 10px;
 }
+
 .dh-homePage img {
     width: auto;
     height: 5.5rem
@@ -184,21 +180,21 @@ section.header-center {
 
 div.search {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 30%;
     height: 20px;
     margin: 0;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: space-between; 
-    min-width: 16rem;
+    min-width: 17rem;
 }
 
 .search input {
     border: none;
     outline: 0;
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     padding: 5px;
     text-align: left;
 }
@@ -210,18 +206,18 @@ div.search {
 
 .icon-header {
     width: auto;
-    height: 26px;
+    height: 30px;
 }
 
-div.support { margin: 1rem}
+div.support { margin: 1rem }
 
 .support a {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
     padding: 15px;
     text-align: left;
-    font-size: 16px;
+    font-size: 18px;
     white-space: nowrap;
     color: white;
 }
@@ -234,9 +230,9 @@ div.support { margin: 1rem}
 .login a {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     white-space: nowrap;
     color: white;
 }
@@ -273,245 +269,12 @@ div.shopping-cart {
     -moz-transform: scale(1.1);
 }
 
-@media (max-width: 1090px) {
-    section.header-center {
-        height: 5.6rem;
-        transition: all .5s;
-    }
-    div.dh-homePage {
-        margin-left: 2rem;
-    }
-    .dh-homePage img {
-        width: auto;
-        height: 4.2rem;
-        transition: .3s;
-    }
-    .dh-homePage span {
-        font-size: 25px;
-        font-weight: 500;
-        transition: .3s;
-    }
-    div.search {
-        padding: 7px;
-        transition: all .3s;
-    }
-    .search input {
-        font-size: 15px;
-        transition: .3s;
-    }
-   
-    .support a {
-        font-size: 14px;
-        transition: .3s;
-        padding: 10px;
-    }
-    .icon-header {
-        width: auto;
-        height: 23px;
-        transition: .3s;
-    }
-    .login a {
-        font-size: 14px;
-        transition: .3s;
-        padding: 10px;
-    }
-    div.shopping-cart {
-        margin-right: 2rem;
-    }
-    .shopping-cart img {
-        width: auto;
-        height: 25px;
-        transition: .3s;
-    }
-}
-
-@media (max-width: 970px) {
-    div.dh-homePage {
-        margin-left: 2rem;
-    }
-    .dh-homePage img {
-        width: auto;
-        height: 4rem;
-        transition: .3s;
-    }
-    .dh-homePage span {
-        font-size: 22px;
-        font-weight: 500;
-        transition: .3s;
-    }
-    div.search {
-        padding: 7px;
-        transition: all .3s;
-        min-width: 12.5rem;
-    }
-    .search input {
-        font-size: 13px;
-        transition: .3s;
-    }
-    .search button img {
-        width: 20px;
-        transition: .3s;
-    }
-    .support a {
-        font-size: 12px;
-        transition: .3s;
-    }
-    .icon-header {
-        width: auto;
-        height: 23px;
-        transition: .3s;
-    }
-    .login a {
-        font-size: 12px;
-        transition: .3s;
-    }
-    div.shopping-cart {
-        padding: 8px;
-    }
-    .shopping-cart img {
-        width: auto;
-        height: 23px;
-        transition: .3s;
-    }
-}
-
-
-@media (max-width: 850px) {
-    section.header-center {
-        height: 5rem;
-        transition: all .5s;
-    }
-    div.dh-homePage {
-        margin-left: 3rem;
-    }
-    .dh-homePage {
-        margin-left: 2rem;
-        margin-right: 1rem;
-        transition: .4s;
-    }
-    .dh-homePage img {
-        width: auto;
-        height: 3.5rem;
-        transition: .3s;
-    }
-    .dh-homePage span {
-        font-size: 20px;
-        font-weight: 500;
-        transition: .3s;
-    }
-    div.search {
-        padding: 7px;
-        transition: all .3s;
-        min-width: 13rem;
-    }
-    .search input {
-        font-size: 12px;
-        transition: .3s;
-    }
-    .search button img {
-        width: 20px;
-        transition: .3s;
-    }
-    .support { display: none;}
-
-    .icon-header {
-        width: auto;
-        height: 23px;
-        transition: .3s;
-    }
-    .login a {
-        font-size: 15px;
-        transition: .3s;
-    }
-    div.shopping-cart {
-        margin-right: 3rem;
-        margin-left: 2rem;
-        padding: 7px
-    }
-    .shopping-cart img {
-        width: auto;
-        height: 25px;
-        transition: .3s;
-    }
-}
-
-@media (max-width: 775px) {
-
-    section.header-center {
-        height: 4.5rem;
-        transition: all .5s;
-    }
-    .dh-homePage {
-        margin-left: 3rem;
-        margin-right: 1rem;
-        transition: .4s;
-    }
-    .dh-homePage img {
-        width: auto;
-        height: 3rem;
-        transition: .3s;
-    }
-    .dh-homePage span {
-        font-size: 17px;
-        font-weight: 500;
-        transition: .3s;
-    }
-    div.search {
-        padding: 4px;
-        transition: all .3s;
-        min-width: 9.3rem;
-    }
-    
-    .search input {
-        font-size: 12px;
-    }
-
-    .search button img {
-        width: 20px;
-        transition: .3s;
-    }
-    .icon-header {
-        width: auto;
-        height: 20px;
-        transition: .3s;
-    }
-    .login a {
-        font-size: 12px;
-        transition: .3s;
-        padding-left: 0;
-    }
-    div.shopping-cart {
-        padding: 6px;
-        margin-left: 5px;
-    }
-    .shopping-cart img {
-        width: auto;
-        height: 20px;
-        transition: .3s;
-    }
-}
-
-@media (max-width: 630px) {
-    .dh-homePage span { display: none;}
-
-    div.dh-homePage {
-        margin-left: 2rem;
-        margin-right: 0;
-    }
-    .support { display: none};
-
-    div.shopping-cart { margin-right: 2rem;}
-
-    div.search { min-width: 10rem; width: 13rem;}
-    .search input { font-size: 10px;}
-}
-
 /*  Categorias no responsivo */ 
 
 .checkbtn {
-    font-size: 25px;
+    font-size: 35px;
     color: #fff;
-    margin-right: 1rem;
+    margin-right: 2rem;
     cursor: pointer;
     display: none;
 }
@@ -523,8 +286,8 @@ div.shopping-cart {
 .categorias-hidden {
     display: none;
     position: absolute;
-    top: 5.6rem;
-    border-top: solid 2px #fad11b;
+    top: 8.5rem;
+    border-top: solid 3px #fad11b;
     background-color: #1a1a1a;
     width: 100%;
     height: auto;
@@ -555,22 +318,25 @@ div.shopping-cart {
 }
 
 .categorias-hidden label {
-    height: 1.5rem;
-    padding-top: 5px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: bold;
 }
 
 .categorias-hidden a {
     display: none;
-    font-size: 13px;
-    padding: 5px;
+    font-size: 16px;
     color: black;
     width: 100%;
     height: 100%;
+    line-height: 100%;
+    padding: 10px;
     text-transform: uppercase;
     font-weight: 400;
 }
 
 .checkbtn2 i { display: none;}
+
 .checkbtn2 {
     color: #fff;
     font-size: 16px;
@@ -609,79 +375,206 @@ div.shopping-cart {
 #check-xbox, #check-steam, #check-gift { display: none;}
 
 
-@media (max-width: 700px) {
-    div.dh-homePage { margin-left: 1rem;}
+@media (max-width: 1090px) {
+
+    section.header-center {
+        height: 7rem;
+        transition: all .4s;
+    }
+
+    div.dh-homePage {
+        margin-left: 2rem;
+        transition: .4s;
+    }
+
+    .dh-homePage img {
+        width: auto;
+        height: 70px;
+        transition: .4s;
+    }
+    .dh-homePage span {
+        font-size: 25px;
+        font-weight: 500;
+        transition: .4s;
+    }
+    div.search {
+        padding: 12px;
+        transition: all .4s;
+        border-radius: 10px;
+    }
+    .search input {
+        font-size: 15px;
+        transition: all .4s;
+    }
+   
+    .support a {
+        font-size: 16px;
+        transition: .4s;
+        padding: 10px;
+    }
+
+    .icon-header {
+        width: auto;
+        height: 23px;
+        transition: .4s;
+    }
+
+    .login a {
+        font-size: 16px;
+        transition: .4s;
+        padding: 10px;
+    }
+
+    div.shopping-cart {
+        margin-right: 2rem;
+        transition: .4s;
+    }
+
+    .shopping-cart img {
+        width: auto;
+        height: 32px;
+        transition: .4s;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    div.dh-homePage { margin-right: 1rem; }
+
+    div.search {
+        transition: all .3s;
+        min-width: 13rem;
+    }
+
+    .search input { font-size: 14px; }
+
+    .search button img {
+        width: 20px;
+        transition: .3s;
+    }
+
+    .support a { font-size: 15px; }
+
+    .login a { font-size: 15px; }
+
+    div.shopping-cart { padding: 8px; }
+}
+
+@media (max-width: 900px) {
+
+    div.dh-homePage {  margin-right: 1rem; }
+
+    .dh-homePage img { height: 63px; }
+
+    .dh-homePage span { font-size: 22px;}
+
+    div.search {
+        padding: 12px;
+        min-width: 13rem;
+    }
+
+    .support { display: none;}
+
+    .icon-header {
+        width: auto;
+        height: 23px;
+        transition: .3s;
+    }
+
+    .login a { font-size: 17px; }
+
+    div.shopping-cart {
+        margin-left: 20px;
+        padding: 7px
+    }
+}
+
+@media (max-width: 730px) {
+
+    section.header-center { gap: 1em; }
+
+    div.dh-homePage { margin-left: 2rem;}
+
     .dh-homePage span { display: none;}
 
-    section.header-center { gap: 12px;}
-
-    .search {
-        min-width: 8rem;
+    .dh-homePage img {
+        width: auto;
+        height: 60px
     }
+
+    div.search {
+        min-width: 12rem;
+        width: 18rem;
+        padding: 10px;
+    }
+
+    .search input { font-size: 14px;}
 
     .login { display: none;}
 
-    div.shopping-cart { margin-right: 5px; }
+    div.shopping-cart { margin-right: 1rem; }
 
-    .shopping-cart img { height: 22px;}
+    .shopping-cart img { height: 30px;}
 
-    .checkbtn {
-        display: block;
-    }
+    .checkbtn { display: block; }
 
     .nav-bar ul { display: none}
+
     #divider-to-categories { display: none;}
 
     #check-nav:checked ~ nav { display: block;}
 }
 
-
-@media (max-width: 350px) {
+@media (max-width: 500px) {
     div.dh-homePage {
         margin: 0;
-        margin-left: 10px;
+        margin-left: 1rem;
     }
     .dh-homePage img {
         width: auto;
-        height: 33px
+        height: 50px
     }
-    .search input::placeholder {
-        color: transparent;
-    }
+    .search input::placeholder { color: transparent; }
+
     div.search {
         min-width: 5rem;
+        padding: 9px;
     }
-    .shopping-cart img {
-        height: 15px;
-    }
-    .checkbtn {font-size: 17px;}
+    .shopping-cart img { height: 25px; }
 
-    #country-origin { display: none }
-    div.overheader-options a { font-size: 9px;}
-    div.overheader-options { margin-left: 2.5rem;}
-    section.overheader {
-        height: 20px;
+    .checkbtn {font-size: 30px; margin-right: 1rem;}
+
+    .categorias-hidden { top: 8rem; }
+
+    .categorias-hidden a {
+        font-size: 14px;
         transition: all .4s;
     }
-    
 }
 
-@media (max-width: 320px) {
-    section.header-center { height: 3.8rem;}
-    .categorias-hidden {
-        top: 5rem;
-        transition: all .5s;
-    }
-    .categorias-hidden label { height: 1.2rem;}
-    .categorias-hidden a { font-size: 10px; }
-    .checkbtn2 { font-size: 13px; }
-}
+@media (max-width: 340px) {
 
-@media (max-width: 315px) {
-    .categorias-hidden {
-        top: 3.7rem;
-        transition: all .5s;
+    .dh-homePage img { height: 45px;}
+
+    .shopping-cart img { height: 20px;}
+
+    div.shopping-cart { margin:0 }
+
+    div.search { min-width: 5rem; }
+
+    .checkbtn { font-size: 25px; margin-left: 0;}
+
+    .checkbtn2 { font-size: 15px; }
+
+    .categorias-hidden { top: 8rem; }
+
+    .categorias-hidden label { 
+        height: 2rem;
+        font-size: 15px;
+        line-height: 2rem;
     }
+
+    .categorias-hidden a { font-size: 13px; }
 }
 
 @media (min-width: 1700px) {
@@ -793,7 +686,7 @@ hr#divider-to-categories {
 
 @media (max-width: 1090px) {
     .categorias { 
-        height: 40px;
+        height: 45px;
         transition: all .4s; 
     }
     .categorias a { 
@@ -806,45 +699,33 @@ hr#divider-to-categories {
     }
 }
 
-@media (max-width: 950px) {
-    .categorias { 
-        height: 38px;
-        transition: all .4s; 
-    }
-    .categorias a { 
-        font-size: 16px; 
-        transition: all .4s; 
-    }
+@media (max-width: 1000px) {
+
+    .categorias a { font-size: 16px; }
+
     .sub-categorias li a {
         height: 34px;
         font-size: 12px;
     }
 }
 
-@media (max-width: 850px) {
-    .categorias { 
-        height: 35px;
-        transition: all .4s; 
-    }
-    .categorias a { 
-        font-size: 14px; 
-        transition: all .4s; 
-    }
+@media (max-width: 900px) {
+
+    .categorias { height: 40px;}
+
+    .categorias a { font-size: 15.5px; }
+
     .sub-categorias li a {
         height: 30px;
         font-size: 12px;
     }
 }
 
-@media (max-width: 747px) {
-    .categorias { 
-        height: 29px;
-        transition: all .4s; 
-    }
-    .categorias a { 
-        font-size: 12px; 
-        transition: all .4s; 
-    }
+@media (max-width: 700px) {
+    .categorias { height: 29px; }
+
+    .categorias a { font-size: 12px; }
+
     .sub-categorias li a {
         height: 1.6rem;
         font-size: 9px;
