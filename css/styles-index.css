@@ -737,18 +737,16 @@ hr#divider-to-categories {
 
 section.container-carousel {
     background: transparent;
-    width: 100%;
-    height: auto;
     position: relative;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    overflow: hidden;
 }
 
 .slider-carousel {
     width: 500%;
     height: auto;
     display: flex;
-    overflow: hidden;
 }
 
 .slider-carousel input { display: none;}
@@ -1139,13 +1137,108 @@ width: 100%;
 }
 
 /* ----------------- section Lançamentos ------------------*/
-
 section.lancamentos {
-    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.slider-lancamentos {
+    position: relative;
     width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.slider-lancamentos > div {
+    display: flex;
+    width: 400%;
     height: auto;
 }
 
+.banner-lancamentos { width: 25%; }
+
+.banner-lancamentos img { width: 100% }
+
+.btn-lancamentos {
+    position: absolute;
+    background: none;
+    border: none;
+    top: 45%;
+    transition: all .4s;
+}
+
+.btn-lancamentos:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+}
+
+.btn-lancamentos img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+#backBtn-lancamentos {left: 1em }
+#nextBtn-lancamentos { right: 0 }
+
+@media (min-width:1200px) {
+    .btn-lancamentos img{
+        width: 100px;
+        height: 100px;
+        transition: all .5s;
+    }
+}
+
+@media (max-width: 700px) {
+    .btn-lancamentos img{
+        width: 60px;
+        height: 60px;
+        transition: all .5s;
+    }
+}
+
+@media (max-width: 500px) {
+    .btn-lancamentos img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 350px) {
+    .btn-lancamentos img{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+
+/* section.container-carousel {
+    background: transparent;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.slider-carousel {
+    width: 500%;
+    height: auto;
+    display: flex;
+}
+
+.slider-carousel input { display: none;}
+
+.slideCarousel {
+    width: 20%;
+    transition: .7s;
+}
+
+.slideCarousel img {
+    width: 100%;
+    height: auto;
+}
+ */
 
 
 /* .lancamentos {
@@ -1318,7 +1411,10 @@ section.lancamentos {
 
 /*-------------------------  FOOTER  ---------------------------------------------------------------------------*/
 
-footer { background-color:  #1a1a1a; color: #eee; }
+footer { 
+    background-color:  #1a1a1a;
+    color: #eee; 
+}
 
 section.info-dh {
     display: flex;
