@@ -1541,7 +1541,7 @@ div.security {
     color: black;
     border-radius: 14px;
     width: 60px;  /* pra que?------- */
-    transition: all .3s;
+    transition: all .4s;
     position: relative;
     background: none;
 }
@@ -1550,8 +1550,14 @@ div.security {
     width: 60px;
     margin-left: 5px;  /* pra que?------- */
 }
+
+.chat:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+}
        
-.chat strong {
+/* .chat strong {
     opacity: 0;
     width: 0;
     background-color: none;
@@ -1590,4 +1596,4 @@ div.security {
         left: 0;
         width: initial;
     }
-}
+} */
