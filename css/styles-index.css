@@ -489,25 +489,28 @@ div.shopping-cart {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 730px) {
 
     section.header-center { 
         gap: 1em;
+        height: 8rem;
     }
 
-    div.dh-homePage { margin-left: 2rem;}
+    .categorias-hidden { top: 10rem}
+
+    div.dh-homePage { margin-left: 2rem; margin-right: 0;}
 
     .dh-homePage span { display: none;}
 
     .dh-homePage img {
         width: auto;
-        height: 60px
+        height: 80px
     }
 
     div.search {
         min-width: 12rem;
         width: 18rem;
-        padding: 10px;
+        padding: 13px;
     }
 
     .search input { font-size: 14px;}
@@ -516,7 +519,7 @@ div.shopping-cart {
 
     div.shopping-cart { margin-right: 1rem; }
 
-    .shopping-cart img { height: 30px;}
+    .shopping-cart img { height: 40px;}
 
     .checkbtn { display: block; }
 
