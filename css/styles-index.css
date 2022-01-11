@@ -1454,103 +1454,89 @@ div.security {
 }
 
 @media (max-width: 1012px) {
-    #payment-methods-title { font-size: 16px; transition: .5s;}
-    #social-networks-title { font-size: 16px; transition: .5s;}
+    #payment-methods-title { font-size: 20px; transition: .5s;}
+    #social-networks-title { font-size: 20px; transition: .5s;}
+
+    .payment-type span { font-size: 13px; transition: .5s;}
+    .payment-type img { height: 30px; transition: .5s;}
+
+    div.social-networks-icons {gap: 2rem;}
+    .social-networks img { height: 45px; transition: .5s;}
+
+    .security span { font-size:18px; transition: .5s;}
+    .security img { height: 30px; transition: .5s;}
+
+    .copyright p { font-size: 14px;}
+}
+
+@media (max-width: 980px) {
+    .firstContainer-footer { margin: 2rem; transition: .5s;}
+
+    #payment-methods-title { font-size: 18px; transition: .5s;}
+    #social-networks-title { font-size: 18px; transition: .5s;}
 
     .payment-type span { font-size: 13px; transition: .5s;}
     .payment-type img { height: 25px; transition: .5s;}
 
-    div.social-networks-icons {gap: 1rem;}
-    .social-networks img { height: 40px; transition: .5s;}
+    .secondContainer-footer {  margin: 2rem; margin-top: 2rem; width: 50%; transition: .5s; }
+    div.social-networks-icons {gap: 1.5rem;}
+    .social-networks img { height: 38px; transition: .5s;}
 
     .security span { font-size: 15px; transition: .5s;}
-    .security img { height: 30px; transition: .5s;}
+    .security img { height: 28px; transition: .5s;}
 
-    .copyright p { font-size: 11px;}
-}
-
-@media (max-width: 870px) {
-    .firstContainer-footer { margin: 2rem; transition: .5s;}
-
-    #payment-methods-title { font-size: 14px; transition: .5s;}
-    #social-networks-title { font-size: 14px; transition: .5s;}
-
-    .payment-type span { font-size: 10px; transition: .5s;}
-    .payment-type img { height: 22px; transition: .5s;}
-
-    .secondContainer-footer {  margin: 2rem; margin-top: 2rem; width: 50%; transition: .5s; }
-    div.social-networks-icons {gap: 1rem;}
-    .social-networks img { height: 35px; transition: .5s;}
-
-    .security span { font-size: 14px; transition: .5s;}
-    .security img { height: 25px; transition: .5s;}
-
-    .copyright p { font-size: 11px;}
+    .copyright p { font-size: 13px;}
     .copyright { padding-bottom: 3rem; margin-left: 2rem; margin-right: 2rem; transition: .5s;}
 }
 
-@media (max-width: 720px) {
-    #payment-methods-title { font-size: 12px; transition: .5s;}
-    #social-networks-title { font-size: 12px; transition: .5s;}
-
-    .firstContainer-footer { margin-top: 2rem;}
-
-    .payment-type {
-        padding-top: 10px;
-        row-gap: 10px;
-        column-gap: 20px; 
-    }
-    .payment-type span { font-size: 9px; transition: .5s;}
-    .payment-type img { height: 20px; transition: .5s;}
-
-    .secondContainer-footer { margin-top: 2rem;}
-    div.social-networks-icons {gap: 1rem;}
-    .social-networks img { height: 28px; transition: .5s;}
-
-    .security span { font-size: 12px; transition: .5s;}
-    .security img { height: 23px; transition: .5s;}
-
-    .copyright p { font-size: 9px;}
-}
-
-@media (max-width: 630px) {
-    #payment-methods-title { font-size: 12px; transition: .5s;}
+@media (max-width: 840px) {
+    #payment-methods-title { font-size: 18px; transition: .5s;}
 
     .payment-type {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding-top: 10px;
+        padding-top: 20px;
         row-gap: 10px;
         column-gap: 20px; 
         white-space: nowrap;
         transition: all .5s;
     }
 
-    .secondContainer-footer { margin-top: 2.9em;}
-    #social-networks-title { font-size: 12px; transition: .5s;}
-    div.social-networks-icons {gap: 15px; transition: .5s;}
-    .social-networks img { height: 25px; transition: .5s;}
+    .payment-type span { font-size: 14px; transition: .5s;}
+    .payment-type img { height: 30px; transition: .5s;}
 
-    .security span { font-size: 12px;}
-    .security img { height: 23px; }
+
+    .secondContainer-footer { margin-top: 3em;}
+    #social-networks-title { font-size: 16px; transition: .5s;}
+    div.social-networks-icons {gap: 15px; transition: .5s;}
+    .social-networks img { height: 36px; transition: .5s;}
+
+    .security span { font-size: 15px;}
+    .security img { height: 30px; }
 }
 
-@media (max-width: 535px) {
+@media (max-width: 735px) {
+    .payment-type span { font-size: 12px; transition: .5s;}
+    .payment-type img { height: 25px; transition: .5s;}
+
+}
+
+
+@media (max-width: 675px) {
     section.info-dh {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
     }
 
-    #payment-methods-title { font-size: 15px; }
+    #payment-methods-title { font-size: 20px; }
 
     .firstContainer-footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 90%;
+        width: 70%;
         height: auto;
         margin: 1rem;
         margin-top: 3rem;
@@ -1562,8 +1548,8 @@ div.security {
     .payment-type div {
         display: flexbox;
     }
-    .payment-type span { font-size: 10px; }
-    .payment-type img { height: 24px;}
+    .payment-type span { font-size: 14px; }
+    .payment-type img { height: 30px;}
 
     .secondContainer-footer {
         width: 100%;
@@ -1577,45 +1563,54 @@ div.security {
         padding-top: 2rem;
     }
 
-    #social-networks-title { font-size: 14px;}
-    .social-networks img { height: 30px;}
+    #social-networks-title { font-size: 17px;}
+    .social-networks img { height: 40px;}
     div.social-networks-icons { gap: 20px}
 
-    .security span { font-size: 14px;}
-    .security img { height: 28px; }
+    .security span { font-size: 17px;}
+    .security img { height: 35px; }
 
-    .copyright { margin: 25px 20px 10px 50px}
+    .copyright { margin: 25px 20px 10px 20px}
 }
 
-@media (max-width: 430px) {
-    #payment-methods-title { font-size: 13px;}
+@media (max-width: 540px) {
+
+    .firstContainer-footer { margin-top: 2rem; width: 90%;}
+
+    #payment-methods-title { font-size: 20px;}
 
     .payment-type {
         grid-template-columns: 2fr 1fr;
         gap: 5px;
     }
-    .payment-type img { height: 20px;}
+    .payment-type img { height: 30px;}
 
-    #social-networks-title { font-size: 11px;}
-    .social-networks-icons img { height: 22px;}
+    #social-networks-title { font-size: 15px;}
+    
+    div.social-networks-icons {margin-top: 0}
+    
+    .social-networks-icons img { height: 35px; }
 
-    .security span { font-size: 11px;}
+    div.security { gap: 15px;}
+    .security span { font-size: 15px;}
     .security img { height: 22px;}
 
-    .copyright p { font-size: 8px;}
+    .copyright p { font-size: 11px;}
 }
 
-@media (max-width: 350px) {
-    .firstContainer-footer { margin-top: 2.5rem;}
+@media (max-width: 450px) {
+    .firstContainer-footer { margin-top: 2.5rem; width: 90%;}
 
-    #payment-methods-title { font-size: 12px; }
+    #payment-methods-title { font-size: 16px; }
 
     .payment-type {
         grid-template-columns: 2fr 1fr;
         gap: 5px;
+        margin-top: 0;
     }
     
-    .payment-type img { height: 15px;}
+    .payment-type span { font-size: 12px;}
+    .payment-type img { height: 23px;}
 
     .secondContainer-footer {
         padding-top: 1rem;
@@ -1623,20 +1618,37 @@ div.security {
     }
 
     #social-networks-title {
-        font-size: 10px;
+        font-size: 14px;
         white-space: normal;
         text-align: center;
     }
 
     div.social-networks-icons { gap: 8px;}
     
-    .security span { font-size: 10px; text-align: center;}
-    .security img { height: 20px;}
+    .security span { font-size: 14px; text-align: center;}
+    .security img { height: 27px;}
 
     .copyright { 
         margin: 1rem 1rem 1rem 1rem;
     }
 }
+
+@media (max-width: 380px) {
+    .payment-type {
+        grid-template-columns: 1fr;
+    }
+
+    .secondContainer-footer {
+        margin-top: 10px;
+        gap: 5px;
+        flex-direction: column;
+    }
+
+    .copyright p { font-size: 10px;}
+}
+
+
+
 
  /*------------------------  CHAT  ------------------------------------------------------------------------*/
 
