@@ -726,7 +726,7 @@ hr#divider-to-categories {
 section.container-carousel {
     background: transparent;
     position: relative;
-    margin-top: 3rem;
+    margin-top: 2rem;
     overflow: hidden;
 }
 
@@ -816,11 +816,6 @@ section.container-carousel {
 }
 
 @media (max-width: 775px) {
-    section.container-carousel {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        transition: .5s ;
-    }
     
     .manual-btn, .navigation-auto div {
         border: 2px solid white;
