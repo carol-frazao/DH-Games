@@ -911,7 +911,7 @@ section.container-carousel {
 
   /* ------------- section jogos Mais Populares ---------------*/
 
-  section.maisPopulares { margin-top: 3rem;}
+  section.maisPopulares { margin-top: 4rem;}
 
   .populares-grid-container {
     display: grid;
@@ -1156,7 +1156,7 @@ section.super-promotions-container {
 
 /* ----------------- section Lançamentos ------------------*/
 
-section.lancamentos-container { margin-top: 4rem;}
+section.lancamentos-container { margin-top: 2rem;}
 
 #slider-lancamentos {
     margin-top: 2rem;
@@ -1651,8 +1651,6 @@ div.security {
 
     .copyright p { font-size: 10px;}
 }
-
-
 
 
  /*------------------------  CHAT  ------------------------------------------------------------------------*/
