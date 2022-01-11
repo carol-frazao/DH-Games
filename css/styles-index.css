@@ -74,8 +74,8 @@ div.overheader-options { gap: 4em; }
 }
 
 @media (max-width: 730px) {
-    section.overheader { height: 1.6rem;}
-    div.overheader-options a { font-size: 12px; }
+    section.overheader { height: 1.7rem;}
+    div.overheader-options a { font-size: 12px; line-height: 1.7rem;}
     .overheader-options img { height: 15px ;}
     #send-email { display: none;}
     #loginHidden { display: inline-flex}
@@ -726,7 +726,7 @@ hr#divider-to-categories {
 section.container-carousel {
     background: transparent;
     position: relative;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     overflow: hidden;
 }
 
