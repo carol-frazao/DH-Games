@@ -41,7 +41,7 @@ section.overheader {
     opacity: 70%;
 }
 
-.overheader a:hover { opacity: 100%; }
+.overheader a:hover { opacity: 90%; color: #fad11b}
 
 div.overheader-options { gap: 4em; }
 
@@ -61,8 +61,6 @@ div.overheader-options { gap: 4em; }
 }
 
 @media (max-width: 400px) {
-    .overheader-options a { font-size: 12px; }
-
     #country-origin { display: none; }
 
     section.overheader {
@@ -71,15 +69,22 @@ div.overheader-options { gap: 4em; }
     }
 }
 
-@media (max-width: 540px) {
-    #send-email { display: none;}
-    #loginHidden { display: inline-flex}
+@media (max-width: 520px) {
     #whatsapp { display: none;}
 }
 
-@media (max-width: 740px) {
+@media (max-width: 700px) {
+    section.overheader { height: 1.6rem;}
+    div.overheader-options a { font-size: 12px; }
+    .overheader-options img { height: 15px ;}
+    #send-email { display: none;}
+    #loginHidden { display: inline-flex}
+}
+
+@media (max-width: 750px) { 
     #segurancaGarantida { display: none;}
 }
+
 
 @media (max-width: 910px) {
     div.overheader-options {
