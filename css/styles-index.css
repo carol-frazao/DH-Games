@@ -986,6 +986,7 @@ section.super-promotions-container {
     position: relative;
     height: auto;
     margin-top: 3rem;
+    margin-bottom: 4rem;
 }
 
 .cards-promotions-container {
@@ -1156,7 +1157,7 @@ section.super-promotions-container {
 
 /* ----------------- section Lançamentos ------------------*/
 
-section.lancamentos-container { margin-top: 5rem;}
+section.lancamentos-container { margin-top: 3rem;}
 
 #slider-lancamentos {
     margin-top: 2rem;
