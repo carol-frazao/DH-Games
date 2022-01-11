@@ -952,7 +952,7 @@ section.container-carousel {
 
 @media (max-width: 850px)  {
     .populares-grid-container { grid-template-columns: repeat(3, 1fr); }
-   div.populares-grid-item img { height: 7rem; }
+   div.populares-grid-item img { height: 8rem; }
    .populares-grid-item p { font-size: 14px; transition: .5s; }
 }
 
@@ -971,10 +971,13 @@ section.container-carousel {
     .populares-grid-item p { font-size: 20px; transition: .5s; }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 500px) {
     .populares-grid-container { grid-template-columns: 1fr 1fr; }
-    div.populares-grid-item img { height: 6rem; }
+    div.populares-grid-item img { height: 7rem; }
+}
 
+@media (max-width: 315px) {
+    div.populares-grid-item img { height: 6rem; }
 }
 
 /* ------------------ section Super Promoções --------------------*/
