@@ -378,7 +378,7 @@ div.shopping-cart {
 @media (max-width: 1090px) {
 
     section.header-center {
-        height: 9rem;
+        height: 8rem;
         transition: all .4s;
     }
 
@@ -886,12 +886,8 @@ section.container-carousel {
     border-radius: 5px;
  }
 
- @media (max-width: 1090px) {
-     .title-sections span { font-size: 20px; transition: .5s;}
- }
-
  @media (max-width: 690px) {
-    .title-sections span { font-size: 17px; transition: .5s;}
+    .title-sections span { font-size: 22px; transition: .5s;}
  }
 
  @media (max-width: 745px) {
@@ -907,6 +903,11 @@ section.container-carousel {
         transition: .5s;
      }    
  }
+
+ @media (max-width: 350px) {
+    .title-sections span { font-size: 18px; transition: .5s;}
+ }
+
 
   /* ------------- section jogos Mais Populares ---------------*/
 
@@ -948,19 +949,11 @@ section.container-carousel {
     font-weight: 200px;
 }
 
-@media (max-width: 415px) {
-    div.populares-grid-item a img { height: 4rem;}
-    div.populares-grid-item a p { font-size: 10px;}
-}
-
-@media (max-width: 690px) {
-    .populares-grid-container { grid-template-columns: repeat(3, 1fr); }
-    .populares-grid-item { padding: 10px; }    
-}
 
 @media (max-width: 850px)  {
-   div.populares-grid-item img { height: 6rem; }
-   .populares-grid-item p { font-size: 13px; transition: .5s; }
+    .populares-grid-container { grid-template-columns: repeat(3, 1fr); }
+   div.populares-grid-item img { height: 7rem; }
+   .populares-grid-item p { font-size: 14px; transition: .5s; }
 }
 
 @media (max-width: 1090px) {
@@ -978,6 +971,11 @@ section.container-carousel {
     .populares-grid-item p { font-size: 20px; transition: .5s; }
 }
 
+@media (max-width: 460px) {
+    .populares-grid-container { grid-template-columns: 1fr 1fr; }
+    div.populares-grid-item img { height: 6rem; }
+
+}
 
 /* ------------------ section Super Promoções --------------------*/
 
@@ -1254,6 +1252,10 @@ section.lancamentos-container { margin-top: 4rem;}
 }
 
 /* ------------- section Parcerias --------------------------------------------*/
+
+section.parcerias {
+    margin-top: 3rem;
+}
 
 .parcerias li { list-style: none;}
 
