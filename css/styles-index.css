@@ -489,7 +489,7 @@ div.shopping-cart {
     }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 700px) {
 
     section.header-center { 
         gap: 1em;
@@ -724,7 +724,7 @@ hr#divider-to-categories {
 section.container-carousel {
     background: transparent;
     position: relative;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     overflow: hidden;
 }
 
