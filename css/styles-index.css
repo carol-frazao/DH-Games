@@ -725,7 +725,6 @@ section.container-carousel {
     background: transparent;
     position: relative;
     margin-top: 2rem;
-    margin-bottom: 2rem;
     overflow: hidden;
 }
 
@@ -911,13 +910,11 @@ section.container-carousel {
 
   /* ------------- section jogos Mais Populares ---------------*/
 
-  section.maisPopulares { margin-top: 3rem;}
-
   .populares-grid-container {
     display: grid;
     justify-content: space-around;
     grid-template-columns: repeat(5, 1fr);
-    margin: 1rem 2rem 1rem 2rem;
+    margin: 1rem 2rem 0rem 2rem;
 }
 
 .populares-grid-item {
@@ -985,8 +982,6 @@ section.container-carousel {
 section.super-promotions-container {
     position: relative;
     height: auto;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
 }
 
 .cards-promotions-container {
@@ -1159,7 +1154,6 @@ section.super-promotions-container {
 
 #slider-lancamentos {
     margin-top: 2rem;
-    margin-bottom: 2rem;
     width: 100%;
     height: auto;
 }
@@ -1254,10 +1248,6 @@ section.super-promotions-container {
 }
 
 /* ------------- section Parcerias --------------------------------------------*/
-
-section.parcerias {
-    margin-top: 3rem;
-}
 
 .parcerias li { list-style: none;}
 
