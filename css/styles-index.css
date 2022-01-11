@@ -1136,7 +1136,7 @@ section.super-promotions-container {
    display: flex;
 } 
 
-@media (max-width:700px) {
+@media (max-width:850px) {
 
    .card-promotion {
        width: 10rem;
