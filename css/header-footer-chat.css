@@ -867,7 +867,31 @@ div.security {
     padding-bottom: 4rem;
  }
 
- .copyright p { font-size: 18px;}
+.copyright p { font-size: 18px;}
+
+.info-copyright {
+    background-color: #eee;
+    color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+}
+
+.info-copyright img {
+    width: 50px;
+    height: 50px;
+    height: 3rem;
+}
+
+.info-copyright > div {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.info-copyright span { font-size: 15px;}
 
 @media (min-width: 1900px) {
     #payment-methods-title { font-size: 27px; transition: .5s;}
@@ -962,6 +986,15 @@ div.security {
 
     .security span { font-size: 15px;}
     .security img { height: 30px; }
+
+    .info-copyright img {
+        width: 30px;
+        height: 30px;
+        transition: .4s;
+    }
+    
+    .info-copyright span { font-size: 12px;}
+
 }
 
 @media (max-width: 735px) {
@@ -1020,6 +1053,15 @@ div.security {
     .security img { height: 35px; }
 
     .copyright { margin: 25px 20px 10px 20px}
+
+    .info-copyright div { gap: 10px;}
+
+    .info-copyright img {
+        width: 40px;
+        height: 40px;
+        transition: .4s;
+    }
+
 }
 
 @media (max-width: 540px) {
@@ -1080,6 +1122,13 @@ div.security {
     .copyright { 
         margin: 1rem 1rem 1rem 1rem;
     }
+
+    .info-copyright img {
+        width: 30px;
+        height: 30px;
+        transition: .4s;
+    }
+    .info-copyright span { font-size: 10px;}
 }
 
 @media (max-width: 380px) {
