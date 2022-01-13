@@ -103,6 +103,8 @@ section.register-container {
     cursor: pointer;
 }
 
+.send_form:hover { border: solid 2px #1a1a1a; }
+
 .login_options div div a {
     padding: 7px;
     color: #fff;
