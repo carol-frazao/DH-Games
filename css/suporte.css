@@ -80,15 +80,21 @@
     }
 
     #location-gmaps { 
-        width: 20rem;
-        height: 13rem;
+        width: 23rem;
+        height: 15rem;
     }
 }
 
 @media (max-width: 430px) {
     #location-gmaps { 
-        width: 15rem;
-        height: 10rem;
+        width: 18rem;
+        height: 11rem;
     }
+}
 
+@media (max-width: 340px) {
+    #location-gmaps { 
+        width: 14rem;
+        height: 9rem;
+    }
 }

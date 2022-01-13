@@ -328,7 +328,7 @@ div.shopping-cart {
     font-size: 20px;
 }
 
-.categorias-hidden a {
+.categorias-hidden div div > a {
     display: none;
     font-size: 18px;
     color: black;
@@ -338,6 +338,23 @@ div.shopping-cart {
     padding: 10px;
     text-transform: uppercase;
     font-weight: 500;
+}
+
+.categorias-hidden div div > p { width: 100%; }
+
+.categorias-hidden div div > p a {
+    display: none;
+    text-decoration: underline;
+    color: black;
+    opacity: 90%;
+    height: 2.5rem;
+    width: 100%;
+    line-height: 2.5rem;
+}
+
+.categorias-hidden div div > p a:hover {
+    opacity: 100%;
+    font-weight: bold;
 }
 
 .checkbtn2 i { display: none;}
@@ -553,6 +570,7 @@ div.shopping-cart {
         width: 14srem;
         padding: 10px;
     }
+
     .shopping-cart img { height: 30px; }
 
     .checkbtn {font-size: 30px; margin-right: 1rem;}
@@ -1014,7 +1032,7 @@ div.security {
         grid-template-columns: 2fr 1fr;
         gap: 5px;
     }
-    .payment-type img { height: 30px;}
+    .payment-type img { height: 27px;}
 
     #social-networks-title { font-size: 15px;}
     
