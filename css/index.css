@@ -776,12 +776,23 @@ section.newsletter {
         width: 3em;
         height: 2.7em;
     }
-
-
-
 }
 
+@media (min-width: 1400px) {
 
+    .news_right input {
+        height: 2.4em;
+        font-size: 20px;
+        transition: .4s;
+    }
+
+    .news_right button {
+        width: 8em;
+        height: 3.1em;
+        transition: .4s;
+    }
+
+} 
 
 
 /* --------------------------- SELOS -----------------------------------*/
@@ -789,25 +800,92 @@ section.newsletter {
 .selos-container {
     display: flex;
     flex-direction: column;
-    margin: 2rem 3rem 2rem 3rem;
+    margin: 1rem 3rem 2rem 3rem;
 }
 
 .title-selos span {
     font-weight: bold;
-    font-size: 27px;
+    font-size: 25px;
     text-transform: uppercase;
 }
 
-.selos ul {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-around;
+.selos  {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
 }
-
-.selos li { list-style: none; }
 
 .selos img {
     width: 10rem;
     height: 6rem
 }
 
+#selo_icon {
+    width: auto;
+    height: 30px;
+}
+
+@media (max-width: 850px) {
+
+    .selos  {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (max-width: 650px) {
+
+    .title-selos span {
+        font-size: 23px;
+        transition: .4s;
+    }
+
+    #selo_icon { height: 27px;}
+
+}
+
+@media (max-width: 500px) {
+
+    .selos-container {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 2rem 2rem 2rem;
+        transition: .4s;
+    }      
+
+    .selos img {
+        width: 9rem;
+        height: 5rem;
+        transition: all .4s;
+    }
+
+    #selo_icon { height: 24px;}
+
+}
+
+@media (max-width: 400px) {
+
+    .title-selos span { font-size: 20px; }
+
+    .selos  { grid-template-columns: 1fr; }
+    
+}
+
+@media (min-width: 1500px) {
+
+    .selos-container {
+        margin: 2rem 3rem 3rem 3rem;
+        transition: .4s;
+    }      
+
+
+    .title-selos span { font-size: 28px; transition: .4s;}
+
+    .selos img {
+        width: 13rem;
+        height: 8rem;
+        transition: all .4s;
+    }    
+
+}
