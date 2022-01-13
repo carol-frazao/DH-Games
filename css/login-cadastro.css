@@ -40,6 +40,8 @@ section.register-container {
     margin-right: 3px;
 }
 
+.signUp-card { height: 31rem;}
+
 #card-login { gap: 2em; }
 
 #card-signUp span { margin-bottom: -50px;}
@@ -148,6 +150,8 @@ section.register-container {
     height: 34rem;
 }
 
+#card-signUp span { font-size: 20px;}
+
 #card-signUp span { margin-bottom: 11px;}
 
 .signUp-label { gap: 3px;}
@@ -160,11 +164,11 @@ section.register-container {
 #termo-signUp { font-size: 13px; }
 
 #return-login {
-    margin-top: 15px;
+    margin-top: 10px;
     background-color: #1a1a1a;
-    border-radius: 10px;
-    height: 27px;
-    width: 9.5em;
+    border-radius: 8px;
+    height: 25px;
+    width: 9.4em;
     text-align: center;
     line-height: 23px;
     transition: .4s;
@@ -183,8 +187,12 @@ section.register-container {
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
  }
+ 
+.signUp-label label { font-size: 14px;}
 
-#card-signUp button { bottom: 3.6em;}
+#card-signUp button {
+    height: 2em;
+    bottom: 4.8em;}
 
 /* @media (min-width: 1600px) {
     .card-register {
@@ -287,7 +295,8 @@ section.register-container {
 
     #card-signUp button {
         height: 2.4em;
-        bottom: 5.8em
+        bottom: 5.8em;
+        font-size: 20px;
     }
 
 }
@@ -298,6 +307,8 @@ section.register-container {
         height: 35rem;
         transition: all .4s;
     }
+
+    .signUp-card { height: 30rem; }
 
     #card-login span { padding-bottom: 5px;}
 
@@ -340,6 +351,10 @@ section.register-container {
         height: 35rem;
     }
 
+    .signUp-card {
+        height: 30rem;
+    }
+
     .options-posInput p br { display: none;}
 
     #forget_password { font-size: 15px;}
@@ -377,6 +392,10 @@ section.register-container {
     .card-register {
         width: 20rem;
         height: 30rem;
+    }
+
+    .signUp-card {
+        height: 27rem;
     }
 
     #card-login span { padding-bottom: 3px;}
@@ -450,16 +469,16 @@ section.register-container {
 
     #return-login a { font-size: 9px; }
     #return-login {
-        margin-top: 11px;
-        height: 20px;
+        margin-top: 21px;
+        height: 23px;
         width: 7em;
-        line-height: 16px;
+        line-height: 19px;
         transition: .4s;
     }
 
     #card-signUp button {
-        height: 2.3em;
-        bottom: 9.8em;
+        height: 2.5em;
+        bottom: 9.5em;
         transition: .4s;
         font-size: 17px;
     }
@@ -469,6 +488,10 @@ section.register-container {
     .card-register {
         width: 16rem;
         height: 27rem;
+    }
+
+    .signUp-card {
+        height: 25rem;
     }
 
     .card-register form { margin: 1.5em;}
@@ -501,17 +524,23 @@ section.register-container {
         bottom: 2.4em;
     }
 
-    .signUp-label label { font-size: 10px;}
+    .signUp-label label { font-size: 11px;}
 
-    .signUp-label input { height: 20px; font-size: 12px;}
+    .signUp-label input { height: 23px; font-size: 12px;}
 
     #termo-signUp { font-size: 8px;}
 
+    #return-login {
+        margin-top: 11px;
+        height: 20px;
+        line-height: 16px;
+    }
+
     #card-signUp button {
-        height: 2em;
-        bottom: 12em;
+        height: 2.7em;
+        bottom: 12.7em;
         transition: .4s;
-        font-size: 17px;
+        font-size: 15px;
     }
 
 }
