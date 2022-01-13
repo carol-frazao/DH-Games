@@ -1114,14 +1114,14 @@ div.security {
     text-decoration: none;
     color: black;
     border-radius: 14px;
-    width: 60px;  /* pra que?------- */
+    width: 80px;  /* pra que?------- */
     transition: all .4s;
     position: relative;
     background: none;
 }
       
 .chat img {
-    width: 60px;
+    width: 70px;
     margin-left: 5px;  /* pra que?------- */
 }
 
