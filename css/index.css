@@ -800,7 +800,7 @@ section.newsletter {
 .selos-container {
     display: flex;
     flex-direction: column;
-    margin: 1rem 3rem 2rem 3rem;
+    margin: 2rem 3rem 2rem 3rem;
 }
 
 .title-selos span {
@@ -850,7 +850,7 @@ section.newsletter {
     .selos-container {
         display: flex;
         flex-direction: column;
-        margin: 1rem 2rem 2rem 2rem;
+        margin: 2rem;
         transition: .4s;
     }      
 
