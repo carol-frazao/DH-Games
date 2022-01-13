@@ -9,7 +9,7 @@ section.register-container {
 
 .card-register {
     width: 60%;
-    height: 82%;
+    height: 30rem;
     border: solid 2px #e4c84e;
     border-radius: 7px;
     background-color: #fff;
@@ -190,6 +190,11 @@ section.register-container {
 }
 
 @media (max-width: 850px) {
+
+    .card-register {
+        height: 27rem;
+    }
+
     .login_options div div a p { display: none;}
 
     .login_options > p { 
@@ -203,6 +208,8 @@ section.register-container {
 }
 
 @media (max-width: 600px) {
+
+    .card-register { height: 25rem;}
 
     .card-register form {
         margin: 1.5em;
@@ -250,6 +257,8 @@ section.register-container {
 
 @media (max-width: 450px) {
 
+    .card-register { height: 24rem;}
+
     .login-label label { font-size: 13px;}
 
     .login-label input {
@@ -283,6 +292,8 @@ section.register-container {
 
 @media (max-width: 370px) {
 
+    #card-login { gap: 10px; }
+
     .options-posInput p { font-size: 11px; }
 
     .options-posInput { gap: 1.7em;}
@@ -292,10 +303,11 @@ section.register-container {
     #card-login button {
         height: 2.2em;
     }
-
 }
 
 @media (min-width: 1300px) {
+
+    .card-register { height: 33rem;}
 
     .card-register form span { font-size: 25px;}
     .login-label label { font-size: 17px;}
