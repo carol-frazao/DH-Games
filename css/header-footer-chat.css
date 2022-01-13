@@ -734,7 +734,7 @@ hr#divider-to-categories {
 @media (max-width: 900px) {
     .categorias li > a { font-size: 16px; transition: all .5s;}
 
-    nav.nav-bar > ul { height: 2.5rem; transition: all .5s; }
+    nav.nav-bar > ul { height: 3rem; transition: all .5s; }
 
     .sub-categorias li a {
         height: 40px;
