@@ -306,9 +306,13 @@ section.register-container {
     }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1000px) {
 
-    .card-register { height: 33rem;}
+    .card-register {
+        height: 33rem;
+        width: 50%;
+        transition: .4s;
+    }
 
     .card-register form span { font-size: 25px;}
     .login-label label { font-size: 17px;}
