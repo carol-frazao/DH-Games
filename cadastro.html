@@ -255,90 +255,45 @@
 
         <section class="register-container">
 
-            <div class="card-register login-card">
-
-                <form action="" method="POST" id="card-login">
-
-                    <span> 
-                        <img src="img/icons/person_outline_black_24dp.svg" alt="">
-                        Login
-                    </span>
-
-                    <div class="reg-label-input login-label">
-                        <label for="email">E-mail:</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-
-                    <div class="reg-label-input login-label">
-                        <label for="senha">Senha:</label>
-                        <input type="password" name="senha" id="senha">
-                    </div>
-
-                    <div class="options-posInput">
-                        <p id="forget_password">
-                            Esqueceu sua senha? <br> <a href="#"> Clique aqui </a>
-                        </p>
-
-                        <p>
-                            <a href="cadastro.html" id="redirect_register"> Não tenho cadastro </a>
-                        </p>
-                    </div>
-
-                    <div class="login_options">
-                        <p> Logar com: </p>
-                        <div>   
-                            <div>
-                                <a href="#" id="login_with_google">
-                                    <img src="img/icons/google_icon.png" alt="">
-                                    <p> Logar com o Google </p>
-                                </a>
-                            </div>
-                            <div>
-                                <a href="#" id="login_with_facebook">
-                                    <img src="img/icons/fb_icon.png" alt="">
-                                    <p> Logar com o Facebook </p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="send_form"> Entrar </button>
-
-                </form>
-            </div>
-
-            <!-- <div class="card-register signUp-card">
+            <div class="card-register signUp-card">
 
                 <form action="" method="POST" id="card-signUp">
 
-                    <span> Quero me cadastrar </span>
+                    <span> 
+                        <img src="img/icons/person_outline_black_24dp.svg" alt="">
+                        Registre-se
+                    </span>
 
                     <div class="reg-label-input signUp-label">
-                        <label for="nome"> Qual o seu nome? </label>
-                        <input type="text" name="nome" id="nome">
+                        <label for="nome"> Qual o seu nome? <i style="color: red"> * </i> </label>
+                        <input type="text" name="nome" id="nome" required>
                     </div>
 
                     <div class="reg-label-input signUp-label">
-                        <label for="email"> Digite seu e-mail: </label>
-                        <input type="email" name="email" id="email">
+                        <label for="email"> Digite seu e-mail: <i style="color: red"> * </i> </label>
+                        <input type="email" name="email" id="email" required>
                     </div>
 
                     <div class="reg-label-input signUp-label">
-                        <label for="senha"> Crie uma senha: </label>
-                        <input type="password" name="senha" id="senha">
+                        <label for="senha"> Crie uma senha: <i style="color: red"> * </i> </label>
+                        <input type="password" name="senha" id="senha" required>
                     </div>
 
                     <div class="reg-label-input signUp-label">
-                        <label for="confirmSenha"> Confirme sua senha: </label>
-                        <input type="password" name="confirmSenha" id="confirmSenha">
+                        <label for="confirmSenha"> Confirme sua senha: <i style="color: red"> * </i> </label>
+                        <input type="password" name="confirmSenha" id="confirmSenha" required>
                     </div>
 
-                    <p id="termo-signUp"> Ao criar uma conta, você concorda com nossos <a href="#"> termos de uso </a>,
-                        condições e <a href="#"> política de privacidade </a> . </p>
+                    <p id="termo-signUp"> Ao criar uma conta, você concorda com nossos <a href="txt/termos_de_uso.txt"> termos de uso</a>,
+                        condições e <a href="txt/politica_privacidade.txt"> política de privacidade</a>. </p>
+
+                    <div id="return-login">
+                        <a href="login.html"> Já tenho cadastro </a>
+                    </div>
 
                     <button class="send_form"> Criar conta </button>
                 </form>
-            </div> -->
+            </div>
 
         </section>
 

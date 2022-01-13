@@ -10,16 +10,15 @@ body {
 
 section.register-container {
     width: 100%;
-    height:100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
 }
 
 .card-register {
-    width: 30rem;
-    height: 35rem;
+    width: 45rem;
+    height: 33rem;
     border: solid 2px #e4c84e;
     border-radius: 7px;
     background-color: #fff;
@@ -29,8 +28,8 @@ section.register-container {
     margin: 2em;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: start;
+    align-items: center;
     position: relative;
     height: 100%;
 } 
@@ -39,9 +38,22 @@ section.register-container {
     font-size: 24px;
     font-weight: bold;
     color: #1a1a1a;
+    display: inline-flex;
 }
 
-.reg-label-input label { font-size: 17px; }
+#card-login span { padding-bottom: 8px; }
+
+.card-register span img {
+    width: auto;
+    height: 28px;
+    margin-right: 3px;
+}
+
+#card-login { gap: 2em; }
+
+#card-signUp span { margin-bottom: -50px;}
+
+.reg-label-input label { font-size: 16px; }
 
 .reg-label-input {
     display: flex;
@@ -58,246 +70,465 @@ section.register-container {
     font-size: 17px;
 }
 
-#card-login span { padding-bottom: 10px;}
+.login-label input { height: 38px; }
 
-#card-login { gap: 2.2em; }
+.options-posInput {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
-.login-label input { height: 40px; }
+.options-posInput p {
+    margin: -15px 10px 0 0;
+    font-size: 14px;
+}
 
-.card-register form p { font-size: 14px; }
-
-.card-register form p a {
+#forget_password a {
     text-decoration: none;
     color: blue;
 }
+ 
+#forget_password a:hover { font-weight: bold; }
 
-#forget_password { margin-top: 10px }
+#redirect_register {
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: bold;
+}
 
-.card-register form button {
+#redirect_register:hover { color: blue; } 
+
+.send_form {
     width: 100%;
     height: 3em;
     border: none;
     border-radius: 10px;
     background-color: #e4c84e;
     position: absolute;
-    bottom: 3em;
+    bottom: 3.2em;
     font-weight: bold;
     font-size: 20px;
     color: #1a1a1a;
     cursor: pointer;
 }
 
-div.login-options {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-#login_with_google {
+.login_options div div a {
+    padding: 7px;
+    color: #fff;
     display: flex;
     justify-content: space-around;
-    background-color: brown;
-    text-decoration: none;
-    color: #fff;
-    padding: 7px;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 13px;
     width: 180px;
-    height: 23px;
-    line-height: 23px;
-    margin-top: -10px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}   
+
+#login_with_google {
+    background-color: rgb(177, 55, 55);
+    margin-top: -18px;
 }
 
 #login_with_facebook {
-    display: flex;
-    justify-content: space-around;
-    background-color: blue;
-    text-decoration: none;
-    color: #fff;
-    padding: 7px;
-    border-radius: 5px;
-    font-size: 12px;
-    width: 180px;
-    height: 23px;
-    line-height: 23px;
-    margin-top: 1em;
+    background-color: rgb(52, 52, 196);
+    margin-top: 10px;
 }
 
+.login_options > p { display: none;}
 
-#card-signUp { gap: 10px }
+#login_with_google:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+}
 
-#card-signUp span { margin-bottom: 1em;}
+#login_with_facebook:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+}
 
+#card-signUp {
+    gap: 10px;
+    height: 34rem;
+}
+
+#card-signUp span { margin-bottom: 11px;}
+
+.signUp-label { gap: 3px;}
+.signUp-label label { font-size: 15px;}
 .signUp-label input {
-    height: 35px;
+    height: 30px;
     font-size: 14px;
 }
 
-@media (max-width: 1090px) {
-    
+#termo-signUp { font-size: 13px; }
+
+#return-login {
+    margin-top: 15px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    height: 27px;
+    width: 9.5em;
+    text-align: center;
+    line-height: 23px;
+    transition: .4s;
+}
+
+#return-login a {
+    padding: 12px;
+    text-decoration: none;
+    color: #fce687;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#return-login:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+ }
+
+#card-signUp button { bottom: 3.6em;}
+
+@media (min-width: 1600px) {
     .card-register {
-        width: 25rem;
-        height: 30rem;
-        transition: all .5s;
+        width: 45rem;
+        height: 35rem;
+        transition: all .4s;
     }
 
-    .card-register form span {
-        font-size: 20px;
-        transition: .5s;
-    }
+    .card-register form span { font-size: 25px; transition: .4s;}
 
-    #card-login span { padding-bottom: 0;}
-    #card-signUp span { margin-bottom: 10px;}
-
-    .signUp-label label {
-        font-size: 14px;
-        transition: all .5s;
-    }
-
-    .signUp-label input {
-        height: 30px;
-        font-size: 13px;
-        transition: .5s;
-    }
-    
-    #termo-signUp { font-size: 12px; }
-
-    .card-register form button {
-        height: 2.5em;
-        font-size: 17px;
-    }
+    .login-label label { font-size: 17px; transition: all .4s; }
 
     .login-label input {
-        height: 35px;
+        height: 40px;
+        font-size: 20px;
+        transition: all .4s;
+    }
+
+    .options-posInput p { 
+        font-size: 15px;
+        margin-top: -20px;
+        transition: .4s; 
+    }
+
+    #redirect_register { font-size: 15px; transition: .4s;}
+
+    .login_options div div a {
+        width: 200px;
+        height: 22px;
+        font-size: 14px;
+        line-height: 22px;
+        transition: all .4s;
+    }
+
+    #login_with_google { margin-top: -5px;}
+
+    .send_form {
+        height: 3.5em;
+        bottom: 3em;
+        transition: .4s;
+    }
+
+    #card-signUp span { padding-bottom: 10px;}
+    
+    .signUp-label label { font-size: 16px; }
+    .signUp-label input { height: 32px; font-size: 15px; }
+
+    #return-login {
+        height: 30px;
+        width: 10em;
+        line-height: 30px;
+    }
+
+    #return-login a { font-size: 13px;}
+
+    #card-signUp button { bottom: 2.2em;}
+}
+
+@media (max-width: 900px) {
+    .card-register {
+        width: 35rem;
+        height: 30.5rem;
+        transition: all .4s;
+    }
+
+    #card-login span { padding-bottom: 3px;}
+    #card-signUp span { font-size: 20px;}
+
+    .login-label input { height: 35px; }
+
+    #card-login { gap: 1.5em; }
+
+    .options-posInput p {
+        margin: -9px 10px 0 0;
         font-size: 14px;
     }
 
-    #card-login { gap: 20px}
-
-    #login_with_google {
-        height: 20px;
+    .login_options div div a {
         width: 160px;
-        line-height: 20px;
-        margin-top: 1em;
-        transition:  all .5s;
+        height: 17px;
+        line-height: 17px;
+        font-size: 12px;
     }
 
-    #login_with_facebook {
-        height: 20px;
-        width: 160px;
+    #login_with_google { margin-top: -6px; }
+    #login_with_facebook { margin-top: 10px; }
+
+    .send_form { height: 2.7em;}
+
+    .signUp-card { height: 30rem; }
+
+    .signUp-label label { font-size: 13px;}
+    .signUp-label input { height: 26px; }
+
+    #termo-signUp { font-size: 12px;}
+
+    #return-login {
+        height: 23px;
+        width: 8em;
         line-height: 20px;
+        margin-top: 6px;
+        transition: .4s;
     }
+
+    #return-login a { font-size: 11px;}
+
+    #card-signUp button {
+        height: 2.4em;
+        bottom: 5.8em
+    }
+
 }
 
-@media (max-width: 930px) {
+@media (max-width: 670px) {
     .card-register {
-        width: 22rem;
-        height: 27rem;
-        transition: all .5s;
-    }
-
-    .login-label input { height: 26px;}
-    .login-label label { font-size: 14px}
-    #forget_password { font-size: 12px;}
-
-    #login_with_google {
-        height: 15px;
-        width: 150px;
-        line-height: 15px;
-        margin-top: 2px;
-        font-size: 10px;
-    }
-
-    #login_with_facebook {
-        height: 15px;
-        width: 150px;
-        line-height: 15px;
-        font-size: 10px;
-    }
-
-    .signUp-label input { height: 27px;}
-    .signUp-label label { font-size: 13px }
-    .signUp-label { gap: 2px;}
-    #card-signUp { gap: 7px;}
-
-    section.register-container { gap: 2rem; transition: all .5s;}
-} 
-
-@media (max-width: 800px) {
-    section.register-container {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-    }
-
-    .login-card { margin-top: 3rem;}
-    .signUp-card { margin-bottom: 3rem;}
-
-    .card-register {
-        width: 25rem;
+        width: 30rem;
         height: 30rem;
+        transition: all .4s;
     }
 
-    #login_with_google { margin-top: 15px;}
+    #card-login span { padding-bottom: 5px;}
 
-    .card-register form button {
-        height: 3em;
-        margin-bottom: 1em;
+    .login-label input { height: 35px; }
+
+    #card-login { gap: 1.2em; }
+
+    .options-posInput p {
+        margin: -5px 10px 0 0;
+        font-size: 14px;
+    }
+
+    .login_options div div a {
+        width: 160px;
+        height: 17px;
+        line-height: 17px;
+        font-size: 12px;
+    }
+
+    #login_with_google { margin-top: 0; }
+
+    .send_form { height: 2.6em;}
+
+    #return-login {
+        height: 21px;
+        width: 8em;
+        line-height: 18px;
+        margin-top: 10px;
+        transition: .4s;
+        border-radius: 6px;
+    }
+
+    #return-login a { font-size: 10px;}
+
+}
+
+@media (max-width: 560px) {
+    .card-register {
+        width: 23rem;
+        height: 30.5rem;
+    }
+
+    .options-posInput p br { display: none;}
+
+    #forget_password { font-size: 15px;}
+    #redirect_register { font-size: 15px;}
+
+    .options-posInput {
+        flex-direction: column;
+        gap: 1.2em;
+        align-items: center;
+        text-align: center;
+    }
+
+    .login_options div div a {
+        width: 160px;
+        height: 15px;
+        line-height: 17px;
+        font-size: 12px;
+    }
+
+    #login_with_google { margin-top: 0;}
+
+    #card-signUp span { font-size: 17px; }
+
+    #termo-signUp { font-size: 11px;}
+
+    #return-login {  margin-top: 14px;}
+
+    #card-signUp button {
+        height: 2.3em;
+        bottom: 5.7em;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
     .card-register {
         width: 18rem;
-        height: 27rem;        
+        height: 26.4rem;
     }
 
-    .card-register form button {
-        height: 2em;
-        margin-bottom:0;
-    }
-}
+    #card-login span { padding-bottom: 3px;}
 
-@media (max-width: 370px) {
-    .card-register {
-        width: 15rem;
-        height: 24rem;        
-    }
+    .card-register form span img { height: 23px;}
 
-    .card-register form span { font-size: 16px;}
+    .card-register form span { font-size: 20px;}
+
+    .login-card form div label { font-size: 13px;}
+
+    .login-label input { height: 28px;}
 
     #forget_password {
+        font-size: 12px;
+        margin-top: -10px   ;
+    }
+
+    #redirect_register { font-size: 13px;}
+
+    #login_with_google p { display: none;}
+
+    .login_options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .login_options > div {
+        display: flex;
+        gap: 10px;
+    }
+
+    .login_options p {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .login_options > p { display: block;}
+
+    .login_options div div a p { display: none;}
+
+    .login_options div div a {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
         margin-top: 0;
-        transition: .5s;
-        font-size: 11px;
-        opacity: 100%;
     }
 
-    #login_with_google {
-        width: 130px;
-        font-size: 10px;
-        margin-top: 0;
+    #login_with_facebook { margin-top: 0;}
+
+    .send_form {
+        height: 2em;
+        bottom: 3em;
     }
 
-    #login_with_facebook {
-        width: 130px;
-        font-size: 10px;
-    }
-    #card-login { gap: 1em; }
-
-    .card-register form button {
-        font-size: 19px;
-        bottom: 2.5em
+    #card-signUp {
+        gap: 7px;
+        margin: 1.5em;
+        transition: .4s;
     }
 
-    .signUp-label input {
-        height: 22px;
-        font-size: 13px;
-    }
+    #card-signUp span { font-size: 15px; margin-bottom: 5px;}
+
+    .signUp-label label { font-size: 12px;}
+
+    .signUp-label input { height: 22px; font-size: 12px;}
 
     #termo-signUp { font-size: 10px;}
 
+    #return-login a { font-size: 9px; }
+    #return-login {
+        margin-top: 11px;
+        height: 20px;
+        width: 7em;
+        line-height: 16px;
+        transition: .4s;
+    }
+
+    #card-signUp button {
+        height: 2.3em;
+        bottom: 9.8em;
+        transition: .4s;
+        font-size: 17px;
+    }
 }
+
+@media (max-width: 350px) {
+    .card-register {
+        width: 15rem;
+        height: 24rem;
+    }
+
+    .card-register form { margin: 1.5em;}
+
+    .card-register form span { font-size: 17px;}
+
+    #card-login { gap: 1em; }
+
+    #card-login span { padding-bottom: 0;}
+
+    .card-register form span img { height: 20px;}
+
+    .login-label input { height: 25px;}
+
+    .options-posInput { gap: 1em;}
+
+    .options-posInput p br { display: block;}
+
+    #forget_password { margin-top: -10px}
+
+    #redirect_register { font-size: 12px;}
+
+    .login_options div div a {
+        width: 15px;
+        height: 15px;
+    }
+
+    .send_form {
+        height: 1.7em;
+        bottom: 2.4em;
+    }
+
+    .signUp-label label { font-size: 10px;}
+
+    .signUp-label input { height: 20px; font-size: 12px;}
+
+    #termo-signUp { font-size: 8px;}
+
+    #card-signUp button {
+        height: 2em;
+        bottom: 12em;
+        transition: .4s;
+        font-size: 17px;
+    }
+
+}
+
 
 
 /*----------------- HEADER -----------------------------------------------------------------------------------*/
