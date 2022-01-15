@@ -135,6 +135,44 @@ section.container-carousel {
     }
 }
 
+ /* ----------------- MARQUEE -------------------*/
+
+    marquee {
+        margin: 3rem 0 3rem 0;
+        background-color: #1a1a1a;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: #e2c647;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: 1000px) {
+        marquee {
+            margin: 2rem 0 2rem 0;
+            font-size: 22px;
+            height: 3.5rem;
+            transition: .4s;
+        }
+    }
+
+    @media (max-width: 600px) {
+        marquee {
+            margin: 1.5rem 0 1.5rem 0;
+        }
+    }
+
+    @media (max-width: 450px) {
+        marquee {
+            margin: 20px 0 20px 0;
+            height: 2.8rem;
+            font-size: 18px;
+        }
+    }
+     
+
  /* ----------------- Titulo das sections -------------------*/
 
  .title-sections {
