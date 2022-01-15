@@ -30,6 +30,7 @@ main {
     margin: 1em;
     align-items: center;
     justify-content: center;
+    height: 4rem;
 }
 
 .demonstrativo_items div  p {
@@ -230,11 +231,23 @@ main {
 
 @media (min-width: 1500px) {
 
+    .demonstrativo_items { height: 6rem; transition: .4s;}
+
     .selos img {
         width: 11rem;
         height: 6rem;
         transition: all .4s;
-    }    
+    }
+
+    .title-demonstrativo span { font-size: 22px; transition: .4s; }
+
+    .content-pageGarantia > span { font-size: 20px; transition: .4s;}
+
+    .content-pageGarantia div p { font-size: 18px; transition: .4s;}
+
+    .title-selos span { font-size: 20px; transition: .4s;}
+
+    .redirect div a p { font-size: 16px; transition: .4s;}
 
 }
 
