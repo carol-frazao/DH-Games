@@ -145,7 +145,6 @@ main { margin: 3rem }
 
 }
 
-
 .redirect {
 
     border-top: #1a1a1a2c 1px solid;
@@ -158,12 +157,15 @@ main { margin: 3rem }
 .redirect a {
     display: flex;
     gap: 10px;
-    margin: 10px 0px 10px 40px;
+    margin: 10px 0px 10px 0px;
     align-items: center;
     font-size: 13px;
     text-decoration: none;
     color: #1a1a1a;
-    padding-right: 3em;
+    padding-right: 2em;
+    padding-left: 2em;
+    text-align: center;
+
 }
 
 .redirect a:hover {
@@ -177,7 +179,7 @@ main { margin: 3rem }
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 490px) {
 
     .redirect a { font-size: 11px; }
 

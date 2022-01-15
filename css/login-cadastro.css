@@ -473,9 +473,10 @@ section.register-container {
 
 } 
 
+/* ---- redirect ---------------*/
+
 
 .redirect {
-
     border-top: #1a1a1a2c 1px solid;
     border-bottom: #1a1a1a2c 1px solid;
     margin: 3rem 0 3rem 0;
@@ -486,12 +487,14 @@ section.register-container {
 .redirect a {
     display: flex;
     gap: 10px;
-    margin: 10px 0px 10px 40px;
+    margin: 10px 0px 10px 0px;
     align-items: center;
     font-size: 13px;
     text-decoration: none;
     color: #1a1a1a;
-    padding-right: 3em;
+    padding-right: 2em;
+    padding-left: 2em;
+    text-align: center;
 }
 
 .redirect a:hover {
@@ -504,10 +507,19 @@ section.register-container {
     border-right: #1a1a1a2c 1px solid;
 }
 
+#redirect_segurancaGarantida a {
+    border-right: #1a1a1a2c 1px solid;
+}
 
-@media (max-width: 450px) {
 
-    .redirect a { font-size: 11px; }
+@media (max-width: 525px) {
+
+    .redirect a {
+        font-size: 11px;
+        padding-right: 1em;
+        padding-left: 1em;    
+        transition: all .4s;
+    }
 
     .redirect div a img {
         width: 15px;
@@ -515,8 +527,22 @@ section.register-container {
     }
 }
 
+@media (max-width: 380px) {
+
+    .redirect a {
+        font-size: 10px;
+    }
+
+    .redirect div a img {
+        width: 13px;
+        gap: 5px;
+    }
+}
+
 @media (min-width: 1500px) {
 
-    .redirect div a p { font-size: 16px; transition: .4s;}
-
+    .redirect div a p {
+        font-size: 16px;
+        transition: .4s;
+    }
 }
