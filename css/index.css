@@ -135,9 +135,6 @@ section.container-carousel {
     }
 }
 
- /* ----------------- MARQUEE -------------------*/
-
-     
 
  /* ----------------- Titulo das sections -------------------*/
 
@@ -149,7 +146,7 @@ section.container-carousel {
  .title-sections span {
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 23px;
  }
 
  .title-sections span::after{
@@ -174,8 +171,8 @@ section.container-carousel {
     border-radius: 5px;
  }
 
- @media (max-width: 690px) {
-    .title-sections span { font-size: 22px; transition: .5s;}
+ @media (max-width: 800px) {
+    .title-sections span { font-size: 20px; transition: .5s;}
  }
 
  @media (max-width: 745px) {
@@ -189,11 +186,18 @@ section.container-carousel {
         margin-left: 2rem;
         margin-right: 2rem;
         transition: .5s;
-     }    
+    }    
+
+    .title-sections span { font-size: 18px; transition: .5s;}
+ 
  }
 
  @media (max-width: 350px) {
     .title-sections span { font-size: 18px; transition: .5s;}
+ }
+
+ @media (max-width: 290px) {
+    .title-sections span { font-size: 15px; transition: .5s;}
  }
 
 
@@ -205,9 +209,9 @@ section.maisPopulares {
 
 .populares-grid-container {
    display: grid;
-   justify-content: space-around;
+   justify-content: space-between;
    grid-template-columns: repeat(5, 1fr);
-   margin: 1rem 2rem 0.5rem 2rem;
+   margin: 1rem 2rem 0rem 2rem;
 }
 
 .populares-grid-item {
@@ -261,13 +265,29 @@ section.maisPopulares {
     .populares-grid-item p { font-size: 20px; transition: .5s; }
 }
 
-@media (max-width: 500px) {
-    .populares-grid-container { grid-template-columns: 1fr 1fr; }
-    div.populares-grid-item img { height: 7rem; }
+@media (max-width: 600px) {
+
+    div.populares-grid-item img { height: 6rem; }
+    .populares-grid-item { padding: 10px; transition: all .4s;}
+
 }
 
-@media (max-width: 315px) {
-    div.populares-grid-item img { height: 6rem; }
+@media (max-width: 400px) {
+
+    div.populares-grid-item img { height: 5rem; }
+
+    .populares-grid-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 330px) {
+    .populares-grid-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+    /* div.populares-grid-item img { height: 5rem; } */
 }
 
 /* ------------------ section Super Promoções --------------------*/
@@ -285,7 +305,7 @@ marquee {
     align-items: center;
     font-size: 25px;
     font-weight: bold;
-    color: #75eb65e3;
+    color: #84eb76e3;
     text-transform: uppercase;
     border-bottom: solid 1px rgba(255, 255, 255, 0.178)
 }
@@ -614,23 +634,22 @@ section.lancamentos-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
     .img-parceiros { margin: 1rem; transition: .4s;}
-    .img-parceiros img { height: 120px }
+    .img-parceiros img { height: 110px }
 }
 
-@media (max-width: 500px) {
-    .img-parceiros img { height: 100px }
+@media (max-width: 450px) {
+    .img-parceiros img { height: 80px }
 }
 
 @media (max-width: 400px) {
-    .img-parceiros img { height: 100px }
 
     .img-parceiros ul {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media (max-width: 300px) {
-    .img-parceiros img { height: 80px }
+@media (max-width: 290px) {
+    .img-parceiros img { height: 60px }
     .img-parceiros ul { gap: 10px ;}
 }
 
@@ -858,8 +877,8 @@ section.newsletter {
 }
 
 .selos img {
-    width: 11rem;
-    height: 7rem
+    width: 10rem;
+    height: 6rem
 }
 
 #selo_icon {
@@ -884,7 +903,7 @@ section.newsletter {
 @media (max-width: 650px) {
 
     .title-selos span {
-        font-size: 23px;
+        font-size: 20px;
         transition: .4s;
     }
 
@@ -913,7 +932,7 @@ section.newsletter {
 
 @media (max-width: 400px) {
 
-    .title-selos span { font-size: 20px; }
+    .title-selos span { font-size: 18px; }
 
     .selos  { grid-template-columns: 1fr; }
     
