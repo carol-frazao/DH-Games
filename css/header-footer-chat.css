@@ -52,8 +52,8 @@ div.overheader-options { gap: 4em; }
     padding-right: 4px;
 }
 
-#segurancaGarantida, #entregaImediata { cursor: default; }
-#segurancaGarantida:hover, #entregaImediata:hover { color: #fff; opacity: 70%; }
+/* #segurancaGarantida, #entregaImediata { cursor: default; }
+#segurancaGarantida:hover, #entregaImediata:hover { color: #fff; opacity: 70%; } */
 
 #loginHidden, #supportHidden { display: none;}
 

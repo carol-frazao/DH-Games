@@ -195,11 +195,15 @@ section.container-carousel {
 
   /* ------------- section jogos Mais Populares ---------------*/
 
-  .populares-grid-container {
-    display: grid;
-    justify-content: space-around;
-    grid-template-columns: repeat(5, 1fr);
-    margin: 1rem 2rem 0rem 2rem;
+section.maisPopulares {
+    margin-top: 1.5rem;
+}
+
+.populares-grid-container {
+   display: grid;
+   justify-content: space-around;
+   grid-template-columns: repeat(5, 1fr);
+   margin: 1rem 2rem 0.5rem 2rem;
 }
 
 .populares-grid-item {
@@ -436,6 +440,10 @@ section.super-promotions-container {
 }
 
 /* ----------------- section Lançamentos ------------------*/
+
+section.lancamentos-container {
+    margin-top: 1rem;
+}
 
 #slider-lancamentos {
     margin-top: 2rem;
@@ -817,8 +825,8 @@ section.newsletter {
 }
 
 .selos img {
-    width: 10rem;
-    height: 6rem
+    width: 11rem;
+    height: 7rem
 }
 
 #selo_icon {
@@ -826,12 +834,18 @@ section.newsletter {
     height: 30px;
 }
 
+@media (max-width: 1000px) {
+    .selos img {
+        width: 10rem;
+        height: 6rem
+    }    
+}
+
 @media (max-width: 850px) {
 
     .selos  {
         grid-template-columns: repeat(2, 1fr);
     }
-    
 }
 
 @media (max-width: 650px) {
