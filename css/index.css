@@ -724,6 +724,7 @@ section.newsletter {
     gap: 5px;
     padding: 10px;
     width: 8em;
+    cursor: pointer;
 }
 
 .news_right button > img {
