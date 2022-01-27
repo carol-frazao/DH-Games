@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/login-cadastro.css">
+
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+    <main>
+
+        <section class="register-container">
+
+            <div class="card-register login-card">
+
+                <form action="" method="POST" id="card-login">
+
+                    <span> 
+                        <img src="/img/icons/person_outline_black_24dp.svg" alt="">
+                        Login
+                    </span>
+
+                    <div class="reg-label-input login-label">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+
+                    <div class="reg-label-input login-label">
+                        <label for="senha">Senha:</label>
+                        <input type="password" name="senha" id="senha">
+                    </div>
+
+                    <div class="options-posInput">
+                        <p id="forget_password">
+                            Esqueceu sua senha? <br> <a href="#"> Clique aqui </a>
+                        </p>
+
+                        <p>
+                            <a href="/cadastro/" id="redirect_register"> Não tenho cadastro </a>
+                        </p>
+                    </div>
+
+                    <div class="login_options">
+                        <p> Logar com: </p>
+                        <div>   
+                            <div>
+                                <a href="#" id="login_with_google">
+                                    <img src="/img/icons/google_icon.png" alt="">
+                                    <p> Logar com o Google </p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" id="login_with_facebook">
+                                    <img src="/img/icons/fb_icon.png" alt="">
+                                    <p> Logar com o Facebook </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="send_form"> Entrar </button>
+
+                </form>
+            </div>
+
+        </section>
+
+    <!-- Redirect para outras pages -->
+        <section class="redirect">
+
+            <div id="return_homePage">
+                <a href="/">
+                    <img src="/img/icons/homePage_black_18dp.svg" alt="">
+                    <p> Página Inicial </p>    
+                </a>
+            </div>
+
+            <div id="redirect_segurancaGarantida">
+                <a href="/seguranca-garantida/">
+                    <img src="/img/icons/lock_black_18dp.svg" alt="">
+                    <p> Segurança garantida </p>    
+                </a>
+            </div>
+
+            <div id="redirect_suporte">
+                <a href="/suporte/">
+                    <img src="/img/icons/headset_mic_black_18dp.svg" alt="">
+                    <p> Suporte </p>    
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include('./partials/chat') %>
+
+    <%- include('./partials/footer') %>
+
+</body>
+
+</html>
