@@ -209,205 +209,30 @@
             </marquee>        
 
             <div class="cards-promotions-container">
-
+                <% servicos.forEach(function(servico){ %>
                 <div class="card-promotion">
 
                     <div>
-                        <img src="/img/games/slider-promotions/apex-legends-ps4.jpg" alt="Apex Legends PS4"
-                            class="promotions-img">
+                        <img src= <%= servico.img %> class="promotions-img">
 
-                        <div class="title-card-promotion"> APEX LEGENDS </div>
+                        <div class="title-card-promotion"> <%= servico.titulo %> </div>
 
                         <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$79,99</p>
+                            <p class="oldPrice-card">De: <%= servico.precoAnterior %></p>
                             <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$39,99</p>
+                            <p class="currentPrice-card"><%= servico.precoAtual %></p>
                         </div>
 
                         <a href="#" class="buy-btn"> Comprar </a>
 
                         <div class="discount-card">
                             <img src="/img/icons/icon-promotion.svg">
-                            <span>50%</span>
+                            <span><%= servico.desconto %></span>
                         </div>
                     </div>
                 </div>
-
-                <div class="card-promotion">
-                    <div>
-                        <img src="/img/games/slider-promotions/dissidia-ps4.jpg" alt="Dissidia Final Fantasy"
-                            class="promotions-img">
-
-                        <p class="title-card-promotion"> DISSIDIA </p>
-
-                        <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$69,99</p>
-                            <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$49,99</p>
-                        </div>
-
-                        <a href="#" class="buy-btn"> Comprar </a>
-
-                        <div class="discount-card">
-                            <img src="/img/icons/icon-promotion.svg">
-                            <span>40%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-promotion">
-                    <div>
-                        <img src="/img/games/slider-promotions/yakuza-ps4.jpg" alt="The Yakuza PS4"
-                            class="promotions-img">
-
-                        <p class="title-card-promotion"> THE YAKUZA </p>
-
-                        <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$219,99</p>
-                            <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$87,99</p>
-                        </div>
-
-                        <a href="#" class="buy-btn"> Comprar </a>
-
-                        <div class="discount-card">
-                            <img src="/img/icons/icon-promotion.svg">
-                            <span>60%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-promotion">
-                    <div>
-                        <img src="/img/games/slider-promotions/batman-ps4.jpg" alt="Bartman Arkhan PS4"
-                            class="promotions-img">
-
-                        <p class="title-card-promotion"> BATMAN ARKHAM </p>
-
-                        <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$89,99</p>
-                            <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$58,49</p>
-                        </div>
-
-                        <a href="#" class="buy-btn"> Comprar </a>
-
-                        <div class="discount-card">
-                            <img src="/img/icons/icon-promotion.svg">
-                            <span>35%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-promotion">
-                    <div>
-                        <img src="/img/games/slider-promotions/battlefield-xbox.jpg" alt="Battlefield 2042"
-                            class="promotions-img">
-
-                        <p class="title-card-promotion"> BATTLEFIELD 2042 </p>
-
-                        <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$199,99</p>
-                            <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$119,99</p>
-                        </div>
-
-                        <a href="#" class="buy-btn"> Comprar </a>
-
-                        <div class="discount-card">
-                            <img src="/img/icons/icon-promotion.svg">
-                            <span>40%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-promotion">
-                    <div>
-                        <img src="/img/games/slider-promotions/dark-souls3-xbox.jpg" alt="Dark Souls III"
-                            class="promotions-img">
-
-                        <p class="title-card-promotion"> DARK SOULS III </p>
-
-                        <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$79,99</p>
-                            <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$43,99</p>
-                        </div>
-
-                        <a href="#" class="buy-btn"> Comprar </a>
-
-                        <div class="discount-card">
-                            <img src="/img/icons/icon-promotion.svg">
-                            <span>45%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-promotion">
-                    <div>
-                        <img src="/img/games/slider-promotions/assassins-creed-xbox.jpg" alt="Assassins Creed Unity"
-                            class="promotions-img">
-
-                        <p class="title-card-promotion"> ASSASSIN'S CREED </p>
-
-                        <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$89,99</p>
-                            <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$62,99</p>
-                        </div>
-
-                        <a href="#" class="buy-btn"> Comprar </a>
-
-                        <div class="discount-card">
-                            <img src="/img/icons/icon-promotion.svg">
-                            <span>30%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-promotion">
-                    <div>
-                        <img src="/img/games/slider-promotions/sonic-xbox.jpg" alt="Sonic Colors XBOX ONE"
-                            class="promotions-img">
-
-                        <p class="title-card-promotion"> SONIC COLORS </p>
-
-                        <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$199,99</p>
-                            <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$99,99</p>
-                        </div>
-
-                        <a href="#" class="buy-btn"> Comprar </a>
-
-                        <div class="discount-card">
-                            <img src="/img/icons/icon-promotion.svg">
-                            <span>50%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-promotion">
-                    <div>
-                        <img src="/img/games/slider-promotions/demon-slayer-xbox.jpg" alt="Demon Slayer"
-                            class="promotions-img">
-
-                        <p class="title-card-promotion"> DEMON SLAYER </p>
-
-                        <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: R$269,99</p>
-                            <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card">R$134,99</p>
-                        </div>
-
-                        <a href="#" class="buy-btn"> Comprar </a>
-
-                        <div class="discount-card">
-                            <img src="/img/icons/icon-promotion.svg">
-                            <span>50%</span>
-                        </div>
-                    </div>
-                </div>
+                <% }) %>  
+             
             </div>
 
             <div class="orientacaoPromotions">
