@@ -3,8 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+
 var app = express();
-const session = require('express-session');
 
 /*
 
@@ -22,7 +23,13 @@ bcrypt.compareSync("outraSenha", hash); // false
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
+app.use(session({
+  secret: 'senha123',
+  resave: false,
+  saveUninitialized: true
+}))
+
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
