@@ -11,10 +11,15 @@ router.get('/seguranca-garantida', function(req, res, next) {
   res.render('seguranca-garantida', { title: 'DH Games: Segurança garantida' });
 });
 
-/* GET login page. */
+/* login page. */
 router.get('/login', function(req, res, next) {
   res.render('login', { title: 'DH Games: Faça seu login' });
 });
+
+router.post('/login', function(req, res, next) {
+  console.log(req.body)
+  res.render('login')
+})
 
 /* GET cadastro page. */
 router.get('/cadastro', function(req, res, next) {
