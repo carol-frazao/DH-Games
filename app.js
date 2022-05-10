@@ -4,11 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
-
 var app = express();
+var bodyParser = require('body-parser')
 
 /*
-
 Para encriptar um dado:
 let hash = bcrypt.hashSync('minhaSenha!');
 
@@ -16,8 +15,14 @@ para verificar um dado:
 bcrypt.compareSync("minhaSenha!", hash); // true
 bcrypt.compareSync("outraSenha", hash); // false
 
-*/
 
+middleware p adicionar dados de login
+app.use(function adicionaUserNoRender(req, res, next) {
+  res.locals.estaLogado = req.session.estaLogado
+  res.locals.nomeUsuario = req.session.nomeUsuario
+  next()
+})
+*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,13 +33,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false}))
+app.use(bodyParser.json())
 
-//middleware p adicionar dados de login
-// app.use(function adicionaUserNoRender(req, res, next) {
-//   res.locals.estaLogado = req.session.estaLogado
-//   res.locals.nomeUsuario = req.session.nomeUsuario
-//   next()
-// })
 
 //session
 app.use(session({

@@ -14,5 +14,8 @@ router.get('/cadastro/termosDeUso', usersController.termosDeUso);
 /* GET termos de uso page. */
 router.get('/cadastro/politicaPrivacidade', usersController.politicaPrivacidade);
 
+//post formulario de cadastro
+router.post('/registraUsuario', usersController.registraUsuario);
+
 
 module.exports = router;

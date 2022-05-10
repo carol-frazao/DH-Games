@@ -18,7 +18,7 @@
 
             <div class="card-register signUp-card">
 
-                <form action="" method="POST" id="card-signUp">
+                <form action="/users/registraUsuario" method="POST" id="card-signUp">
 
                     <span> 
                         <img src="/img/icons/person_outline_black_24dp.svg" alt="">
@@ -27,7 +27,7 @@
 
                     <div class="reg-label-input signUp-label">
                         <label for="nome"> Qual o seu nome? <i style="color: red"> * </i> </label>
-                        <input type="text" name="name" id="nome">
+                        <input type="text" name="nome" id="nome">
                     </div>
 
                     <div class="reg-label-input signUp-label">
@@ -37,12 +37,12 @@
 
                     <div class="reg-label-input signUp-label">
                         <label for="senha"> Crie uma senha: <i style="color: red"> * </i> </label>
-                        <input type="password" name="password" id="senha">
+                        <input type="password" name="senha" id="senha">
                     </div>
 
                     <div class="reg-label-input signUp-label">
                         <label for="confirmSenha"> Confirme sua senha: <i style="color: red"> * </i> </label>
-                        <input type="password" name="confirmPassword" id="confirmSenha">
+                        <input type="password" name="confirmaSenha" id="confirmSenha">
                     </div>
 
                     <p id="termo-signUp"> Ao criar uma conta, você concorda com nossos <a href="/users/cadastro/termosDeUso/"> termos de uso</a>,
@@ -52,7 +52,7 @@
                         <a href="/users/login/"> Já tenho cadastro </a>
                     </div>
 
-                    <button class="send_form"> Criar conta </button>
+                    <button type="submit" class="send_form"> Criar conta </button>
                 </form>
             </div>
 
