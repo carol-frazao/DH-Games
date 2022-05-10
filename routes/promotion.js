@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-servicos = [
+const servicos = [
   { 
     id: '1',
     titulo: 'APEX LEGENDS',
@@ -77,7 +77,7 @@ servicos = [
 ]
 
 router.get('/', function (req, res) {
-  res.render('index', { servicos: servicos})
+  res.render('index', { servicos: servicos, title: 'DH Games'})
   console.log("Rota Promoções")
 })
 
@@ -93,3 +93,5 @@ router.get('/:idServico', function (req, res) {
 })
 
 module.exports = router
+
+module.exports.servicos = servicos

@@ -23,12 +23,6 @@ bcrypt.compareSync("outraSenha", hash); // false
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(session({
-  secret: 'senha123',
-  resave: false,
-  saveUninitialized: true
-}))
-
 // app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

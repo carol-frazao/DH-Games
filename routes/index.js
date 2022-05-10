@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const {servicos} = require('./promotion')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'DH Games' });
+  console.log('index')
+  res.render('index', { title: 'DH Games', servicos: servicos });
 });
 
 /* GET seguranca-garantida page. */
