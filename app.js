@@ -28,6 +28,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
+
+//middleware p adicionar dados de login
+// app.use(function adicionaUserNoRender(req, res, next) {
+//   res.locals.estaLogado = req.session.estaLogado
+//   res.locals.nomeUsuario = req.session.nomeUsuario
+//   next()
+// })
+
 //session
 app.use(session({
 	secret: 'dhgames123',
@@ -36,7 +44,6 @@ app.use(session({
 }));
 
 app.use('/', require('./routes/index'));
-app.use('/promotion', require('./routes/promotion'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
