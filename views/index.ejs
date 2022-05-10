@@ -205,29 +205,29 @@
             </h1>
 
             <marquee behavior="scroll" direction="left" bgcolor="#1a1a1a" style="font-family: 'Oswald', sans-serif;">
-                <p> Abril na DH Games: Até 60% de desconto em produtos selecionados! </p>
+                <p> Maio na DH Games: Até 60% de desconto em produtos selecionados! </p>
             </marquee>        
 
             <div class="cards-promotions-container">
-                <% servicos.forEach(function(servico){ %>
+                <% listaProdutos.forEach(function(produto){ %>
                 <div class="card-promotion">
 
                     <div>
-                        <img src= <%= servico.img %> class="promotions-img">
+                        <img src= <%= produto.img %> class="promotions-img">
 
-                        <div class="title-card-promotion"> <%= servico.titulo %> </div>
+                        <div class="title-card-promotion"> <%= produto.titulo %> </div>
 
                         <div class="price-card-promotions">
-                            <p class="oldPrice-card">De: <%= servico.precoAnterior %></p>
+                            <p class="oldPrice-card">De: <%= produto.precoAnterior %></p>
                             <p class="priceUpdate-card">Por:</p>
-                            <p class="currentPrice-card"><%= servico.precoAtual %></p>
+                            <p class="currentPrice-card"><%= produto.precoAtual %></p>
                         </div>
 
                         <a href="#" class="buy-btn"> Comprar </a>
 
                         <div class="discount-card">
                             <img src="/img/icons/icon-promotion.svg">
-                            <span><%= servico.desconto %></span>
+                            <span><%= produto.desconto %></span>
                         </div>
                     </div>
                 </div>
