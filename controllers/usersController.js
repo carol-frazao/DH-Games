@@ -1,4 +1,6 @@
-const modelUsuarios = require('../models/Usuario')
+const { Usuario } = require('../models')
+
+
 
 
 const users =  {
@@ -20,16 +22,23 @@ const users =  {
 
         registraUsuario: (req, res, next) => {
             // res.send(req.body.nome + req.body.email)
-            modelUsuarios.create({
-                nome: req.body.nome,
-                email: req.body.email,
-                senha: req.body.senha,
-                confirmaSenha: req.body.confirmaSenha
-            }).then(function() {
-                res.send("Cadastro realizado com sucesso!")
-            }).catch(function(erro) {
-                res.send("Não foi possível realizar o cadastro: " + erro)
-            })
+            console.log("Controller registraUsuario: ", req.body)
+
+            try {
+                Usuario.create({
+                    nome: req.body.nome,
+                    email: req.body.email,
+                    senha: req.body.senha,
+                    confirmaSenha: req.body.confirmaSenha
+                })
+                res.redirect('/login')
+            } catch (error) {
+                console.log("-------------------------------");
+                console.log(">>>> ERRO: ", JSON.stringify(error?.parent?.sqlMessage)); //Sempre use isso para saber o erro do sequelize
+                console.log("-------------------------------");
+            }
+    
+            
         }
     }
     

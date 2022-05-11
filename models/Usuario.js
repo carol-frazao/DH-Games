@@ -1,6 +1,6 @@
 module.exports = (connection, DataTypes) => {
 
-    const modelUsuarios = connection.define('Usuario', {
+    const model = connection.define('Usuario', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -19,8 +19,8 @@ module.exports = (connection, DataTypes) => {
         type: DataTypes.STRING(20)
       }
     }, {
-      timestamps: true,
-      tableName: 'Usuarios'
+      timestamps: false,
+      tableName: 'usuarios'
     })
   
     // model.associate = models => {
@@ -34,6 +34,6 @@ module.exports = (connection, DataTypes) => {
     //   model.sync({ alter: true })
     // }
   
-    return modelUsuarios
+    return model
   }
   

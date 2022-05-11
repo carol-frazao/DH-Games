@@ -17,12 +17,13 @@ bcrypt.compareSync("outraSenha", hash); // false
 
 
 middleware p adicionar dados de login
+*/
 app.use(function adicionaUserNoRender(req, res, next) {
-  res.locals.estaLogado = req.session.estaLogado
-  res.locals.nomeUsuario = req.session.nomeUsuario
+  res.locals.estaLogado = req.session?.estaLogado
+  res.locals.nomeUsuario = req.session?.nomeUsuario
   next()
 })
-*/
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

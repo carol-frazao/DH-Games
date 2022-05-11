@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const {Usuario} = require('../models')
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -60,7 +62,9 @@ router.get('/logout', function(req, res, next) {
   res.redirect('/')
 })
 
-router.post('/login', async function(req, res, next) {
+router.post('/login', async function (req, res, next) {
+  
+  console.log("login", req.body)
   try {
     const usuarioLogin = await Usuario.findOne({
       where: {
@@ -70,8 +74,10 @@ router.post('/login', async function(req, res, next) {
     if(usuarioLogin && usuarioLogin.senha == req.body.senha) {
       req.session.estaLogado = true
       req.session.usuarioLogado = usuarioLogin
-      res.redirect('/admin')
+      console.log("usuario e senha ok")
+      res.redirect('/')
     } else {
+      console.log("usuario e senha ok")
       res.render('erro-validacao', { mensagemErro: 'Senha inválida' })
     }
   } catch (erro) {
