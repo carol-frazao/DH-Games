@@ -20,6 +20,10 @@ const users =  {
             res.render('politicaPrivacidade', {title: 'Política de Privacidade'}) 
         },
 
+
+
+        
+
         registraUsuario: (req, res, next) => {
             // res.send(req.body.nome + req.body.email)
             console.log("Controller registraUsuario: ", req.body)
@@ -31,9 +35,9 @@ const users =  {
                     senha: req.body.senha,
                     confirmaSenha: req.body.confirmaSenha
                 })
-                // res.redirect('/login')
+                res.redirect('/login')
                 // setTimeout(function() {
-                    res.redirect('/login')
+                //     res.redirect('/login')
                 // }, 3000)
             } catch (error) {
                 console.log("-------------------------------");
@@ -43,54 +47,81 @@ const users =  {
             
         },
 
-        // validationRegister: (req, res) => {
-        //     if(document.formRegister.nome.value=="" ||
-        //     document.formRegister.nome.value.length < 3)
+        usuarioJaExiste: async function (req, res, next) {
+
+            const usuario = await Usuario.findOne({
+                where: {
+                  email: req.body.email
+                }
+              })
+              
+              if(usuario) {
+                res.send('usuario ja existe')
+                return
+              }
+              
+            await Usuario.create(req.body)
+        
+            res.redirect('/login')
+        
+        }
+
+        // validaCampos: (req, res, next) => {
+
+        //     if(req.body.nome == "")
         //     {
-        //     alert( "O nome precisa ter no mínimo 3 caracteres" );
-        //     document.formRegister.nome.focus();
-        //     return false;
+        //         alert( "Preencha seu nome" );
+        //         req.body.nome.focus();
+        //         return false;
         //     }
     
     
-        //     if( document.formRegister.email.value=="" ||
-        //     document.formRegister.email.value.indexOf('@')==-1 ||
-        //     document.formRegister.email.value.indexOf('.')==-1 )
+        //     if(req.body.nome.length < 3)
         //     {
-        //     alert( "Insira um e-mail válido" );
-        //     document.formRegister.email.focus();
-        //     return false;
+        //         alert( "O nome precisa ter no mínimo 3 caracteres" );
+        //         req.body.nome.focus();
+        //         return false;
         //     }
     
-        //     if (document.formRegister.senha.value=="")
+    
+        //     if( req.body.email =="" ||
+        //     req.body.email.indexOf('@')==-1 ||
+        //     req.body.email.indexOf('.')==-1 )
         //     {
-        //     alert( "Crie uma senha" );
-        //     document.formRegister.senha.focus();
-        //     return false;
+        //         alert( "Insira um e-mail válido" );
+        //         req.body.email.focus();
+        //         return false;
         //     }
     
-        //     if (document.formRegister.senha.value.length < 4 & document.formRegister.senha.value.length > 8)
+        //     if (req.body.senha=="")
         //     {
-        //     alert("A senha deve ter entre 4 e 8 caracteres");
-        //     document.formRegister.senha.focus();
-        //     return false;
+        //         alert( "Crie uma senha" );
+        //         req.body.senha.focus();
+        //         return false;
         //     }
     
-        //     if (document.formRegister.confirmaSenha.value == "") {
+        //     if (req.body.senha.length < 4 || req.body.senha.length > 8)
+        //     {
+        //         alert("A senha deve ter entre 4 e 8 caracteres");
+        //         req.body.senha.focus();
+        //         return false;
+        //     }
+    
+        //     if (req.body.confirmaSenha == "") {
         //         alert("Confirme sua senha");
-        //         document.formRegister.confirmaSenha.focus();
+        //         req.body.confirmaSenha.focus();
         //         return false
         //     }
     
-        //     if (document.formRegister.confirmaSenha.value != document.formRegister.senha.value) {
+        //     if (req.body.confirmaSenha != req.body.senha) {
         //         alert("As senhas não conferem")
-        //         document.formRegister.confirmaSenha.focus();
+        //         req.body.confirmaSenha.focus();
         //         return false
         //     }
     
         //     return true;
         // }
-           
+               
     }
 
     
