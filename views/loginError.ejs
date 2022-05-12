@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/login-cadastro.css">
+
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+    <main class="mainError">
+
+        <section class="erroLogin">
+            <div>
+                <span class="msgErroLogin">
+                    Usuário não localizado. <br> Por favor, faça seu registro.
+                </span>
+            </div>
+
+            <div class="redirectRegistro">
+                <span>Redirecionando...</span>
+            </div>
+
+            <div class="carregandoGif">
+                <img src="/img/carregando.gif" alt="">
+            </div>
+        </section>
+
+    </main>
+
+    <%- include('./partials/chat') %>
+
+    <%- include('./partials/footer') %>
+
+</body>
+
+<script type="text/javascript">
+setTimeout( function(){
+    window.location = '/cadastro'; },3000);
+</script>
+
+</html>

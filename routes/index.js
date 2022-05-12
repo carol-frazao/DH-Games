@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const {Usuario} = require('../models')
+const usersController = require('../controllers/usersController')
+const usersValidator = require('../middlewares/usersValidator')
 
 
 /* GET home page. */
@@ -19,10 +21,42 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'DH Games: Faça seu login' });
 });
 
-// router.post('/login', function(req, res, next) {
-//   console.log(req.body)
-//   res.render('login')
-// })
+router.get('/login/erroLogin', function(req, res, next) {
+  res.render('loginError', {title: 'Erro no login'})
+})
+
+router.get('/login/dadosIncorretos', function(req, res, next) {
+  res.render('dadosIncorretos', {title: 'Erro no login'})
+})
+
+router.post('/login', async function(req, res, next) {
+
+  try {
+    const usuarioLogin = await Usuario.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
+
+    if(usuarioLogin && usuarioLogin.senha == req.body.senha) {
+      req.session.estaLogado = true
+      req.session.usuarioLogado = usuarioLogin
+      res.redirect('/')
+    } if(usuarioLogin && usuarioLogin.senha != req.body.senha) {
+      res.redirect('/login/dadosIncorretos')
+    } if(!usuarioLogin) {
+      res.redirect('/login/erroLogin')
+    }
+  } catch (erro) {
+    next(erro)
+  }
+})
+
+//encerrar sessão
+router.get('/logout', function(req, res, next) {
+  req.session.destroy()
+  res.redirect('/')
+})
 
 /* GET cadastro page. */
 router.get('/cadastro', function(req, res, next) {
@@ -33,6 +67,7 @@ router.get('/cadastro', function(req, res, next) {
 router.get('/suporte', function(req, res, next) {
   res.render('suporte', { title: 'DH Games: Suporte ao cliente' });
 });
+
 
 
 //lista de produtos
