@@ -700,13 +700,13 @@ section.newsletter {
     color: #fff;
 }
 
-.news_right {
+.news_right form {
     display: flex;
     height: 3em;
-    width: 50%;
+    width: 100%;
 }
 
-.news_right input {
+.news_right form input {
     width: 70%;
     outline: 0;
     font-size: 17px;
@@ -714,7 +714,7 @@ section.newsletter {
     min-width: 11em;
 }
 
-.news_right button {
+.news_right form button {
     background-color: #e2c647;
     display: flex;
     justify-content: center;
@@ -727,7 +727,7 @@ section.newsletter {
     cursor: pointer;
 }
 
-.news_right button > img {
+.news_right form button > img {
     width: 35px;
 }
 
@@ -743,15 +743,15 @@ section.newsletter {
     
     .news_left p { font-size: 13px; }    
 
-    .news_right input {
+    .news_right form input {
         height: 40px;
         width: 70%;
         font-size: 14px
     }
 
-    .news_right button img { width: 23px; }
+    .news_right form button img { width: 23px; }
 
-    .news_right button {
+    .news_right form button {
         height: 45px;
         width: 7em;
         font-size: 13px;
@@ -776,7 +776,7 @@ section.newsletter {
     .news_left { width: 100%;}
     .news_right { width: 100%;}
 
-    .news_right input { width: 100%;}
+    .news_right form input { width: 100%;}
 }
 
 @media (max-width: 650px) {
@@ -808,9 +808,9 @@ section.newsletter {
     
     .news_left p { font-size: 12px; transition: .4s;}    
 
-    .news_right input { height: 2.4em; }
+    .news_right form input { height: 2.4em; }
 
-    .news_right button { height: 3em; }
+    .news_right form button { height: 3em; }
 
 }
 
@@ -830,8 +830,8 @@ section.newsletter {
         font-size: 12px;
     }
 
-    .news_right button p { display: none;}
-    .news_right button {
+    .news_right form button p { display: none;}
+    .news_right form button {
         width: 3em;
         height: 2.7em;
     }
@@ -839,13 +839,13 @@ section.newsletter {
 
 @media (min-width: 1400px) {
 
-    .news_right input {
+    .news_right form input {
         height: 2.4em;
         font-size: 20px;
         transition: .4s;
     }
 
-    .news_right button {
+    .news_right form button {
         width: 8em;
         height: 3.1em;
         transition: .4s;

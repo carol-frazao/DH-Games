@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const {Usuario} = require('../models')
-const usersController = require('../controllers/usersController')
-const usersValidator = require('../middlewares/usersValidator')
+const { Assinatura } = require('../models');
+const assinatura = require('../models/assinatura');
+var session = require('express-session');
 
 
 /* GET home page. */
@@ -39,9 +40,10 @@ router.post('/login', async function(req, res, next) {
     })
 
     if(usuarioLogin && usuarioLogin.senha == req.body.senha) {
+      console.log('usuario logado')
       req.session.estaLogado = true
       req.session.usuarioLogado = usuarioLogin
-      res.redirect('/')
+      res.redirect('/suporte')
     } if(usuarioLogin && usuarioLogin.senha != req.body.senha) {
       res.redirect('/login/dadosIncorretos')
     } if(!usuarioLogin) {
@@ -67,6 +69,26 @@ router.get('/cadastro', function(req, res, next) {
 router.get('/suporte', function(req, res, next) {
   res.render('suporte', { title: 'DH Games: Suporte ao cliente' });
 });
+
+//adesão assinatura
+router.post('/envioAssinatura', async function(req, res, next) {
+
+  try {
+    const envioAssinatura = await Assinatura.findOne({
+      where: {
+        emailAssinatura: req.body.emailAssinatura
+      }
+    })
+
+    if(envioAssinatura) {
+      res.redirect('/')
+    }} catch (erro) {
+    next(erro)
+  }
+
+})
+
+
 
 
 
@@ -150,16 +172,14 @@ router.get('/', function (req, res) {
   res.render('index', { listaProdutos: listaProdutos, title: 'DH Games'})
 })
 
-router.get('/:idProduto', function (req, res) {
-  const { idProduto } = req.params
+// router.get('/:idProduto', function (req, res) {
+//   const { idProduto } = req.params
 
-  const produto = listaProdutos.find(function (produto) {
-    return produto.id == idProduto
-  })
+//   const produto = listaProdutos.find(function (produto) {
+//     return produto.id == idProduto
+//   })
 
-  res.render('dados-produto', produto)
-
-})
+// })
 // fim da lista de produtos
 
 
