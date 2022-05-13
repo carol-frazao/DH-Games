@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const {Usuario} = require('../models')
-const { Assinatura } = require('../models');
-const session = require('express-session');
-const users = require('../controllers/usersController');
 
 
 /* GET home page. */
@@ -77,7 +74,6 @@ router.get('/cadastro/sucessoCadastro', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
   req.session.destroy()
   res.redirect('/')
-  // res.redirect('/')
 })
 
 /* GET cadastro page. */
@@ -89,27 +85,6 @@ router.get('/cadastro', function(req, res, next) {
 router.get('/suporte', function(req, res, next) {
   res.render('suporte', { title: 'Suporte ao cliente' });
 });
-
-//adesão assinatura
-// router.post('/envioAssinatura', async function(req, res, next) {
-
-//   try {
-//     const envioAssinatura = await Assinatura.findOne({
-//       where: {
-//         emailAssinatura: req.body.emailAssinatura
-//       }
-//     })
-
-//     if(envioAssinatura) {
-//       res.redirect('/')
-//     }} catch (erro) {
-//     next(erro)
-//   }
-
-// })
-
-
-
 
 
 //lista de produtos
