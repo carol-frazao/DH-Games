@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/login-cadastro.css">
+
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+    <main class="mainError">
+
+        <section class="erroLogin">
+            <div>
+                <span class="msgErroLogin">
+                    Cadastro realizado com sucesso :D <br><br>
+                    Faça seu login
+                </span>
+            </div>
+
+            <div class="redirectRegistro">
+                <span>Redirecionando...</span>
+            </div>
+
+            <div class="carregandoGif">
+                <img src="/img/carregando.gif" alt="">
+            </div>
+        </section>
+
+    </main>
+
+    <%- include('./partials/chat') %>
+
+    <%- include('./partials/footer') %>
+
+</body>
+
+<script type="text/javascript">
+setTimeout( function(){
+    window.location = '/login'; },2500);
+</script>
+
+</html>

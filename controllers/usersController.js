@@ -1,5 +1,6 @@
 const { Usuario } = require('../models')
 const { validationResult } = require('express-validator')
+const app = require('../app')
 
 
 
@@ -21,19 +22,17 @@ const users =  {
         },
 
 
-
         registraUsuario: async function (req, res, next)  {
             // res.send(req.body.nome + req.body.email)
             console.log("Controller registraUsuario: ", req.body)
 
-            const usuario = await Usuario.findAll( {
+            const usuario = await Usuario.findOne( {
                 where: {
                     email: req.body.email
                 }
             })
-            console.log(usuario[0].dataValues)
 
-            if(!usuario[0].dataValues) {
+            if(!usuario) {
                 try {
                     Usuario.create({
                         nome: req.body.nome,
@@ -41,7 +40,7 @@ const users =  {
                         senha: req.body.senha,
                         confirmaSenha: req.body.confirmaSenha
                     })
-                    res.redirect('/login')
+                    res.redirect('/cadastro/sucessoCadastro')
                     // setTimeout(function() {
                     //     res.redirect('/login')
                     // }, 3000)
@@ -52,10 +51,9 @@ const users =  {
                 }
     
             } else {
-                res.send('ja existe')
+                res.redirect('/cadastro/usuarioCadastrado')
             }         
         }
-               
     }
 
     

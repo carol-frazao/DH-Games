@@ -23,10 +23,22 @@
                 <img loading="lazy" src="/img/icons/support_agent_white_24dp.svg" class="icon-overheader">Suporte
             </a>
 
-            <a href="/login/" id="loginHidden">
-                <img loading="lazy" src="/img/icons/person_white_24dp.svg" class="icon-overheader">Login/Cadastro
+            <% if(estaLogado) { %>
+            <a href="#" id="loginHidden">
+                <img loading="lazy" src="/img/icons/person_white_24dp.svg" class="icon-overheader"> Olá, <%= usuarioLogado.nome %>
             </a>
 
+            <a href="/logout" class="icon-overheader">
+                <img src="/img/icons/logout_white_24dp.svg" alt="">
+            </a>
+
+            <% } else { %>
+                
+            <a href="/login/" id="loginHidden">
+                <img loading="lazy" src="/img/icons/person_white_24dp.svg" class="icon-overheader"> Login/cadastro
+            </a>
+            <% } %>
+        
         </div>
 
         <div class="country">
@@ -58,21 +70,26 @@
             </a>
         </div>
 
+        <% if(estaLogado) { %>
+        <div class="logado">
+        <% } else { %>
         <div class="login">
+        <% } %>            
 
             <% if(estaLogado) { %>
-            <a href="#"> 
+            <a href="#" id="nomeUsuario"> 
                 <img src="/img/icons/login-icon.png" class="icon-header">
                 Olá, <%= usuarioLogado.nome %> 
             </a>
-
-            <a href="/logout" class="login">
+            
+            <a href="/logout" class="login" id="logout">
+                <img src="/img/icons/logout_white_24dp.svg" alt="">
                 Sair
             </a>
 
             <% } else { %>
 
-            <a href="/login/">
+            <a href="/login/" >
                 <img src="/img/icons/login-icon.png" class="icon-header">
                 Faça seu login <br> ou cadastre-se
             </a>

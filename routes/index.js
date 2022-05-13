@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const {Usuario} = require('../models')
 const { Assinatura } = require('../models');
-const assinatura = require('../models/assinatura');
-var session = require('express-session');
+const session = require('express-session');
+const users = require('../controllers/usersController');
 
 
 /* GET home page. */
@@ -17,20 +17,16 @@ router.get('/seguranca-garantida', function(req, res, next) {
   res.render('seguranca-garantida', { title: 'DH Games: Segurança garantida' });
 });
 
-/* login page. */
-router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'DH Games: Faça seu login' });
-});
 
 router.get('/login/erroLogin', function(req, res, next) {
-  res.render('loginError', {title: 'Erro no login'})
+  res.render('loginError', {title: 'Ops...'})
 })
 
 router.get('/login/dadosIncorretos', function(req, res, next) {
-  res.render('dadosIncorretos', {title: 'Erro no login'})
+  res.render('dadosIncorretos', {title: 'Ops...'})
 })
 
-router.post('/login', async function(req, res, next) {
+router.post('/login', async function validaLogin (req, res, next) {
 
   try {
     const usuarioLogin = await Usuario.findOne({
@@ -40,10 +36,9 @@ router.post('/login', async function(req, res, next) {
     })
 
     if(usuarioLogin && usuarioLogin.senha == req.body.senha) {
-      console.log('usuario logado')
       req.session.estaLogado = true
       req.session.usuarioLogado = usuarioLogin
-      res.redirect('/suporte')
+      res.redirect('/')
     } if(usuarioLogin && usuarioLogin.senha != req.body.senha) {
       res.redirect('/login/dadosIncorretos')
     } if(!usuarioLogin) {
@@ -54,39 +49,64 @@ router.post('/login', async function(req, res, next) {
   }
 })
 
+//quando a sessão está iniciada na aplicação
+router.get('/login/usuarioLogado', function(req, res, next) {
+  res.render('usuarioLogado', {title: 'Ops...'})
+})
+
+/* login page. */
+router.get('/login', function(req, res, next) {
+  if(req.session.estaLogado == true) {
+    res.redirect('/login/usuarioLogado')
+  } else {
+    res.render('login', { title: 'Entrar' });
+  }
+  });
+
+//tentativa registro de usuário já cadastrado
+router.get('/cadastro/usuarioCadastrado', function(req, res, next) {
+  res.render('usuarioCadastrado', {title: 'Ops...'})
+})
+
+//sucesso no cadastro
+router.get('/cadastro/sucessoCadastro', function(req, res, next) {
+  res.render('sucessoCadastro', { title: 'Opa!'})
+})
+
 //encerrar sessão
 router.get('/logout', function(req, res, next) {
   req.session.destroy()
   res.redirect('/')
+  // res.redirect('/')
 })
 
 /* GET cadastro page. */
 router.get('/cadastro', function(req, res, next) {
-  res.render('cadastro', { title: 'DH Games: Cadastre-se' });
+  res.render('cadastro', { title: 'Cadastrar' });
 });
 
 /* GET suporte page. */
 router.get('/suporte', function(req, res, next) {
-  res.render('suporte', { title: 'DH Games: Suporte ao cliente' });
+  res.render('suporte', { title: 'Suporte ao cliente' });
 });
 
 //adesão assinatura
-router.post('/envioAssinatura', async function(req, res, next) {
+// router.post('/envioAssinatura', async function(req, res, next) {
 
-  try {
-    const envioAssinatura = await Assinatura.findOne({
-      where: {
-        emailAssinatura: req.body.emailAssinatura
-      }
-    })
+//   try {
+//     const envioAssinatura = await Assinatura.findOne({
+//       where: {
+//         emailAssinatura: req.body.emailAssinatura
+//       }
+//     })
 
-    if(envioAssinatura) {
-      res.redirect('/')
-    }} catch (erro) {
-    next(erro)
-  }
+//     if(envioAssinatura) {
+//       res.redirect('/')
+//     }} catch (erro) {
+//     next(erro)
+//   }
 
-})
+// })
 
 
 

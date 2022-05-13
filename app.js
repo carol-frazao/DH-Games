@@ -18,11 +18,8 @@ bcrypt.compareSync("outraSenha", hash); // false
 
 middleware p adicionar dados de login
 */
-app.use(function adicionaUserNoRender(req, res, next) {
-  res.locals.estaLogado = req.session?.estaLogado
-  res.locals.nomeUsuario = req.session?.nomeUsuario
-  next()
-})
+
+
 
 
 // view engine setup
@@ -37,13 +34,18 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 
-
 //session
 app.use(session({
 	secret: 'dhgames123',
 	resave: false,
 	saveUninitialized: true, 
 }));
+app.use(function adicionaUserNoRender(req, res, next) {
+  res.locals.usuarioLogado = req.session.usuarioLogado
+  res.locals.estaLogado = req.session.estaLogado
+  res.locals.nomeUsuario = req.session.nomeUsuario
+  next()
+})
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'))

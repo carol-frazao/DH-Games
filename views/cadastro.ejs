@@ -28,33 +28,21 @@
                     <div class="reg-label-input signUp-label">
                         <label for="nome"> Qual o seu nome? <i style="color: red"> * </i> </label>
                         <input type="text" name="nome" id="nome">
-                        <!-- <% if (locals.errors && errors.name) { %>
-                            <p class="feedback"> <% errors.name %> </p>
-                        <% } %> -->
                     </div>
 
                     <div class="reg-label-input signUp-label">
                         <label for="email"> Digite seu e-mail: <i style="color: red"> * </i> </label>
                         <input type="email" name="email" id="email">
-                        <!-- <% if (locals.errors && errors.name) { %>
-                            <p class="feedback"> <% errors.name %> </p>
-                        <% } %> -->
                     </div>
 
                     <div class="reg-label-input signUp-label">
                         <label for="senha"> Crie uma senha: <i style="color: red"> * </i> </label>
                         <input type="password" name="senha" id="senha">
-                        <!-- <% if (locals.errors && errors.name) { %>
-                            <p class="feedback"> <% errors.name %> </p>
-                        <% } %> -->
                     </div>
 
                     <div class="reg-label-input signUp-label">
                         <label for="confirmSenha"> Confirme sua senha: <i style="color: red"> * </i> </label>
                         <input type="password" name="confirmaSenha" id="confirmaSenha">
-                        <!-- <% if (locals.errors && errors.name) { %>
-                            <p class="feedback"> <% errors.name %> </p>
-                        <% } %> -->
                     </div>
 
                     <p id="termo-signUp"> Ao criar uma conta, você concorda com nossos <a href="/users/cadastro/termosDeUso/"> termos de uso</a>,
@@ -123,10 +111,13 @@
             return false;
         }
 
+        if(document.formRegister.email.value == "") {
+            alert("O e-mail é obrigatório")
+            return false
+        }
 
-        if( document.formRegister.email.value=="" ||
-        document.formRegister.email.value.indexOf('@')==-1 ||
-        document.formRegister.email.value.indexOf('.')==-1 )
+        if( document.formRegister.email.value.indexOf('@')==-1 ||
+            document.formRegister.email.value.indexOf('.')==-1 )
         {
             alert( "Insira um e-mail válido" );
             document.formRegister.email.focus();
