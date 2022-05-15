@@ -24,11 +24,11 @@
             </a>
 
             <% if(estaLogado) { %>
-            <a href="#" id="loginHidden">
+            <a href="/admin" id="loginHidden">
                 <img loading="lazy" src="/img/icons/person_white_24dp.svg" class="icon-overheader"> Olá, <%= usuarioLogado.nome %>
             </a>
 
-            <a href="/logout" class="icon-overheader">
+            <a href="/logout" class="icon-overheader" id="logoutIcon">
                 <img src="/img/icons/logout_white_24dp.svg" alt="">
             </a>
 
@@ -77,12 +77,12 @@
         <% } %>            
 
             <% if(estaLogado) { %>
-            <a href="/admin" id="nomeUsuario"> 
+            <a href="/admin" id="nomeUsuario" class="userLogado"> 
                 <img src="/img/icons/login-icon.png" class="icon-header">
                 Olá, <%= usuarioLogado.nome %> 
             </a>
             
-            <a href="/logout" class="login" id="logout">
+            <a href="/logout" class="login userLogado" id="logout">
                 <img src="/img/icons/logout_white_24dp.svg" alt="">
                 Sair
             </a>

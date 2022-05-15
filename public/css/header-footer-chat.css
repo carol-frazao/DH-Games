@@ -58,7 +58,7 @@ div.overheader-options { gap: 4em; }
 /* #segurancaGarantida, #entregaImediata { cursor: default; }
 #segurancaGarantida:hover, #entregaImediata:hover { color: #fff; opacity: 70%; } */
 
-#loginHidden, #supportHidden { display: none;}
+#loginHidden, #supportHidden, #logoutIcon { display: none;}
 
 #country-origin {
     width: auto;
@@ -85,7 +85,7 @@ div.overheader-options { gap: 4em; }
     div.overheader-options a { font-size: 12px; line-height: 1.7rem;}
     .overheader-options img { height: 15px ;}
     #send-email { display: none;}
-    #loginHidden { display: inline-flex}
+    #loginHidden, #logoutIcon { display: inline-flex}
     #segurancaGarantida { display: none;}
 }
 
@@ -568,9 +568,13 @@ div.shopping-cart {
     #divider-to-categories { display: none;}
 
     #check-nav:checked ~ nav { display: block;}
+
+    .logado {
+        display: none;
+    }
 }
 
-@media (max-width: 535px) {
+@media (max-width: 615px) {
     section.header-center { height: 8rem; }
 
     div.dh-homePage {
@@ -601,9 +605,15 @@ div.shopping-cart {
         font-size: 16px;
         transition: all .4s;
     }
+
+    a.userLogado {
+        font-size: 12px;
+        transition: .3s all;
+    }
+
 }
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
 
     section.header-center { height: 7rem;}
 
@@ -629,6 +639,7 @@ div.shopping-cart {
     }
 
     .categorias-hidden a { font-size: 13px; }
+
 }
 
 @media (min-width: 1800px) {
