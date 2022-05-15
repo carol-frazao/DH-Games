@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/error.css">
+
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+    <main class="mainError">
+        
+        <section class="divs-error">
+
+            <div class="imgErro">
+                <img src="/img/image-erro.png" alt="Erro">
+            </div>
+
+            <div class="agroup-msg">
+                <div class="msgErro">
+                    <span>Ops... Parece que algo deu errado </span>
+                    <!-- <p>Código de erro:</p> -->
+                </div>
+
+                <div class="codigoErro">
+                    <p> Erro 404 </p> <p style="font-size: 15px">(exemplo) </p>
+                </div>
+    
+                <a href="/" class="returnHomePage">
+                       > Retornar à página inicial
+                </a>    
+                
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <%- include('./partials/chat') %>
+
+    <%- include('./partials/footer') %>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/admin.css">
+
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+        <main>
+            <section class="titleAdmin">
+                <div class="pageDescription">
+                    <span>Painel do admin </span>
+                </div>
+
+                <div class="adminName">
+                    <img src="/img/engineering_black_24dp.svg" alt="">
+                    <span> Olá <%= usuarioLogado.nome %>, gerencie sua aplicação </span>
+                </div>
+            </section>
+
+            <br>
+
+            <section class="superPromotions">
+
+                <div class="tituloSessao">
+                    <img src="/img/icons/offer_black_24dp.svg" alt="">
+                    <span> PRODUTOS EM OFERTA </span>
+                </div>
+
+                <br>
+
+                <div class="incluirOferta">
+
+                    <span class="incluir"> INCLUIR PRODUTO </span>
+
+                    <br> <br>
+
+                    <form action=" /envioOfertas" method="post" enctype="multipart/form-data" class="produtoOferta">
+
+                        <div>
+                            <label for="imagemProduto"> Imagem do produto: </label>
+                            <br>
+                            <input type="file" name="imagemProduto" id='imagemProduto' required>
+                        </div>
+
+                        <div>
+                            <label for="nomeProduto"> Título do produto: </label>
+                            <br>
+                            <input type="text" name="nomeProduto" id="nomeProduto" required>
+                        </div>
+
+                        <div>
+                            <label for="valorOriginal"> Valor original: </label>
+                            <br>
+                            <input type="number" step="0.01" name="valorOriginal" min="0.01" id="valorOriginal"
+                                required>
+                        </div>
+
+                        <div>
+                            <label for="valorPromocional"> Valor promocional: </label>
+                            <br>
+                            <input type="number" step="0.01" name="valorPromocional" min="0.01" id="valorPromocional"
+                                required>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn-ofertas"> Incluir na lista </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <br> <br>
+
+                <div class="excluirOferta">
+
+                    <span class="excluir"> REMOVER PRODUTO </span>
+
+                    <br> <br>
+
+                    <form action="" method="post">
+                        <label for="nomeProdutoDestroy"> Título do produto que deseja remover:</label>
+                        <br>
+                        <input type="text" id="nomeProdutoDestroy">
+
+                        <br> <br>
+
+                        <button type="submit" class="btn-removeOferta"> Remover da lista </button>
+
+                    </form>
+                </div>
+
+
+            </section>
+
+        </main>
+
+        <%- include('../partials/chat') %>
+
+            <%- include('../partials/footer') %>
+
+</body>
+
+</html>

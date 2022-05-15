@@ -1,0 +1,150 @@
+
+* { 
+    margin: 0; 
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eee;
+    width: 100%;
+}
+
+main {
+    margin: 3rem;
+}
+
+/*---------- titulo admin -----------*/
+.pageDescription{
+    background-color: #1a1a1a2c;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.pageDescription span {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 1rem;
+    text-transform: uppercase;
+}
+
+.adminName {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(218, 145, 8);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+
+}
+
+/* ----- SUPER PROMOÇÕES / OFERTAS DO DIA ----- */
+
+.tituloSessao {
+    background-color: #36363616;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.tituloSessao span {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333333;
+    margin-left: 10px;
+}
+
+.tituloSessao img{
+    margin-left: 1rem;
+    width: auto;
+    height: 20px;
+}
+
+.incluir {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(30, 187, 61);
+}
+
+.excluir {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(209, 58, 28);
+}
+
+.incluirOferta {
+    margin-top: 10px;
+}
+
+.incluirOferta form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.incluirOferta form input {
+    width: 40%;
+    height: 1.5rem;
+    margin-top: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 14px;
+}
+
+.btn-ofertas {
+    background-color: #58c96feb;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 15%;
+    height: 2rem;
+    font-size: 14px;
+    font-weight: 550;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: .3s;
+}
+
+.btn-envioOfertas:hover {
+    transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+}
+
+.btn-removeOferta {
+    background-color: #ec7352f3;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 15%;
+    height: 2rem;
+    font-size: 14px;
+    font-weight: 550;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: .3s;
+}
+
+.btn-removeOferta:hover {
+    transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+}
+
+.excluirOferta form input {
+    width: 40%;
+    height: 1.5rem;
+    margin-top: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 14px;
+}

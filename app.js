@@ -7,6 +7,7 @@ var session = require('express-session');
 var app = express();
 var bodyParser = require('body-parser')
 
+
 /*
 Para encriptar um dado:
 let hash = bcrypt.hashSync('minhaSenha!');
@@ -65,5 +66,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

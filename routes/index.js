@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {Usuario} = require('../models')
-
+const React = require('react')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -53,7 +53,7 @@ router.get('/login/usuarioLogado', function(req, res, next) {
 
 /* login page. */
 router.get('/login', function(req, res, next) {
-  if(req.session.estaLogado == true) {
+  if(req.session.estaLogado) {
     res.redirect('/login/usuarioLogado')
   } else {
     res.render('login', { title: 'Entrar' });
@@ -85,6 +85,20 @@ router.get('/cadastro', function(req, res, next) {
 router.get('/suporte', function(req, res, next) {
   res.render('suporte', { title: 'Suporte ao cliente' });
 });
+
+//ADMIN
+
+router.get('/admin', function(req, res, next) {
+  if(req.session.estaLogado) {
+  res.render('./admin/painelAdmin', {title: 'Painel do admin'});
+  } else {
+    res.render('naoEstaLogado', {title: 'Sessão expirada'})
+  }
+})
+
+router.get('/erro', function(req, res, next) {
+  res.render('paginaDeErro', {title: 'Erro'})
+})
 
 
 //lista de produtos

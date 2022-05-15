@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/login-cadastro.css">
+
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+    <main class="mainError">
+
+        <section class="erroLogin">
+            <div>
+                <span class="msgErroLogin">
+                    Ops, parece que você não está logado <br>
+                </span>
+            </div>
+
+            <br>
+
+            <div class="redirectRegistro">
+                <span>Redirecionando...</span>
+            </div>
+
+            <div class="carregandoGif">
+                <img src="/img/carregando.gif" alt="">
+            </div>
+        </section>
+
+    </main>
+
+    <%- include('./partials/chat') %>
+
+    <%- include('./partials/footer') %>
+
+</body>
+
+<script type="text/javascript">
+setTimeout( function(){
+    window.location = '/login'; },2000);
+</script>
+
+</html>
