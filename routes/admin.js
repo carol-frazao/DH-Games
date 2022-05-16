@@ -8,7 +8,7 @@ const upload = multer({
   dest: 'public/uploads/'
 })
 
-router.get('/', adminController.validaLogin)
+router.get('/', adminController.validaLogin, adminController.exibeOfertas)
 
 router.post('/envioOfertas', adminController.envioOfertas)
 

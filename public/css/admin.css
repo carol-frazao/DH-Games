@@ -147,15 +147,33 @@ span.span-lista {
     color: black;
 }
 
+#editarOferta {
+    background-color: rgba(51, 124, 202, 0.474);
+}
+
+#removerOferta {
+    background-color: rgba(226, 43, 86, 0.442);
+}
+
 #editarOferta:hover {
-    color: rgb(80, 43, 226);
     font-weight: 700;
 }
 
 #removerOferta:hover {
-    color: rgb(226, 43, 86);
     font-weight: 700;
 }
+
+.editar-remover {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.editar-remover a {
+    text-decoration: none;
+    color: black;
+}
+
 
 
 @media (max-width: 950px) {
