@@ -215,18 +215,18 @@
                         <div class="card-promotion">
 
                             <div>
-                                <img src=<%=produto.img %> class="promotions-img">
+                                <img src=<%=produto.imagemProduto %> class="promotions-img">
 
                                 <div class="title-card-promotion">
-                                    <%= produto.titulo %>
+                                    <%= produto.nomeProduto %>
                                 </div>
 
                                 <div class="price-card-promotions">
-                                    <p class="oldPrice-card">De: <%= produto.precoAnterior %>
+                                    <p class="oldPrice-card">De: R$ <%= produto.valorOriginal %>
                                     </p>
                                     <p class="priceUpdate-card">Por:</p>
                                     <p class="currentPrice-card">
-                                        <%= produto.precoAtual %>
+                                        R$ <%= produto.valorPromocional%>
                                     </p>
                                 </div>
 
@@ -235,7 +235,7 @@
                                 <div class="discount-card">
                                     <img src="/img/icons/icon-promotion.svg">
                                     <span>
-                                        <%= produto.desconto %>
+                                        <%= Math.round(produto.valorPromocional*100 / produto.valorOriginal) %>%
                                     </span>
                                 </div>
                             </div>

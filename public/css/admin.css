@@ -118,40 +118,49 @@ main {
     -webkit-transform: scale(1.05);
 }
 
-.btn-removeOferta {
-    background-color: #ec7352f3;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    width: 17%;
-    height: 2rem;
-    font-size: 14px;
-    font-weight: 550;
+
+.tabelaProdutos {
+    text-align: center;
+    width: 50%;
+}
+
+span.span-lista {
+    font-weight: bold;
+    font-size: 16px;
     text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: .3s;
-    flex-wrap: nowrap;
+    color: rgb(218, 145, 8);
 }
 
-.btn-removeOferta:hover {
-    transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -webkit-transform: scale(1.05);
+.tabelaProdutos th {
+    background-color:  #33333311;
+    padding: 5px;
+    width: auto;
 }
 
-.excluirOferta form input {
-    width: 40%;
-    height: 1.5rem;
-    margin-top: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    font-size: 14px;
+.tabelaProdutos td {
+    padding: 5px;
+    background-color: #33333311;
+    width: auto;
 }
+
+.acao {
+    color: black;
+}
+
+#editarOferta:hover {
+    color: rgb(80, 43, 226);
+    font-weight: 700;
+}
+
+#removerOferta:hover {
+    color: rgb(226, 43, 86);
+    font-weight: 700;
+}
+
 
 @media (max-width: 950px) {
 
-    .btn-ofertas, .btn-removeOferta {
+    .btn-ofertas {
         width: 25%;
         transition: .3s all;
     }
@@ -170,7 +179,7 @@ main {
     }
     
 
-    .btn-ofertas, .btn-removeOferta {
+    .btn-ofertas {
         font-size: 11px;
     }
 
@@ -193,14 +202,13 @@ main {
         transition: .3s all;
     }
 
-    .produtoOferta div input, .excluirOferta form input {
+    .produtoOferta div input {
         width: 100%;
         transition: .3s all;
     }
 
-    .btn-ofertas, .btn-removeOferta {
+    .btn-ofertas {
         width: 50%;
     }
-
 
 }

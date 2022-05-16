@@ -35,73 +35,18 @@
 
                 <br>
 
-                <div class="listagemProdutos">
-
-                    <span class="span-lista">Lista de produtos</span>
-                    
-                    <div class="align-row" style="width: 100%;">
-                        <table class="tabelaProdutos">
-                            <tr>
-                                <th> ID </th>
-                                <th> Título do produto </th>
-                                <th> Valor original </th>
-                                <th> Valor promocional </th>
-                                <th> Desconto </th>
-                                <th> Ação </th>
-                            </tr>
-
-                            <% if(estaLogado) {
-                                listaProdutos.forEach(function(produto) { %>
-                            <tr>
-                                <td>
-                                    <%= produto.id %>
-                                </td>
-
-                                <td>
-                                    <%= produto.nomeProduto %>
-                                </td>
-
-                                <td>
-                                    R$ <%= produto.valorOriginal %>
-                                </td>
-
-                                <td>
-                                    R$ <%= produto.valorPromocional %>
-                                </td>
-
-                                <td>
-                                    <%= Math.round(produto.valorPromocional*100 / produto.valorOriginal) %>%
-                                </td>
-
-                                <td>
-                                    <a href="" class="acao" id="editarOferta"> Editar</a>
-                                    ou
-                                    <a href="" class="acao" id="removerOferta">Remover</a>
-                                </td>
-                            </tr>
-                            <% }) }  %>
-
-                        </table>
-                    </div>
-                </div>
-
-
-                <br>
-
                 <div class="incluirOferta">
 
                     <span class="incluir"> INCLUIR PRODUTO </span>
 
                     <br> <br>
 
-                    <form action="/admin/envioOfertas" method="post""
-                        class="produtoOferta">
+                    <form action="/admin/envioOfertas" method="post" enctype="multipart/form-data" class="produtoOferta">
 
                         <div>
                             <label for="imagemProduto"> Imagem do produto: </label>
                             <br>
-                            <input type="file" name="imagemProduto" id='imagemProduto' onchange="validaExtensao(this)"
-                                required>
+                            <input type="file" name="imagemProduto" id='imagemProduto' onchange="validaExtensao(this)" required >
                         </div>
 
                         <div>
@@ -124,11 +69,42 @@
                                 required>
                         </div>
 
-                        <button type="submit" class="btn-ofertas"> Incluir na lista </button>
+                        
+                        <div>
+                            <label for="valorDesconto"> Desconto a exibir: </label>
+                            <br>
+                            <input type="number" name="valorDesconto" id="valorDesconto" required>
+                        </div>
+
+
+                        <div>
+                            <button type="submit" class="btn-ofertas"> Incluir na lista </button>
+                        </div>
 
                     </form>
 
                 </div>
+
+                <br> <br>
+
+                <div class="excluirOferta">
+
+                    <span class="excluir"> REMOVER PRODUTO </span>
+
+                    <br> <br>
+
+                    <form action="" method="post">
+                        <label for="nomeProdutoDestroy"> Título do produto que deseja remover:</label>
+                        <br>
+                        <input type="text" id="nomeProdutoDestroy">
+
+                        <br> <br>
+
+                        <button type="submit" class="btn-removeOferta"> Remover da lista </button>
+
+                    </form>
+                </div>
+
 
             </section>
 
@@ -138,7 +114,7 @@
 
         <%- include('../partials/footer') %>
 
-</body> 
+</body>
 
 <script type="text/javascript">
 
@@ -148,14 +124,14 @@
         var caminhoArquivo = arquivoInput.value;
         var extensoesPermitidas = /(.jpg|.jpeg|.png)$/i;
 
-        if (!extensoesPermitidas.exec(caminhoArquivo)) {
+        if(!extensoesPermitidas.exec(caminhoArquivo)){
 
             alert('Por favor, envie um arquivo que tenha as extensões .jpeg, .jpg, ou .png ');
             arquivoInput.value = '';
 
             return false;
 
-        } else {
+        }else{
 
             if (arquivoInput.files && arquivoInput.files[0]) {
                 var reader = new FileReader();
@@ -165,9 +141,9 @@
                 console.log(arquivoInput.files[0].size / 1024 / 1024);
                 console.log(arquivoInput.files[0].size);
 
-                if (arquivoInput.files[0].size > 2097152) {
-                    alert("Tamanho do arquivo deve ser 2 MB");
-                    return false;
+            if (arquivoInput.files[0].size > 2097152) { 
+                alert("Tamanho do arquivo deve ser 2 MB");
+                return false;
                 }
             }
         }

@@ -7,7 +7,7 @@ var session = require('express-session');
 var app = express();
 var bodyParser = require('body-parser')
 
-
+var produtos = require('./controllers/adminController').produtos
 /*
 Para encriptar um dado:
 let hash = bcrypt.hashSync('minhaSenha!');
@@ -50,6 +50,7 @@ app.use(function adicionaUserNoRender(req, res, next) {
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'))
+app.use('/admin', require('./routes/admin'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -66,6 +67,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 module.exports = app;

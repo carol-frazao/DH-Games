@@ -41,9 +41,6 @@ const users =  {
                         confirmaSenha: req.body.confirmaSenha
                     })
                     res.redirect('/cadastro/sucessoCadastro')
-                    // setTimeout(function() {
-                    //     res.redirect('/login')
-                    // }, 3000)
                 } catch (error) {
                     console.log("-------------------------------");
                     console.log(">>>> ERRO: ", JSON.stringify(error?.parent?.sqlMessage)); //Sempre use isso para saber o erro do sequelize

@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const {Usuario} = require('../models')
-const React = require('react')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log('index')
-  res.render('index', { title: 'DH Games', listaProdutos: listaProdutos });
+  res.render('index', { title: 'DH Games', listaProdutos: listaProdutos  });
 });
 
 /* GET seguranca-garantida page. */
@@ -48,11 +47,12 @@ router.post('/login', async function validaLogin (req, res, next) {
 
 //quando a sessão está iniciada na aplicação
 router.get('/login/usuarioLogado', function(req, res, next) {
-  res.render('usuarioLogado', {title: 'Ops...'})
+  res.render('usuarioLogado', {title: 'Usuário logado'})
 })
 
 /* login page. */
 router.get('/login', function(req, res, next) {
+  console.log('login')
   if(req.session.estaLogado) {
     res.redirect('/login/usuarioLogado')
   } else {
@@ -85,101 +85,82 @@ router.get('/cadastro', function(req, res, next) {
 router.get('/suporte', function(req, res, next) {
   res.render('suporte', { title: 'Suporte ao cliente' });
 });
+  
 
-//ADMIN
-
-router.get('/admin', function(req, res, next) {
-  if(req.session.estaLogado) {
-  res.render('./admin/painelAdmin', {title: 'Painel do admin'});
-  } else {
-    res.render('naoEstaLogado', {title: 'Sessão expirada'})
-  }
-})
-
-router.get('/erro', function(req, res, next) {
-  res.render('paginaDeErro', {title: 'Erro'})
-})
+// router.get('/erro', function(req, res, next) {
+//   res.render('paginaDeErro', {title: 'Erro'})
+// })
 
 
 //lista de produtos
 const listaProdutos = [
   { 
     id: '1',
-    titulo: 'APEX LEGENDS',
-    precoAnterior: 'R$79,99',
-    precoAtual: 'R$39,99',
-    desconto: '50%',
-    img:'https://live.staticflickr.com/65535/51857207563_5eea10a393_c.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51857207563_5eea10a393_c.jpg',
+    nomeProduto: 'APEX LEGENDS',
+    valorOriginal: 79.99,
+    valorPromocional: 39.99,
   },
   { 
     id: '2',
-    titulo: 'DISSIDIA FINAL',
-    precoAnterior: 'R$69,99',
-    precoAtual: 'R$49,99',
-    desconto: '40%',
-    img:'https://live.staticflickr.com/65535/51857779895_0994fdb48c_b.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51857779895_0994fdb48c_b.jpg',
+    nomeProduto: 'DISSIDIA FINAL',
+    valorOriginal: 69.99,
+    valorPromocional: 48.99,
   },
   { 
     id: '3',
-    titulo: 'THE YAKUZA',
-    precoAnterior: 'R$219,99',
-    precoAtual: 'R$87,99',
-    desconto: '60%',
-    img:'https://live.staticflickr.com/65535/51856166042_76fcd5c0dc_w.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51856166042_76fcd5c0dc_w.jpg',
+    nomeProduto: 'THE YAKUZA',
+    valorOriginal: 219.99,
+    valorPromocional: 87.99,
   },
   { 
     id: '4',
-    titulo: 'BATMAN ARKHAM',
-    precoAnterior: 'R$89,99',
-    precoAtual: 'R$58,49',
-    desconto: '35%',
-    img:'https://live.staticflickr.com/65535/51857122981_93e6f30cdf_z.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51857122981_93e6f30cdf_z.jpg',
+    nomeProduto: 'BATMAN ARKHAM',
+    valorOriginal: 89.99,
+    valorPromocional: 58.49,
   },
   { 
     id: '5',
-    titulo: 'BATTLEFIELD 2042',
-    precoAnterior: 'R$199,99',
-    precoAtual: 'R$119,99',
-    desconto: '40%',
-    img:'https://live.staticflickr.com/65535/51857779960_7d49728ba0_c.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51857779960_7d49728ba0_c.jpg',
+    nomeProduto: 'BATTLEFIELD 2042',
+    valorOriginal: 199.99,
+    valorPromocional: 119.99,
   },
   { 
     id: '6',
-    titulo: 'DARK SOULS III',
-    precoAnterior: 'R$79,99',
-    precoAtual: 'R$43,99',
-    desconto: '45%',
-    img:'https://live.staticflickr.com/65535/51857122921_58bfd88ec7_c.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51857122921_58bfd88ec7_c.jpg',
+    nomeProduto: 'DARK SOULS III',
+    valorOriginal: 79.99,
+    valorPromocional: 43.99,
   },
   { 
     id: '7',
-    titulo: 'ASSASSINS CREED',
-    precoAnterior: 'R$89,99',
-    precoAtual: 'R$62,99',
-    desconto: '30%',
-    img:'https://live.staticflickr.com/65535/51857207528_fce20b3684_b.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51857207528_fce20b3684_b.jpg',
+    nomeProduto: 'ASSASSINS CREED',
+    valorOriginal: 89.99,
+    valorPromocional: 62.99,
   },
   { 
     id: '8',
-    titulo: 'SONIC COLORS',
-    precoAnterior: 'R$199,99',
-    precoAtual: 'R$99,99',
-    desconto: '50%',
-    img:'https://live.staticflickr.com/65535/51857207418_b10aac209b_b.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51857207418_b10aac209b_b.jpg',
+    nomeProduto: 'SONIC COLORS',
+    valorOriginal: 199.99,
+    valorPromocional: 99.99,
   },
   { 
     id: '9',
-    titulo: 'DEMON SLAYER',
-    precoAnterior: 'R$269,99',
-    precoAtual: 'R$134,99',
-    desconto: '50%',
-    img:'https://live.staticflickr.com/65535/51856166127_0d148f4cc9_c.jpg'
+    imagemProduto:'https://live.staticflickr.com/65535/51856166127_0d148f4cc9_c.jpg',
+    nomeProduto: 'DEMON SLAYER',
+    valorOriginal: 269.99,
+    valorPromocional: 134.99,
   },
 ]
 
-router.get('/', function (req, res) {
-  res.render('index', { listaProdutos: listaProdutos, title: 'DH Games'})
-})
+
+
 
 // router.get('/:idProduto', function (req, res) {
 //   const { idProduto } = req.params
