@@ -8,7 +8,7 @@ const upload = multer({
   dest: 'public/uploads/'
 })
 
-router.get('/',adminController.validaLogin, async function (req, res, next) {
+router.get('/', adminController.validaLogin, async function (req, res, next) {
   // console.log("usuario logado", await )
 
   const obj = {
@@ -18,11 +18,13 @@ router.get('/',adminController.validaLogin, async function (req, res, next) {
   // console.log("produtos admin", obj.produtos)
 })
 
-router.post('/envioOfertas', adminController.envioOfertas)
+router.post('/envioOfertas',  upload.single('imagemProduto'), adminController.envioOfertas)
 
 router.get('/envioOfertas', function(req, res, next) {
   res.send('Oferta enviada ok')
-})  
+})
+
+router.get('/removeOferta/:id', adminController.removeOferta)
 
 
 // router.get('/admin', function (req, res) {

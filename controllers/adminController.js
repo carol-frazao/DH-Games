@@ -1,4 +1,9 @@
 const { Ofertas } = require('../models')
+const multer = require('multer')
+
+const upload = multer({
+  dest: 'public/uploads/'
+})
 
 const admin = {
 
@@ -9,12 +14,14 @@ const admin = {
         next()
 
       } else {
+        // next()
         res.render('naoEstaLogado', {title: 'Sessão expirada'})
       }
     },
 
     envioOfertas: async function (req, res, next) {
-        
+      req.body.imagem = req.file.filename
+      console.log("req.file", req.file)
         console.log("Controller envioOfertas: ", req.body)
   
         const oferta = await Ofertas.findOne({
@@ -24,14 +31,16 @@ const admin = {
         })
     
         if(!oferta) {
+          upload.single('imagemProduto')
           try {
+            console.log("body oferta", req.body)
               Ofertas.create({
-                  imagemProduto: req.body.imagemProduto,
+                  imagemProduto: req.body.imagem,
                   nomeProduto: req.body.nomeProduto,
                   valorOriginal: req.body.valorOriginal,
                   valorPromocional: req.body.valorPromocional
               })
-              res.send('Oferta enviada com sucesso')
+              res.redirect('/admin')
           } catch (error) {
               console.log("-------------------------------");
               console.log(">>>> ERRO: ", JSON.stringify(error?.parent?.sqlMessage)); //Sempre use isso para saber o erro do sequelize
@@ -42,6 +51,17 @@ const admin = {
           res.send('Este produto já está entre as ofertas')
       } 
 
+    },
+
+  removeOferta: async function (req, res, next) {
+    console.log(req.params)
+      const idProduto = req.params.id
+      await Ofertas.destroy({
+        where: {
+          id: idProduto
+        }
+      })
+    res.redirect('/admin')
     }
 }
 

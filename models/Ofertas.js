@@ -13,10 +13,10 @@ module.exports = (connection, DataTypes) => {
         type: DataTypes.STRING(50)
       },
       valorOriginal: {
-        type: DataTypes.DECIMAL(10)
+        type: DataTypes.FLOAT(10)
       },
       valorPromocional: {
-        type: DataTypes.DECIMAL(10)
+        type: DataTypes.FLOAT(10)
       }
     }, {
       timestamps: false,

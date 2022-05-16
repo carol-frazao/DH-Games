@@ -20,7 +20,7 @@
 
                 <div class="adminName">
                     <img src="/img/engineering_black_24dp.svg" alt="">
-                    <span> Olá <%= usuarioLogado.nome %>, gerencie sua aplicação </span>
+                    <span> Olá <%= usuarioLogado?.nome %>, gerencie sua aplicação </span>
                 </div>
             </section>
 
@@ -69,12 +69,12 @@
                                 </td>
 
                                 <td>
-                                    <%= Math.round(produto.valorPromocional*100 / produto.valorOriginal) %>%
+                                    <%= Math.round(produto.valorOriginal - (produto.valorPromocional*100/produto.valorOriginal)) %>%
                                 </td>
 
                                 <td class="editar-remover">
                                     <a href="" class="acao" id="editarOferta"> Editar</a>
-                                    <a href="" class="acao" id="removerOferta">Remover</a>
+                                    <a href="/admin/removeOferta/<%= produto.id %>" class="acao" id="removerOferta">Remover</a>
                                 </td>
                             </tr>
                             <% }) %>
@@ -92,7 +92,7 @@
 
                     <br> <br>
 
-                    <form action="/admin/envioOfertas" method="post""
+                    <form action="/admin/envioOfertas" method="post" enctype="multipart/form-data""
                         class="produtoOferta">
 
                         <div>
