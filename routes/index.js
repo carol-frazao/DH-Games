@@ -1,11 +1,17 @@
 const express = require('express');
+const { envioOfertas } = require('../controllers/adminController');
 const router = express.Router();
 const {Usuario} = require('../models')
+const {Ofertas} = require('../models')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
   console.log('index')
-  res.render('index', { title: 'DH Games', listaProdutos: listaProdutos  });
+  const obj = {
+    produtos: await Ofertas.findAll()
+  }
+  res.render('index', { title: 'DH Games', obj});
+  // console.log(obj.produtos)
 });
 
 /* GET seguranca-garantida page. */

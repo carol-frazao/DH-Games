@@ -8,7 +8,15 @@ const upload = multer({
   dest: 'public/uploads/'
 })
 
-router.get('/', adminController.validaLogin, adminController.exibeOfertas)
+router.get('/',adminController.validaLogin, async function (req, res, next) {
+  // console.log("usuario logado", await )
+
+  const obj = {
+    produtos: await Ofertas.findAll()
+  }
+  res.render('./admin/painelAdmin', { title: 'Painel do admin', obj});
+  // console.log("produtos admin", obj.produtos)
+})
 
 router.post('/envioOfertas', adminController.envioOfertas)
 

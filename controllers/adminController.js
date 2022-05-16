@@ -3,20 +3,15 @@ const { Ofertas } = require('../models')
 const admin = {
 
     validaLogin: function(req, res, next) {
-      console.log('admin')
+    console.log('admin')
+    console.log("req.session.estaLogado", req?.session?.estaLogado)
       if(req.session.estaLogado) {
-      res.render('./admin/painelAdmin', {title: 'Painel do admin', listaProdutos: listaProdutos});
+        next()
+
       } else {
         res.render('naoEstaLogado', {title: 'Sessão expirada'})
       }
     },
-
-
-    exibeOfertas: async function (req, res, next) {
-      res.render('./admin/painelAdmin', {listaProdutos: listaProdutos})
-      next()
-    },
-
 
     envioOfertas: async function (req, res, next) {
         
