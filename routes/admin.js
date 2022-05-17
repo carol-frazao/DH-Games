@@ -26,6 +26,19 @@ router.get('/envioOfertas', function(req, res, next) {
 
 router.get('/removeOferta/:id', adminController.removeOferta)
 
+router.get('/editarOferta/:id', async function(req, res, next) {
+  const oferta = await Ofertas.findByPk(req.params.id)
+  if(oferta) {
+    res.render('./admin/editarOferta', {title: 'Editar oferta'})
+  } else {
+    res.render('paginaDeErro', {title: 'Ops...'})
+  }
+})
+
+router.post('/editarOferta/:id', adminController.editarOferta)
+
+// router.get('/editarOferta/:id', adminController.editarOferta)
+
 
 // router.get('/admin', function (req, res) {
 //   res.render('./admin/painelAdmin', { listaOfertas: listaOfertas, title: 'Painel do admin'})

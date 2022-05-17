@@ -217,7 +217,7 @@
                             <div>
                                 <img src="/uploads/<%=produto.imagemProduto %>" class="promotions-img">
 
-                                <div class="title-card-promotion">
+                                <div class="title-card-promotion" style="text-transform: uppercase">
                                     <%= produto.nomeProduto %>
                                 </div>
 
@@ -235,7 +235,7 @@
                                 <div class="discount-card">
                                     <img src="/img/icons/icon-promotion.svg">
                                     <span>
-                                        <%= Math.round(produto.valorPromocional*100 / produto.valorOriginal) %>%
+                                        <%= Math.round(100-(produto.valorPromocional*100/produto.valorOriginal)) %>%
                                     </span>
                                 </div>
                             </div>

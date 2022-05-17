@@ -56,7 +56,7 @@
                                     <%= produto.id %>
                                 </td>
 
-                                <td>
+                                <td style="text-transform: uppercase">
                                     <%= produto.nomeProduto %>
                                 </td>
 
@@ -69,11 +69,11 @@
                                 </td>
 
                                 <td>
-                                    <%= Math.round(produto.valorOriginal - (produto.valorPromocional*100/produto.valorOriginal)) %>%
+                                    <%= Math.round(100-(produto.valorPromocional*100/produto.valorOriginal)) %>%
                                 </td>
 
                                 <td class="editar-remover">
-                                    <a href="" class="acao" id="editarOferta"> Editar</a>
+                                    <a href="/admin/editarOferta/<%= produto.id %>" class="acao" id="editarOferta"> Editar</a>
                                     <a href="/admin/removeOferta/<%= produto.id %>" class="acao" id="removerOferta">Remover</a>
                                 </td>
                             </tr>
@@ -105,7 +105,7 @@
                         <div>
                             <label for="nomeProduto"> Título do produto: </label>
                             <br>
-                            <input type="text" name="nomeProduto" id="nomeProduto" required>
+                            <input type="text" name="nomeProduto" id="nomeProduto" required style="text-transform: uppercase">
                         </div>
 
                         <div>
@@ -127,53 +127,6 @@
                     </form>
 
                 </div>
-
-                <!-- <br> <br>
-
-                <div class="editarOferta">
-
-                    <span class="excluir"> EDITAR PRODUTO </span>
-
-                    <br> <br>
-
-                    <form action="" method="post">
-                        <label for="idProduto"> ID do produto que deseja atualizar :</label>
-                        <br>
-                        <input type="number" id="idProduto">
-
-                        <br>
-
-                        <div>
-                            <label for="imagemProdutoEdit"> Imagem do produto: </label>
-                            <br>
-                            <input type="file" name="imagemProdutoEdit" id='imagemProdutoEdit' onchange="validaExtensao(this)">
-                        </div>
-
-                        <div>
-                            <label for="nomeProdutoEdit"> Título do produto: </label>
-                            <br>
-                            <input type="text" name="nomeProdutoEdit" id="nomeProdutoEdit">
-                        </div>
-
-                        <div>
-                            <label for="valorOriginalEdit"> Valor original: </label>
-                            <br>
-                            <input type="number" step="0.01" name="valorOriginalEdit" min="0.01" id="valorOriginalEdit">
-                        </div>
-
-                        <div>
-                            <label for="valorPromocionalEdit"> Valor promocional: </label>
-                            <br>
-                            <input type="number" step="0.01" name="valorPromocionalEdit" min="0.01" id="valorPromocionalEdit">
-                        </div>
-
-
-                        <br> <br>
-
-                        <button type="submit" class="btn-editarOferta"> Atualizar produto </button>
-
-                    </form>
-                </div> -->
 
             </section>
 

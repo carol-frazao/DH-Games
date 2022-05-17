@@ -14,8 +14,8 @@ const admin = {
         next()
 
       } else {
-        // next()
-        res.render('naoEstaLogado', {title: 'Sessão expirada'})
+        next()
+        // res.render('naoEstaLogado', {title: 'Sessão expirada'})
       }
     },
 
@@ -53,16 +53,29 @@ const admin = {
 
     },
 
-  removeOferta: async function (req, res, next) {
-    console.log(req.params)
-      const idProduto = req.params.id
-      await Ofertas.destroy({
-        where: {
-          id: idProduto
-        }
-      })
-    res.redirect('/admin')
-    }
+    editarOferta: async function (req, res, next) {
+      console.log(req.params)
+        const idProduto = req.params.id
+        await Ofertas.update({
+          where: {
+            id: idProduto
+          }
+        })
+      res.redirect('/admin')
+    }, 
+    
+
+    removeOferta: async function (req, res, next) {
+      console.log(req.params)
+        const idProduto = req.params.id
+        await Ofertas.destroy({
+          where: {
+            id: idProduto
+          }
+        })
+      res.redirect('/admin')
+  },
+
 }
 
 

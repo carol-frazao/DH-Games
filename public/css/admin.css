@@ -173,12 +173,52 @@ span.span-lista {
     text-decoration: none;
     color: black;
 }
+.editar {
+    color: rgb(51, 124, 202);
+    font-size: 16px;
+    font-weight: bold;
+}
 
+.btn-editarOferta {
+    background-color: rgba(51, 124, 202, 0.64);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 17%;
+    height: 2rem;
+    font-size: 14px;
+    font-weight: 550;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: .3s;
+    flex-wrap: nowrap;
+}
 
+.btn-editarOferta:hover {
+    transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+}
+
+.editarOferta form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.editarOferta form input {
+    width: 40%;
+    height: 1.5rem;
+    margin-top: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 14px;
+}
 
 @media (max-width: 950px) {
 
-    .btn-ofertas {
+    .btn-ofertas, .btn-editarOferta {
         width: 25%;
         transition: .3s all;
     }
@@ -197,7 +237,7 @@ span.span-lista {
     }
     
 
-    .btn-ofertas {
+    .btn-ofertas, .btn-editarOferta {
         font-size: 11px;
     }
 
@@ -225,7 +265,7 @@ span.span-lista {
         transition: .3s all;
     }
 
-    .btn-ofertas {
+    .btn-ofertas, .btn-editarOferta {
         width: 50%;
     }
 
