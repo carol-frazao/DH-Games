@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/produtos.css">
+
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+        <main>
+
+            <section class="containerGame">
+                <div class="infoGame">
+                    <div class="imgGame">
+                        <img src='/img/games/viewsgames/free_Fire.jpg' alt="Free Fire IMG">
+                    </div>
+                    <div class="dadosDoGame">
+                        <span class="tituloGame"> <%= games.freeFire.tituloGame %> </span>
+                        <p class="descricaoGame">
+                            <%= games.freeFire.descricaoGame %>
+                        </p>
+                        <span class="valorGame"> <i>R$</i> <%= games.freeFire.valorGame %> </span>
+                        <br>
+                        <button class="btn-Game"> Comprar </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <%- include('../partials/chat') %>
+
+            <%- include('../partials/footer') %>
+
+</body>
+
+</html>

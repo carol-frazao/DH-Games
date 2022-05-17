@@ -1,0 +1,67 @@
+
+* { 
+    margin: 0; 
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eee;
+    width: 100%;
+}
+
+.containerGame{
+    margin: 2rem;
+}
+
+.infoGame {
+    display: flex;
+}
+
+.dadosDoGame {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+
+}
+
+.tituloGame {
+    font-weight: bold;
+    font-size: 25px;
+    color: #1c1c1c
+}
+
+.descricaoGame {
+    text-align: justify;
+    color: #1c1c1c
+}
+
+.valorGame {
+    font-weight: bold;
+    font-size: 40px;
+    color: #1c1c1c
+}
+
+.valorGame i {
+    font-size: 30px;
+}
+
+.btn-Game {
+    width: 50%;
+    background-color: rgb(61, 159, 61);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    height: 2rem;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-Game:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+}
