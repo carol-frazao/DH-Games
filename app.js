@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var app = express();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+const { rmSync } = require('fs');
 
 /*
 Para encriptar um dado:

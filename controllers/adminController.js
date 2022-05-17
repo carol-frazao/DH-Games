@@ -62,17 +62,20 @@ const admin = {
     
 
     postEditarOferta: async function(req, res, next) {
+
       console.log(req.params)
       console.log('enviando atualizações')
-      console.log(req.body)
-    
+
+      req?.file?.filename ? req.body.imagemProduto = req?.file?.filename : ""
+
       const idProduto = req.params.id
-    
+
       await Ofertas.update(req.body, {
         where: {
-          id: idProduto 
+          id: idProduto
         }
       })
+
       res.redirect('/admin')
     },
     

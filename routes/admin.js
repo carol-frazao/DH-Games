@@ -14,6 +14,8 @@ function verificaLoginAdmin(req, res, next) {
     res.redirect('/login')
     return
   }
+  res.cookie(req.session.usuarioLogado.nome, req.session.estaLogado)
+
   next()
 }
 
@@ -40,7 +42,7 @@ router.get('/removeOferta/:id', adminController.removeOferta)
 
 router.get('/editarOferta/:id', adminController.getEditarOferta)
 
-router.post('/editarOferta/:id', adminController.postEditarOferta)
+router.post('/editarOferta/:id', upload.single('imagemProduto'), adminController.postEditarOferta)
 
 
 module.exports = router 
