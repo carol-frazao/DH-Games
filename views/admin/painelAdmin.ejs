@@ -39,44 +39,51 @@
 
                     <span class="span-lista">Lista de produtos</span>
                     
-                    <div class="align-row" style="width: 100%;">
-                        <table class="tabelaProdutos">
-                            <tr>
-                                <th> ID </th>
-                                <th> Título do produto </th>
-                                <th> Valor original </th>
-                                <th> Valor promocional </th>
-                                <th> Desconto </th>
-                                <th> Ação </th>
-                            </tr>
+                    <div class="align-row" style="width: 100%;" class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> ID </th>
+                                    <th scope="col"> Título do produto </th>
+                                    <th scope="col"> Valor original </th>
+                                    <th scope="col"> Valor promocional </th>
+                                    <th scope="col"> Desconto </th>
+                                    <th scope="col"> Ação </th>
+                                </tr>
+                            </thead>
 
-                    <% obj.produtos.forEach(function(produto){ %>
-                            <tr>
-                                <td style="font-weight: bold">
-                                    <%= produto.id %>
-                                </td>
+                        <% obj.produtos.forEach(function(produto){ %>
+                            <tbody>
+                                <tr>
+                                    <td data-title="ID" class="idProduto">
+                                        <%= produto.id %>
+                                    </td>
 
-                                <td style="text-transform: uppercase">
-                                    <%= produto.nomeProduto %>
-                                </td>
+                                    <td data-title="Título do produto" style="text-transform: uppercase">
+                                        <%= produto.nomeProduto %>
+                                    </td>
 
-                                <td>
-                                    R$ <%= produto.valorOriginal %>
-                                </td>
+                                    <td data-title="Valor original">
+                                        R$ <%= produto.valorOriginal %>
+                                    </td>
 
-                                <td>
-                                    R$ <%= produto.valorPromocional %>
-                                </td>
+                                    <td data-title="Valor promocional">
+                                        R$ <%= produto.valorPromocional %>
+                                    </td>
 
-                                <td>
-                                    <%= Math.round(100-(produto.valorPromocional*100/produto.valorOriginal)) %>%
-                                </td>
+                                    <td data-title="Desconto">
+                                        <%= Math.round(100-(produto.valorPromocional*100/produto.valorOriginal)) %>%
+                                    </td>
 
-                                <td class="editar-remover">
-                                    <a href="/admin/editarOferta/<%= produto.id %>" class="acao" id="editarOferta"> Editar</a>
-                                    <a href="/admin/removeOferta/<%= produto.id %>" class="acao" id="removerOferta">Remover</a>
-                                </td>
-                            </tr>
+                                    <td>
+                                        <div class="editar-remover">
+                                        <a href="/admin/editarOferta/<%= produto.id %>" class="acao" id="editarOferta"> Editar</a>
+                                        <a href="/admin/removeOferta/<%= produto.id %>" class="acao" id="removerOferta">Remover</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
                             <% }) %>
 
                         </table>

@@ -1209,12 +1209,12 @@ div.security {
     -moz-transform: scale(1.1);
 }
        
-/* .chat strong {
+.chat strong {
     opacity: 0;
     width: 0;
     background-color: none;
     color: black;
-    text-align: center;
+    text-align: left;
     font-size: 14px;
     line-height: 17px;
     padding-right: 10px;
@@ -1228,7 +1228,7 @@ div.security {
     
 .chat:hover{
     border: solid 2px #e2bf23; 
-    width: 165px;
+    width: 230px;
     background: #eee;
 }
     
@@ -1248,4 +1248,4 @@ div.security {
         left: 0;
         width: initial;
     }
-} */
+}

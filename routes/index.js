@@ -1,5 +1,4 @@
 const express = require('express');
-const { envioOfertas } = require('../controllers/adminController');
 const router = express.Router();
 const {Usuario} = require('../models')
 const {Ofertas} = require('../models')
@@ -93,91 +92,5 @@ router.get('/suporte', function(req, res, next) {
   res.render('suporte', { title: 'Suporte ao cliente' });
 });
   
-
-// router.get('/erro', function(req, res, next) {
-//   res.render('paginaDeErro', {title: 'Erro'})
-// })
-
-
-//lista de produtos
-const listaProdutos = [
-  { 
-    id: '1',
-    imagemProduto:'https://live.staticflickr.com/65535/51857207563_5eea10a393_c.jpg',
-    nomeProduto: 'APEX LEGENDS',
-    valorOriginal: 79.99,
-    valorPromocional: 39.99,
-  },
-  { 
-    id: '2',
-    imagemProduto:'https://live.staticflickr.com/65535/51857779895_0994fdb48c_b.jpg',
-    nomeProduto: 'DISSIDIA FINAL',
-    valorOriginal: 69.99,
-    valorPromocional: 48.99,
-  },
-  { 
-    id: '3',
-    imagemProduto:'https://live.staticflickr.com/65535/51856166042_76fcd5c0dc_w.jpg',
-    nomeProduto: 'THE YAKUZA',
-    valorOriginal: 219.99,
-    valorPromocional: 87.99,
-  },
-  { 
-    id: '4',
-    imagemProduto:'https://live.staticflickr.com/65535/51857122981_93e6f30cdf_z.jpg',
-    nomeProduto: 'BATMAN ARKHAM',
-    valorOriginal: 89.99,
-    valorPromocional: 58.49,
-  },
-  { 
-    id: '5',
-    imagemProduto:'https://live.staticflickr.com/65535/51857779960_7d49728ba0_c.jpg',
-    nomeProduto: 'BATTLEFIELD 2042',
-    valorOriginal: 199.99,
-    valorPromocional: 119.99,
-  },
-  { 
-    id: '6',
-    imagemProduto:'https://live.staticflickr.com/65535/51857122921_58bfd88ec7_c.jpg',
-    nomeProduto: 'DARK SOULS III',
-    valorOriginal: 79.99,
-    valorPromocional: 43.99,
-  },
-  { 
-    id: '7',
-    imagemProduto:'https://live.staticflickr.com/65535/51857207528_fce20b3684_b.jpg',
-    nomeProduto: 'ASSASSINS CREED',
-    valorOriginal: 89.99,
-    valorPromocional: 62.99,
-  },
-  { 
-    id: '8',
-    imagemProduto:'https://live.staticflickr.com/65535/51857207418_b10aac209b_b.jpg',
-    nomeProduto: 'SONIC COLORS',
-    valorOriginal: 199.99,
-    valorPromocional: 99.99,
-  },
-  { 
-    id: '9',
-    imagemProduto:'https://live.staticflickr.com/65535/51856166127_0d148f4cc9_c.jpg',
-    nomeProduto: 'DEMON SLAYER',
-    valorOriginal: 269.99,
-    valorPromocional: 134.99,
-  },
-]
-
-
-
-
-// router.get('/:idProduto', function (req, res) {
-//   const { idProduto } = req.params
-
-//   const produto = listaProdutos.find(function (produto) {
-//     return produto.id == idProduto
-//   })
-
-// })
-// fim da lista de produtos
-
 
 module.exports = router;

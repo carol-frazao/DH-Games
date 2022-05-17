@@ -49,7 +49,7 @@ main {
     height: 2.2rem;
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 100%;
 }
 
 .tituloSessao span {
@@ -118,12 +118,6 @@ main {
     -webkit-transform: scale(1.05);
 }
 
-
-.tabelaProdutos {
-    text-align: center;
-    width: 50%;
-}
-
 span.span-lista {
     font-weight: bold;
     font-size: 16px;
@@ -131,16 +125,36 @@ span.span-lista {
     color: rgb(218, 145, 8);
 }
 
-.tabelaProdutos th {
-    background-color:  #33333311;
-    padding: 5px;
-    width: auto;
+/*-------tabela produtos--------*/
+
+table {
+    text-align: center;
+    width: 80%;
+    border-collapse: collapse;
+    min-height: .01%;
+    overflow-x: auto;
+
 }
 
-.tabelaProdutos td {
-    padding: 5px;
-    background-color: #33333311;
+table thead {
+    display: table-header-group;
+}
+
+table th, td{
+    background-color:  #33333311;
+    border: solid 1px rgba(0, 0, 0, 0.137);
+    padding: 10px;
     width: auto;
+    /* vertical-align: middle; */
+}
+
+table tbody tr td {
+    display: table-cell;
+    position: relative;
+}
+
+div.table-responsive {
+    overflow-x: scroll;
 }
 
 .acao {
@@ -149,36 +163,142 @@ span.span-lista {
 
 #editarOferta {
     background-color: rgba(51, 124, 202, 0.474);
+    border-radius: 10px;
+    box-shadow: #33333379 1px 1px 1px 1px;
 }
 
 #removerOferta {
     background-color: rgba(226, 43, 86, 0.442);
+    border-radius: 10px;
+    box-shadow: #33333379 1px 1px 1px 1px;
 }
 
 #editarOferta:hover {
-    font-weight: 700;
+    font-weight: 550;
+    color: #292929;
 }
 
 #removerOferta:hover {
-    font-weight: 700;
+    font-weight: 550;
+    color: #292929;
 }
 
 .editar-remover {
     display: flex;
-    flex-direction: column;
-    gap: 3px;
+    gap: 12px;
+    justify-content: center;
 }
 
 .editar-remover a {
     text-decoration: none;
     color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    transition: .1s all;
+    text-align: center;
 }
+
 .editar {
     color: rgb(51, 124, 202);
     font-size: 16px;
     font-weight: bold;
 }
 
+.idProduto{
+    font-weight: bold
+}
+
+@media all and (max-width: 765px) {
+
+    table {
+        width: 100%;
+    }
+
+    table tbody tr td {
+        display: block;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    table tbody {
+        border: 1px solid rgba(40, 39, 39, 0.5);
+    }
+
+    table thead {
+        display: none;
+    }
+
+    #editarOferta {
+        width: 50%;
+        margin-left: 1rem;
+    }
+
+    #removerOferta {
+        width: 50%;
+        margin-right: 10px;
+    }
+
+    .editar-remover {
+        gap: 25px;
+    }
+
+    .editar-remover a {
+        padding: 2px;
+    }
+
+    .editar-remover a:hover {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+    }
+
+    table tbody tr td {
+        display: block;
+        text-align: right;
+        padding-right: 1rem;
+        font-size: 14px;
+    }
+
+    table tbody tr td:before {
+        content: attr(data-title);
+        position: absolute;
+        left: 1rem;
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: initial;
+    }
+
+    .idProduto {
+        font-weight: 500
+    }
+}
+
+@media all and (max-width: 450px) {
+
+    .editar-remover a {
+        font-size: 13px;
+    }
+
+    #editarOferta {
+        width: 50%;
+        margin-left: 10px;
+    }
+
+    #removerOferta {
+        margin-right: 6px;
+    }
+
+    table tbody tr td {
+        font-size: 12px;
+    }
+
+    table tbody tr td:before {
+        font-size: 12px;
+    }
+}
+
+/* form */
 .btn-editarOferta {
     background-color: rgba(51, 124, 202, 0.64);
     color: white;
