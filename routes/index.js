@@ -102,7 +102,11 @@ router.get('/produtos/wildRift', function(req, res, next) {
 })
 
 router.get('/produtos/pubgMobile', function(req, res, next) {
-  res.render('./produtos/pubgMobile', {title: 'pubgMobile', games})
+  res.render('./produtos/pubgMobile', {title: 'PUBG Royale', games})
+})
+
+router.get('/produtos/clashRoyale', function(req, res, next) {
+  res.render('./produtos/clashRoyale', {title: 'Clash Royale', games})
 })
 
 const games = {
@@ -123,11 +127,18 @@ const games = {
 
   pubgMobile: {
     img: 'https://ibb.co/7rJKHWn',
-    tituloGame: 'Pubg Mobile',
+    tituloGame: 'PUBG Mobile',
     descricaoGame: 'PUBG Mobile é a versão para Android e iOS de PlayerUnknowns Battlegrounds, jogo de sobrevivência no estilo Battle Royale que faz sucesso no PC e Xbox One. Completamente adaptado para telas de toque, o game é gratuito para jogar e conta com as principais modalidades da versão principal, assim como ajustes gráficos e sistema de missões diárias.',
     valorGame: '49,99',
+  },
 
+  clashRoyale: {
+    img: 'https://ibb.co/7rJKHWn',
+    tituloGame: 'Clash Royale',
+    descricaoGame: 'Clash Royale consiste em um jogo de estratégia no qual se lutará contra um adversário aleatório. O objetivo é destruir as torres inimigas usando cartas que poderão ser desbloqueadas ao longo do tempo, algumas delas são trazidas de outro jogo da Supercell: o Clash of Clans.',
+    valorGame: '39,99',
   }
+
 
 }
 
