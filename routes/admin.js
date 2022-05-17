@@ -3,6 +3,7 @@ const router = express.Router()
 const {Ofertas} = require('../models')
 const adminController = require('../controllers/adminController')
 const multer = require('multer')
+const admin = require('../controllers/adminController')
 
 const upload = multer({
   dest: 'public/uploads/'
@@ -26,16 +27,10 @@ router.get('/envioOfertas', function(req, res, next) {
 
 router.get('/removeOferta/:id', adminController.removeOferta)
 
-router.get('/editarOferta/:id', async function(req, res, next) {
-  const oferta = await Ofertas.findByPk(req.params.id)
-  if(oferta) {
-    res.render('./admin/editarOferta', {title: 'Editar oferta'})
-  } else {
-    res.render('paginaDeErro', {title: 'Ops...'})
-  }
-})
 
-router.post('/editarOferta/:id', adminController.editarOferta)
+router.get('/editarOferta/:id', adminController.getEditarOferta)
+
+router.post('/editarOferta/:id', adminController.postEditarOferta)
 
 // router.get('/editarOferta/:id', adminController.editarOferta)
 

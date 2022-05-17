@@ -14,8 +14,8 @@ const admin = {
         next()
 
       } else {
-        next()
-        // res.render('naoEstaLogado', {title: 'Sessão expirada'})
+        res.render('naoEstaLogado', {title: 'Sessão expirada'})
+        // next()
       }
     },
 
@@ -53,16 +53,38 @@ const admin = {
 
     },
 
-    editarOferta: async function (req, res, next) {
+    getEditarOferta: async function(req, res, next) {
+      const idProduto = req.params.id
+      const oferta = await Ofertas.findByPk(idProduto)
+      const obj = {
+        oferta: oferta,
+        title: 'Editar oferta'
+      }
+    
+      if(!oferta) {
+        res.render('paginaDeErro', {title: 'Ops...'})
+        return
+      }
+    
+      res.render('./admin/editarOferta', obj)
+     
+      console.log(obj.oferta)
+    
+    },
+    
+
+    postEditarOferta: async function(req, res, next) {
       console.log(req.params)
-        const idProduto = req.params.id
-        await Ofertas.update({
-          where: {
-            id: idProduto
-          }
-        })
+
+      const idProduto = req.params.id
+    
+      await Ofertas.update(req.body, {
+        where: {
+          id: idProduto
+        }
+      })
       res.redirect('/admin')
-    }, 
+    },
     
 
     removeOferta: async function (req, res, next) {
