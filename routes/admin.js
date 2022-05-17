@@ -9,8 +9,18 @@ const upload = multer({
   dest: 'public/uploads/'
 })
 
-router.get('/', adminController.validaLogin, async function (req, res, next) {
-  // console.log("usuario logado", await )
+function verificaLoginAdmin(req, res, next) {
+  if(!req.session.estaLogado) {
+    res.redirect('/login')
+    return
+  }
+  next()
+}
+
+router.use(verificaLoginAdmin)
+
+router.get('/', async function (req, res, next) {
+  console.log(admin)
 
   const obj = {
     produtos: await Ofertas.findAll()
@@ -32,11 +42,5 @@ router.get('/editarOferta/:id', adminController.getEditarOferta)
 
 router.post('/editarOferta/:id', adminController.postEditarOferta)
 
-// router.get('/editarOferta/:id', adminController.editarOferta)
-
-
-// router.get('/admin', function (req, res) {
-//   res.render('./admin/painelAdmin', { listaOfertas: listaOfertas, title: 'Painel do admin'})
-// })
 
 module.exports = router 

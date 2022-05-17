@@ -7,7 +7,6 @@ var session = require('express-session');
 var app = express();
 var bodyParser = require('body-parser')
 
-var produtos = require('./controllers/adminController').produtos
 /*
 Para encriptar um dado:
 let hash = bcrypt.hashSync('minhaSenha!');
@@ -19,8 +18,6 @@ bcrypt.compareSync("outraSenha", hash); // false
 
 middleware p adicionar dados de login
 */
-
-
 
 
 // view engine setup
@@ -38,7 +35,7 @@ app.use(bodyParser.json())
 //session
 app.use(session({
 	secret: 'dhgames123',
-	resave: false,
+	resave: true,
 	saveUninitialized: true, 
 }));
 app.use(function adicionaUserNoRender(req, res, next) {

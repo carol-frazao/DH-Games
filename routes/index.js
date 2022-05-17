@@ -41,6 +41,7 @@ router.post('/login', async function validaLogin (req, res, next) {
       req.session.estaLogado = true
       req.session.usuarioLogado = usuarioLogin
       res.redirect('/')
+      // next()
     } if(usuarioLogin && usuarioLogin.senha != req.body.senha) {
       res.redirect('/login/dadosIncorretos')
     } if(!usuarioLogin) {

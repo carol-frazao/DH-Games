@@ -33,19 +33,19 @@
                     <div>
                         <label for="nomeProduto"> Título do produto: </label>
                         <br>
-                        <input type="text" name="nomeProduto" id="nomeProduto">
+                        <input type="text" name="nomeProduto" id="nomeProduto" value="<%= oferta.nomeProduto %>" required>
                     </div>
 
                     <div>
                         <label for="valorOriginal"> Valor original: </label>
                         <br>
-                        <input type="number" step="0.01" name="valorOriginal" min="0.01" id="valorOriginal">
+                        <input type="number" step="0.01" name="valorOriginal" min="0.01" id="valorOriginal" value="<%= oferta.valorOriginal %>" required>
                     </div>
 
                     <div>
                         <label for="valorPromocional"> Valor promocional: </label>
                         <br>
-                        <input type="number" step="0.01" name="valorPromocional" min="0.01" id="valorPromocional">
+                        <input type="number" step="0.01" name="valorPromocional" min="0.01" id="valorPromocional" value="<%= oferta.valorPromocional %>" required>
                     </div>
 
                     <button type="submit" class="btn-editarOferta"> Editar produto </button>

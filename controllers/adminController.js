@@ -7,18 +7,6 @@ const upload = multer({
 
 const admin = {
 
-    validaLogin: function(req, res, next) {
-    console.log('admin')
-    console.log("req.session.estaLogado", req?.session?.estaLogado)
-      if(req.session.estaLogado) {
-        next()
-
-      } else {
-        res.render('naoEstaLogado', {title: 'Sessão expirada'})
-        // next()
-      }
-    },
-
     envioOfertas: async function (req, res, next) {
       req.body.imagem = req.file.filename
       console.log("req.file", req.file)
@@ -75,12 +63,14 @@ const admin = {
 
     postEditarOferta: async function(req, res, next) {
       console.log(req.params)
-
+      console.log('enviando atualizações')
+      console.log(req.body)
+    
       const idProduto = req.params.id
     
       await Ofertas.update(req.body, {
         where: {
-          id: idProduto
+          id: idProduto 
         }
       })
       res.redirect('/admin')
