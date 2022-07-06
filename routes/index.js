@@ -10,7 +10,6 @@ router.get('/', async function(req, res, next) {
     produtos: await Ofertas.findAll()
   }
   res.render('index', { title: 'DH Games', obj});
-  //console.log(obj.produtos)
 });
 
 /* GET seguranca-garantida page. */

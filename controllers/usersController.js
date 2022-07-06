@@ -2,8 +2,6 @@ const { Usuario } = require('../models')
 const { validationResult } = require('express-validator')
 const app = require('../app')
 
-
-
 const users =  {
 
         login: (req, res, next) => {
@@ -23,7 +21,6 @@ const users =  {
 
 
         registraUsuario: async function (req, res, next)  {
-            // res.send(req.body.nome + req.body.email)
             console.log("Controller registraUsuario: ", req.body)
 
             const usuario = await Usuario.findOne( {

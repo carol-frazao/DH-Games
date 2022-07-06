@@ -22,23 +22,22 @@ const admin = {
           upload.single('imagemProduto')
           try {
             console.log("body oferta", req.body)
-              Ofertas.create({
-                  imagemProduto: req.body.imagem,
-                  nomeProduto: req.body.nomeProduto,
-                  valorOriginal: req.body.valorOriginal,
-                  valorPromocional: req.body.valorPromocional
-              })
-              res.redirect('/admin')
+            Ofertas.create({
+                imagemProduto: req.body.imagem,
+                nomeProduto: req.body.nomeProduto,
+                valorOriginal: req.body.valorOriginal,
+                valorPromocional: req.body.valorPromocional
+            })
+            res.redirect('/admin')
           } catch (error) {
               console.log("-------------------------------");
               console.log(">>>> ERRO: ", JSON.stringify(error?.parent?.sqlMessage)); //Sempre use isso para saber o erro do sequelize
               console.log("-------------------------------");
           }
     
-      } else {
-          res.send('Este produto já está entre as ofertas')
-      } 
-
+        } else {
+            res.send('Este produto já está entre as ofertas')
+        } 
     },
 
     getEditarOferta: async function(req, res, next) {

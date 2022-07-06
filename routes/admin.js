@@ -28,7 +28,6 @@ router.get('/', async function (req, res, next) {
     produtos: await Ofertas.findAll()
   }
   res.render('./admin/painelAdmin', { title: 'Painel do admin', obj});
-  // console.log("produtos admin", obj.produtos)
 })
 
 router.post('/envioOfertas',  upload.single('imagemProduto'), adminController.envioOfertas)
