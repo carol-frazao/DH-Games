@@ -4,12 +4,10 @@ const {Usuario} = require('../models')
 const {Ofertas} = require('../models')
 
 /* GET home page. */
-router.get('/', async function(req, res, next) {
+router.get('/', function(req, res, next) {
   console.log('index')
-  const obj = {
-    produtos: await Ofertas.findAll()
-  }
-  res.render('index', { title: 'DH Games', obj});
+  
+  res.render('index', { title: 'DH Games'});
 });
 
 /* GET seguranca-garantida page. */
