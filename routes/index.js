@@ -92,57 +92,5 @@ router.get('/suporte', function(req, res, next) {
   res.render('suporte', { title: 'Suporte ao cliente' });
 });
 
-//view games
-router.get('/produtos/freeFire', function(req, res, next) {
-  res.render('./produtos/free-fire', {title: 'Free Fire', games})
-})
-
-router.get('/produtos/wildRift', function(req, res, next) {
-  res.render('./produtos/wildRift', {title: 'Wild Rift', games})
-})
-
-router.get('/produtos/pubgMobile', function(req, res, next) {
-  res.render('./produtos/pubgMobile', {title: 'PUBG Royale', games})
-})
-
-router.get('/produtos/clashRoyale', function(req, res, next) {
-  res.render('./produtos/clashRoyale', {title: 'Clash Royale', games})
-})
-
-//teste, temporario
-const games = {
-
-  freeFire: {
-    img: 'https://ibb.co/7rJKHWn',
-    tituloGame: 'Free Fire',
-    descricaoGame: 'Free Fire é um jogo mobile de tiro no estilo Battle Royale, ou seja, todos contra todos. Disponível para Android e iOS (iPhone), Free Fire coloca até 50 jogadores numa ilha e    estes precisam encontrar, rapidamente, armas e equipamentos para tentar sobreviver e    eliminar outros jogadores. ',
-    valorGame: '19,99',
-  },
-
-  wildRift: {
-    img: 'https://ibb.co/7rJKHWn',
-    tituloGame: 'Wild Rift',
-    descricaoGame: 'Mergulhe no Wild Rift: a experiência de MOBA 5v5 cheia de habilidades e estratégias de League of Legends (e tudo feito do zero para dispositivos móveis e consoles!). Com controles novos e partidas aceleradas, jogadores de todos os níveis podem se unir aos amigos, escolher seus Campeões e fazer grandes jogadas. ',
-    valorGame: '29,99',
-  },
-
-  pubgMobile: {
-    img: 'https://ibb.co/7rJKHWn',
-    tituloGame: 'PUBG Mobile',
-    descricaoGame: 'PUBG Mobile é a versão para Android e iOS de PlayerUnknowns Battlegrounds, jogo de sobrevivência no estilo Battle Royale que faz sucesso no PC e Xbox One. Completamente adaptado para telas de toque, o game é gratuito para jogar e conta com as principais modalidades da versão principal, assim como ajustes gráficos e sistema de missões diárias.',
-    valorGame: '49,99',
-  },
-
-  clashRoyale: {
-    img: 'https://ibb.co/7rJKHWn',
-    tituloGame: 'Clash Royale',
-    descricaoGame: 'Clash Royale consiste em um jogo de estratégia no qual se lutará contra um adversário aleatório. O objetivo é destruir as torres inimigas usando cartas que poderão ser desbloqueadas ao longo do tempo, algumas delas são trazidas de outro jogo da Supercell: o Clash of Clans.',
-    valorGame: '39,99',
-  }
-
-
-}
-
   
-
 module.exports = router;

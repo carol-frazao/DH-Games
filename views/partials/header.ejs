@@ -24,21 +24,23 @@
             </a>
 
             <% if(estaLogado) { %>
-            <a href="/admin" id="loginHidden">
-                <img loading="lazy" src="/assets/img/icons/person_white_24dp.svg" class="icon-overheader"> Olá, <%= usuarioLogado.nome %>
-            </a>
+                <a href="/admin" id="loginHidden">
+                    <img loading="lazy" src="/assets/img/icons/person_white_24dp.svg" class="icon-overheader"> Olá, <%=
+                        usuarioLogado.nome %>
+                </a>
 
-            <a href="/logout" class="icon-overheader" id="logoutIcon">
-                <img src="/assets/img/icons/logout_white_24dp.svg" alt="">
-            </a>
+                <a href="/logout" class="icon-overheader" id="logoutIcon">
+                    <img src="/assets/img/icons/logout_white_24dp.svg" alt="">
+                </a>
 
-            <% } else { %>
-                
-            <a href="/login/" id="loginHidden">
-                <img loading="lazy" src="/assets/img/icons/person_white_24dp.svg" class="icon-overheader"> Login/cadastro
-            </a>
-            <% } %>
-        
+                <% } else { %>
+
+                    <a href="/login/" id="loginHidden">
+                        <img loading="lazy" src="/assets/img/icons/person_white_24dp.svg" class="icon-overheader">
+                        Login/cadastro
+                    </a>
+                    <% } %>
+
         </div>
 
         <div class="country">
@@ -71,122 +73,179 @@
         </div>
 
         <% if(estaLogado) { %>
-        <div class="logado">
-        <% } else { %>
-        <div class="login">
-        <% } %>            
+            <div class="logado">
+                <% } else { %>
+                    <div class="login">
+                        <% } %>
 
-            <% if(estaLogado) { %>
-            <a href="/admin" id="nomeUsuario" class="userLogado"> 
-                <img src="/assets/img/icons/login-icon.png" class="icon-header">
-                Olá, <%= usuarioLogado.nome %> 
-            </a>
-            
-            <a href="/logout" class="login userLogado" id="logout">
-                <img src="/assets/img/icons/logout_white_24dp.svg" alt="">
-                Sair
-            </a>
+                            <% if(estaLogado) { %>
+                                <a href="/admin" id="nomeUsuario" class="userLogado">
+                                    <img src="/assets/img/icons/login-icon.png" class="icon-header">
+                                    Olá, <%= usuarioLogado.nome %>
+                                </a>
 
-            <% } else { %>
+                                <a href="/logout" class="login userLogado" id="logout">
+                                    <img src="/assets/img/icons/logout_white_24dp.svg" alt="">
+                                    Sair
+                                </a>
 
-            <a href="/login/" >
-                <img src="/assets/img/icons/login-icon.png" class="icon-header">
-                Faça seu login <br> ou cadastre-se
-            </a>
+                                <% } else { %>
 
-            <% } %>
+                                    <a href="/login/">
+                                        <img src="/assets/img/icons/login-icon.png" class="icon-header">
+                                        Faça seu login <br> ou cadastre-se
+                                    </a>
 
-        </div>
+                                    <% } %>
 
-        <div class="shopping-cart">
-            <a href="/txt/carrinho.txt">
-                <img src="/assets/img/icons/outline-shopping-cart.png" alt="Carrinho">
-            </a>
-        </div>
+                    </div>
 
-        <input type="checkbox" id="check-nav">
-        <label for="check-nav" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
+                    <div class="shopping-cart">
+                        <a href="/txt/carrinho.txt">
+                            <img src="/assets/img/icons/outline-shopping-cart.png" alt="Carrinho">
+                        </a>
+                    </div>
 
-        <nav class="categorias-hidden">
-            <div>
-                <input type="checkbox" id="check-mobile">
-                <label for="check-mobile" class="checkbtn2"> JOGOS MOBILE
-                    <i class="fas fa-bars"></i>
-                </label>
-                <div>
-                    <a href="/produtos/freeFire">Free Fire</a>
-                    <a href="/produtos/wildRift">Wild Rift</a>
-                    <a href="/produtos/pubgMobile">Pubg Mobile</a>
-                    <a href="/produtos/clashRoyale">Clash Royale</a>
-                    <a href="#">Mobile Legends</a>
-                    <p><a href="#"> Ver todos </a></p>
-                </div>
-            </div>
+                    <input type="checkbox" id="check-nav">
+                    <label for="check-nav" class="checkbtn">
+                        <i class="fas fa-bars"></i>
+                    </label>
 
-            <div>
-                <input type="checkbox" id="check-jogosPC">
-                <label for="check-jogosPC" class="checkbtn2"> JOGOS PC
-                    <i class="fas fa-bars"></i>
-                </label>
-                <div>
-                    <a href="#">CS:GO</a>
-                    <a href="#">Fortnite</a>
-                    <a href="#">Call of Duty</a>
-                    <a href="#">Grand Theft Auto</a>
-                    <a href="#">League of Legends</a>
-                    <a href="#"> Ver todos </a>
-                </div>
-            </div>
+                    <nav class="categorias-hidden">
 
-            <div>
-                <input type="checkbox" id="check-playstation">
-                <label for="check-playstation" class="checkbtn2"> PLAYSTATION
-                    <i class="fas fa-bars"></i>
-                </label>
-                <div>
-                    <a href="#">FIFA</a>
-                    <a href="#">God of War</a>
-                    <a href="#">Final Fantasy</a>
-                    <a href="#">Street Figther</a>
-                    <a href="#">Gift Card Digital</a>
-                    <a href="#"> Ver todos </a>
-                </div>
-            </div>
+                        <div>
 
-            <div>
-                <input type="checkbox" id="check-xbox">
-                <label for="check-xbox" class="checkbtn2"> XBOX
-                    <i class="fas fa-bars"></i>
-                </label>
-                <div>
-                    <a href="#">Diablo</a>
-                    <a href="#">Fortnite</a>
-                    <a href="#">Battlefield</a>
-                    <a href="#">Assassin's Creed</a>
-                    <a href="#">Gift Card Digital</a>
-                    <a href="#"> Ver todos </a>
-                </div>
-            </div>
+                            <input type="checkbox" id="check-mobile">
+                            <label for="check-mobile" class="checkbtn2"> JOGOS MOBILE
+                                <i class="fas fa-bars"></i>
+                            </label>
 
-            <div>
-                <input type="checkbox" id="check-steam">
-                <label for="check-steam" class="checkbtn2"> STEAM
-                    <i class="fas fa-bars"></i>
-                </label>
-                <div>
-                    <a href="#">DOTA</a>
-                    <a href="#">Destiny</a>
-                    <a href="#">Dark Souls</a>
-                    <a href="#">Counter Strike</a>
-                    <a href="#">Gift Card Digital</a>
-                    <a href="#"> Ver todos </a>
-                </div>
-            </div>
+                            <div>
+                                <a href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR&gl=US"
+                                    target="_blank">Free Fire</a>
 
-        </nav>
+                                <a href="https://wildrift.leagueoflegends.com/pt-br/" target="_blank">Wild Rift</a>
 
+                                <a href="https://www.pubgmobile.com/pt/home.shtml" target="_blank">Pubg Mobile</a>
+
+                                <a href="https://play.google.com/store/apps/details?id=com.supercell.clashroyale&hl=pt_BR&gl=US"
+                                    target="_blank">Clash Royale</a>
+
+                                <a href="https://play.google.com/store/apps/details?id=com.mobile.legends&hl=pt_BR&gl=US"
+                                    target="_blank"> Mobile Legends</a>
+
+                                <a onclick="clickAll()"> Ver todos </a>
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <input type="checkbox" id="check-jogosPC">
+                            <label for="check-jogosPC" class="checkbtn2"> JOGOS PC
+                                <i class="fas fa-bars"></i>
+                            </label>
+
+                            <div>
+                                <a href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/"
+                                    target="_blank">CS:GO</a>
+
+                                <a href="https://www.epicgames.com/fortnite/pt-BR/home" target="_blank">Fortnite</a>
+
+                                <a href="https://www.callofduty.com/br/pt/modernwarfare/pc" target="_blank">Call of
+                                    Duty</a>
+
+                                <a href="https://www.rockstargames.com/br/gta-v" target="_blank">Grand Theft Auto</a>
+
+                                <a href="https://www.leagueoflegends.com/pt-br/" target="_blank">League of Legends</a>
+
+                                <a onclick="clickAll()"> Ver todos </a>
+
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <input type="checkbox" id="check-playstation">
+                            <label for="check-playstation" class="checkbtn2"> PLAYSTATION <i class="fas fa-bars"></i>
+                            </label>
+
+                            <div>
+                                <a href="https://store.playstation.com/pt-br/concept/10003393" target="_blank">FIFA</a>
+
+                                <a href="https://store.playstation.com/pt-br/product/UP9000-CUSA01623_00-0000GODOFWAR3PS4"
+                                    target="_blank">God of War</a>
+
+                                <a href="https://store.playstation.com/pt-br/product/UP0082-CUSA01633_00-FFXVROYALEDITION"
+                                    target="_blank">Final Fantasy</a>
+
+                                <a href="https://store.playstation.com/pt-br/product/UP0102-CUSA01200_00-SF5FULLGAME00000"
+                                    target="_blank">Street Figther</a>
+
+                                <a href="https://www.zero3games.com.br/loja/gift-card-playstation-store-reais"
+                                    target="_blank">Gift Card Digital</a>
+
+                                <a onclick="clickAll()"> Ver todos </a>
+
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <input type="checkbox" id="check-xbox">
+                            <label for="check-xbox" class="checkbtn2"> XBOX
+                                <i class="fas fa-bars"></i>
+                            </label>
+
+                            <div>
+                                <a href="https://www.xbox.com/pt-BR/games/store/diablo-iii-eternal-collection/BZ84XLQBRHTG"
+                                    target="_blank">Diablo</a>
+
+                                <a href="https://www.xbox.com/pt-BR/play/games/fortnite/BT5P2X999VH2"
+                                    target="_blank">Fortnite</a>
+
+                                <a href="https://marketplace.xbox.com/pt-br/Product/Battlefield-4/66acd000-77fe-1000-9115-d802454109ba"
+                                    target="_blank"> Battlefield</a>
+
+                                <a href="https://www.xbox.com/pt-BR/games/store/assassins-creed/BZC8PXK6S00G"
+                                    target="_blank">Assassin's Creed</a>
+
+                                <a href="https://www.zero3games.com.br/loja/xbox-cartao-presente-credito-gift-card-brasil"
+                                    target="_blank">Gift Card Digital</a>
+
+                                <a onclick="clickAll()"> Ver todos </a>
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <input type="checkbox" id="check-steam">
+                            <label for="check-steam" class="checkbtn2"> STEAM
+                                <i class="fas fa-bars"></i>
+                            </label>
+
+                            <div>
+                                <a href="https://store.steampowered.com/app/570/Dota_2/?l=portuguese"
+                                    target="_blank">DOTA</a>
+
+                                <a href="https://store.steampowered.com/app/1085660/Destiny_2/?l=brazilian"
+                                    target="_blank">Destiny 2</a>
+
+                                <a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/" target="_blank">Dark
+                                    Souls</a>
+
+                                <a href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/?l=portuguese"
+                                    target="_blank">Counter Strike</a>
+
+                                <a href="https://www.zero3games.com.br/loja/gift-card-steam" target="_blank">Gift Card
+                                    Digital</a>
+
+                                <a onclick="clickAll()"> Ver todos </a>
+
+                            </div>
+                        </div>
+
+                    </nav>
     </section>
 
     <hr id="divider-to-categories">
@@ -196,58 +255,78 @@
 
             <ul class="categorias">
 
-                <li><a>Jogos Mobile</a>
+                <li><a> JOGOS MOBILE </a>
                     <ul class="sub-categorias">
-                        <li><a href="/produtos/freeFire">free fire</a></li>
-                        <li><a href="/produtos/wildRift">Wild rift</a></li>
-                        <li><a href="/produtos/pubgMobile">PUBG mobile</a></li>
-                        <li><a href="/produtos/clashRoyale">clash royale</a></li>
-                        <li><a href="#">mobile legends</a></li>
-                        <a href="#"> Ver todos </a>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR&gl=US"
+                                target="_blank"> Free Fire </a></li>
+                        <li><a href="https://wildrift.leagueoflegends.com/pt-br/" target="_blank"> Wild Rift </a></li>
+                        <li><a href="https://www.pubgmobile.com/pt/home.shtml" target="_blank">PUBG mobile</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.supercell.clashroyale&hl=pt_BR&gl=US"
+                                target="_blank">clash royale</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.mobile.legends&hl=pt_BR&gl=US"
+                                target="_blank">mobile legends</a></li>
+                        <a onclick="clickAll()"> Ver todos </a>
                     </ul>
                 </li>
 
-                <li><a>Jogos pc</a>
+                <li><a> JOGOS PC </a>
                     <ul class="sub-categorias">
-                        <li><a href="#">CS:GO</a></li>
-                        <li><a href="#">Fortnite</a></li>
-                        <li><a href="#">Call of Duty</a></li>
-                        <li><a href="#">Grand Theft Auto</a></li>
-                        <li><a href="#">League of Legends</a></li>
-                        <a href="#"> Ver todos </a>
+                        <li><a href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/"
+                                target="_blank"> CS:GO </a></li>
+                        <li><a href="https://www.epicgames.com/fortnite/pt-BR/home" target="_blank">Fortnite</a></li>
+                        <li><a href="https://www.callofduty.com/br/pt/modernwarfare/pc" target="_blank">Call of Duty</a>
+                        </li>
+                        <li><a href="https://www.rockstargames.com/br/gta-v" target="_blank">Grand Theft Auto</a></li>
+                        <li><a href="https://www.leagueoflegends.com/pt-br/" target="_blank">League of Legends</a></li>
+                        <a onclick="clickAll()"> Ver todos </a>
                     </ul>
                 </li>
 
-                <li><a>Playstation</a>
+                <li><a> PLAYSTATION </a>
                     <ul class="sub-categorias">
-                        <li><a href="#">FIFA</a></li>
-                        <li><a href="#">God of war</a></li>
-                        <li><a href="#">Final Fantasy</a></li>
-                        <li><a href="#">Street Fighter</a></li>
-                        <li><a href="#">Gift Card Digital</a></li>
-                        <a href="#"> Ver todos </a>
+                        <li><a href="https://store.playstation.com/pt-br/concept/10003393" target="_blank"> FIFA </a>
+                        </li>
+                        <li> <a href="https://store.playstation.com/pt-br/product/UP9000-CUSA01623_00-0000GODOFWAR3PS4"
+                                target="_blank">God of war</a></li>
+                        <li><a href="https://store.playstation.com/pt-br/product/UP0082-CUSA01633_00-FFXVROYALEDITION"
+                                target="_blank">Final Fantasy</a></li>
+                        <li><a href="https://store.playstation.com/pt-br/product/UP0102-CUSA01200_00-SF5FULLGAME00000"
+                                target="_blank">Street Fighter</a></li>
+                        <li><a href="https://www.zero3games.com.br/loja/gift-card-playstation-store-reais"
+                                target="_blank">Gift Card Digital</a></li>
+                        <a onclick="clickAll()"> Ver todos </a>
                     </ul>
                 </li>
 
-                <li><a>xbox</a>
+                <li><a> XBOX </a>
                     <ul class="sub-categorias">
-                        <li><a href="#">Diablo</a></li>
-                        <li><a href="#">Fortnite</a></li>
-                        <li><a href="#">Battlefield</a></li>
-                        <li><a href="#">Assassin's Creed</a></li>
-                        <li><a href="#">Gift Card Digital</a></li>
-                        <a href="#"> Ver todos </a>
+                        <li><a href="https://www.xbox.com/pt-BR/games/store/diablo-iii-eternal-collection/BZ84XLQBRHTG"
+                                target="_blank">Diablo III</a></li>
+                        <li><a href="https://www.xbox.com/pt-BR/play/games/fortnite/BT5P2X999VH2"
+                                target="_blank">Fortnite</a></li>
+                        <li><a href="https://marketplace.xbox.com/pt-br/Product/Battlefield-4/66acd000-77fe-1000-9115-d802454109ba"
+                                target="_blank">Battlefield</a></li>
+                        <li><a href="https://www.xbox.com/pt-BR/games/store/assassins-creed/BZC8PXK6S00G"
+                                target="_blank">Assassin's Creed</a></li>
+                        <li><a href="https://www.zero3games.com.br/loja/xbox-cartao-presente-credito-gift-card-brasil"
+                                target="_blank">Gift Card Digital</a></li>
+                        <a onclick="clickAll()"> Ver todos </a>
                     </ul>
                 </li>
 
-                <li><a>steam</a>
+                <li><a> STEAM </a>
                     <ul class="sub-categorias">
-                        <li><a href="#">Dota</a></li>
-                        <li><a href="#">Destiny</a></li>
-                        <li><a href="#">Dark Souls</a></li>
-                        <li><a href="#">Counter Strike</a></li>
-                        <li><a href="#">Gift Card Digital</a></li>
-                        <a href="#"> Ver todos </a>
+                        <li><a href="https://store.steampowered.com/app/570/Dota_2/?l=portuguese"
+                                target="_blank">Dota</a></li>
+                        <li> <a href="https://store.steampowered.com/app/1085660/Destiny_2/?l=brazilian"
+                                target="_blank">Destiny 2</a></li>
+                        <li><a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/" target="_blank">Dark
+                                Souls</a></li>
+                        <li><a href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/?l=portuguese"
+                                target="_blank">Counter Strike</a></li>
+                        <li><a href="https://www.zero3games.com.br/loja/gift-card-steam" target="_blank">Gift Card
+                                Digital</a></li>
+                        <a onclick="clickAll()"> Ver todos </a>
                     </ul>
                 </li>
 
@@ -258,3 +337,9 @@
     </section>
 
 </header>
+
+<script>
+    function clickAll() {
+        alert('Esta função estará disponível em breve.')
+    }
+</script>
