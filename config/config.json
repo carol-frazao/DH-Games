@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "dh-games",
-    "host": "localhost",
+    "username": "b8665a683b8d91",
+    "password": "ca3a14d2",
+    "database": "heroku_d736bd0f7aeaccf",
+    "host": "us-cdbr-east-06.cleardb.net",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "dh-games",
-    "host": "localhost",
+    "username": "b8665a683b8d91",
+    "password": "ca3a14d2",
+    "database": "heroku_d736bd0f7aeaccf",
+    "host": "us-cdbr-east-06.cleardb.net",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "dh-games",
-    "host": "localhost",
+    "username": "b8665a683b8d91",
+    "password": "ca3a14d2",
+    "database": "heroku_d736bd0f7aeaccf",
+    "host": "us-cdbr-east-06.cleardb.net",
     "dialect": "mysql"
   }
 }
