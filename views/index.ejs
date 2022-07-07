@@ -175,20 +175,22 @@
                 </marquee>
 
                 <div class="cards-promotions-container">
+                    <% obj.produtos.forEach(function(produto){ %>
                         <div class="card-promotion">
 
                             <div>
-                                <img src="" class="promotions-img">
+                                <img src="/uploads/<%=produto.imagemProduto %>" class="promotions-img">
 
                                 <div class="title-card-promotion" style="text-transform: uppercase">
+                                    <%= produto.nomeProduto %>
                                 </div>
 
                                 <div class="price-card-promotions">
-                                    <p class="oldPrice-card">De: R$
+                                    <p class="oldPrice-card">De: R$ <%= produto.valorOriginal %>
                                     </p>
                                     <p class="priceUpdate-card">Por:</p>
                                     <p class="currentPrice-card">
-                                        
+                                        R$ <%= produto.valorPromocional%>
                                     </p>
                                 </div>
 
@@ -197,12 +199,12 @@
                                 <div class="discount-card">
                                     <img src="/img/icons/icon-promotion.svg">
                                     <span>
-                                        
+                                        <%= Math.round(100-(produto.valorPromocional*100/produto.valorOriginal)) %>%
                                     </span>
                                 </div>
                             </div>
                         </div>
-                     
+                        <% }) %>
 
                 </div>
 
