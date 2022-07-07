@@ -171,7 +171,7 @@
 
             <marquee behavior="scroll" direction="left" bgcolor="#1a1a1a"
                 style="font-family: 'Oswald', sans-serif;">
-                <p> Maio na DH Games: Até 60% de desconto em produtos selecionados! </p>
+                <%= new Date().toLocaleString("pt-BR", {month: "long"}) %> na DH Games: Até 60% de desconto em produtos selecionados!
             </marquee>
 
             <div class="cards-promotions-container">
@@ -391,80 +391,17 @@
 
 </body>
 
-
 <%- include('./partials/chat') %>
 
 <%- include('./partials/footer') %>
 
-
-<!-- Carrossel de imagens -->
+<script type="text/javascript" src="/assets/scripts/slick.js"></script>
+<script type="text/javascript" src="/assets/scripts/swiper.js"></script>
 <script type="text/javascript" src="/assets/scripts/carrossel.js"></script>
-
-<!-- Cards de promoção (section Super Promoções)-->
-<script>
-
-    $('.cards-promotions-container').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 1050,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 850,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 350,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-        ]
-    });
-
-</script>
-
-<!-- Navegação entre os banners de lançamento -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <script>
-    var swiper = new Swiper(".mySwiper", {
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
+   const clickPromotion = () => alert('Esta função estará disponível em breve.')
 </script>
-
-<script>
-    function clickPromotion() {
-        alert('Esta função estará disponível em breve.')
-    }
-</script>
-
 
 </html>
