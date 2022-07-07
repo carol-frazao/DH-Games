@@ -610,19 +610,19 @@ section.lancamentos-container {
 
 .img-parceiros img {
     width: auto;
-    height: 200px
+    height: 180px
 }
 
 @media (min-width: 1400px) {
     .img-parceiros img {
-        height: 250px;
+        height: 230px;
         transition: all .4s;
     }
 }
 
 @media (max-width: 1000px) {
     .img-parceiros img {
-        height: 150px;
+        height: 130px;
         transition: all .4s;
     }
 }

@@ -3,46 +3,46 @@
         <div class="overheader-options">
 
             <a href="/seguranca-garantida/" id="segurancaGarantida">
-                <img loading="lazy" src="/img/icons/seguro-icon.svg" class="icon-overheader">Segurança garantida
+                <img loading="lazy" src="/assets/img/icons/seguro-icon.svg" class="icon-overheader">Segurança garantida
             </a>
 
             <a href="/seguranca-garantida/" id="entregaImediata">
-                <img loading="lazy" src="/img/icons/entrega-imediata.svg" class="icon-overheader">Entrega
+                <img loading="lazy" src="/assets/img/icons/entrega-imediata.svg" class="icon-overheader">Entrega
                 imediata
             </a>
 
             <a href="mailto:anacf04@outlook.com" id="send-email">
-                <img loading="lazy" src="/img/icons/send-email.svg" class="icon-overheader">Envie-nos um e-mail
+                <img loading="lazy" src="/assets/img/icons/send-email.svg" class="icon-overheader">Envie-nos um e-mail
             </a>
 
             <a href="https://wa.me/5511976070718" target="_blank" id="whatsapp">
-                <img loading="lazy" src="/img/icons/whatsapp_white.svg" class="icon-overheader">Whatsapp
+                <img loading="lazy" src="/assets/img/icons/whatsapp_white.svg" class="icon-overheader">Whatsapp
             </a>
 
             <a href="/suporte/" id="supportHidden">
-                <img loading="lazy" src="/img/icons/support_agent_white_24dp.svg" class="icon-overheader">Suporte
+                <img loading="lazy" src="/assets/img/icons/support_agent_white_24dp.svg" class="icon-overheader">Suporte
             </a>
 
             <% if(estaLogado) { %>
             <a href="/admin" id="loginHidden">
-                <img loading="lazy" src="/img/icons/person_white_24dp.svg" class="icon-overheader"> Olá, <%= usuarioLogado.nome %>
+                <img loading="lazy" src="/assets/img/icons/person_white_24dp.svg" class="icon-overheader"> Olá, <%= usuarioLogado.nome %>
             </a>
 
             <a href="/logout" class="icon-overheader" id="logoutIcon">
-                <img src="/img/icons/logout_white_24dp.svg" alt="">
+                <img src="/assets/img/icons/logout_white_24dp.svg" alt="">
             </a>
 
             <% } else { %>
                 
             <a href="/login/" id="loginHidden">
-                <img loading="lazy" src="/img/icons/person_white_24dp.svg" class="icon-overheader"> Login/cadastro
+                <img loading="lazy" src="/assets/img/icons/person_white_24dp.svg" class="icon-overheader"> Login/cadastro
             </a>
             <% } %>
         
         </div>
 
         <div class="country">
-            <img src="/img/icons/brasil.png" alt="Brasil" id="country-origin">
+            <img src="/assets/img/icons/brasil.png" alt="Brasil" id="country-origin">
         </div>
 
     </section>
@@ -51,7 +51,7 @@
 
         <div class="dh-homePage">
             <a href="/">
-                <img id="logo-dh" src="/img/logo/logo-dh-yellow.png" alt="DH">
+                <img id="logo-dh" src="/assets/img/logo/logo-dh-yellow.png" alt="DH">
                 <span id="title-logo">GAMES</span>
             </a>
         </div>
@@ -59,13 +59,13 @@
         <div class="search">
             <input type="text" name="search" placeholder="O que você está procurando?">
             <button><a href="#">
-                    <img src="/img/icons/lupa-cinza.svg" alt="Pesquisar"> </a>
+                    <img src="/assets/img/icons/lupa-cinza.svg" alt="Pesquisar"> </a>
             </button>
         </div>
 
         <div class="support">
             <a href="/suporte/">
-                <img src="/img/icons/support-icon.png" class="icon-header">
+                <img src="/assets/img/icons/support-icon.png" class="icon-header">
                 Suporte
             </a>
         </div>
@@ -78,19 +78,19 @@
 
             <% if(estaLogado) { %>
             <a href="/admin" id="nomeUsuario" class="userLogado"> 
-                <img src="/img/icons/login-icon.png" class="icon-header">
+                <img src="/assets/img/icons/login-icon.png" class="icon-header">
                 Olá, <%= usuarioLogado.nome %> 
             </a>
             
             <a href="/logout" class="login userLogado" id="logout">
-                <img src="/img/icons/logout_white_24dp.svg" alt="">
+                <img src="/assets/img/icons/logout_white_24dp.svg" alt="">
                 Sair
             </a>
 
             <% } else { %>
 
             <a href="/login/" >
-                <img src="/img/icons/login-icon.png" class="icon-header">
+                <img src="/assets/img/icons/login-icon.png" class="icon-header">
                 Faça seu login <br> ou cadastre-se
             </a>
 
@@ -100,7 +100,7 @@
 
         <div class="shopping-cart">
             <a href="/txt/carrinho.txt">
-                <img src="/img/icons/outline-shopping-cart.png" alt="Carrinho">
+                <img src="/assets/img/icons/outline-shopping-cart.png" alt="Carrinho">
             </a>
         </div>
 

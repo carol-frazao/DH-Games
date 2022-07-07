@@ -12,172 +12,139 @@
 
     <%- include('../partials/header') %>
 
-        <main>
-            <section class="titleAdmin">
-                <div class="pageDescription">
-                    <span>Painel do admin </span>
-                </div>
+    <main>
+        <section class="titleAdmin">
+            <div class="pageDescription">
+                <span>Painel do admin </span>
+            </div>
 
-                <div class="adminName">
-                    <img src="/img/engineering_black_24dp.svg" alt="">
-                    <span> Olá <%= usuarioLogado?.nome %>, gerencie sua aplicação </span>
-                </div>
-            </section>
+            <div class="adminName">
+                <img src="/assets/img/engineering_black_24dp.svg" alt="">
+                <span> Olá <%= usuarioLogado?.nome %>, gerencie sua aplicação </span>
+            </div>
+        </section>
+
+        <br>
+
+        <section class="superPromotions">
+
+            <div class="tituloSessao">
+                <img src="/assets/img/icons/offer_black_24dp.svg" alt="">
+                <span> PRODUTOS EM OFERTA </span>
+            </div>
 
             <br>
 
-            <section class="superPromotions">
+            <div class="listagemProdutos">
 
-                <div class="tituloSessao">
-                    <img src="/img/icons/offer_black_24dp.svg" alt="">
-                    <span> PRODUTOS EM OFERTA </span>
+                <span class="span-lista">Lista de produtos</span>
+                
+                <div class="align-row" style="width: 100%;" class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"> ID </th>
+                                <th scope="col"> Título do produto </th>
+                                <th scope="col"> Valor original </th>
+                                <th scope="col"> Valor promocional </th>
+                                <th scope="col"> Desconto </th>
+                                <th scope="col"> Ação </th>
+                            </tr>
+                        </thead>
+
+                    <% obj.produtos.forEach(function(produto){ %>
+                        <tbody>
+                            <tr>
+                                <td data-title="ID" class="idProduto">
+                                    <%= produto.id %>
+                                </td>
+
+                                <td data-title="Título do produto" style="text-transform: uppercase">
+                                    <%= produto.nomeProduto %>
+                                </td>
+
+                                <td data-title="Valor original">
+                                    R$ <%= produto.valorOriginal %>
+                                </td>
+
+                                <td data-title="Valor promocional">
+                                    R$ <%= produto.valorPromocional %>
+                                </td>
+
+                                <td data-title="Desconto">
+                                    <%= Math.round(100-(produto.valorPromocional*100/produto.valorOriginal)) %>%
+                                </td>
+
+                                <td>
+                                    <div class="editar-remover">
+                                    <a href="/admin/editarOferta/<%= produto.id %>" class="acao" id="editarOferta"> Editar</a>
+                                    <a href="/admin/removeOferta/<%= produto.id %>" class="acao" id="removerOferta">Remover</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                        <% }) %>
+
+                    </table>
                 </div>
+            </div>
 
-                <br>
 
-                <div class="listagemProdutos">
+            <br>
 
-                    <span class="span-lista">Lista de produtos</span>
-                    
-                    <div class="align-row" style="width: 100%;" class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col"> ID </th>
-                                    <th scope="col"> Título do produto </th>
-                                    <th scope="col"> Valor original </th>
-                                    <th scope="col"> Valor promocional </th>
-                                    <th scope="col"> Desconto </th>
-                                    <th scope="col"> Ação </th>
-                                </tr>
-                            </thead>
+            <div class="incluirOferta">
 
-                        <% obj.produtos.forEach(function(produto){ %>
-                            <tbody>
-                                <tr>
-                                    <td data-title="ID" class="idProduto">
-                                        <%= produto.id %>
-                                    </td>
+                <span class="incluir"> INCLUIR PRODUTO </span>
 
-                                    <td data-title="Título do produto" style="text-transform: uppercase">
-                                        <%= produto.nomeProduto %>
-                                    </td>
+                <br> <br>
 
-                                    <td data-title="Valor original">
-                                        R$ <%= produto.valorOriginal %>
-                                    </td>
+                <form action="/admin/envioOfertas" method="post" enctype="multipart/form-data""
+                    class="produtoOferta">
 
-                                    <td data-title="Valor promocional">
-                                        R$ <%= produto.valorPromocional %>
-                                    </td>
-
-                                    <td data-title="Desconto">
-                                        <%= Math.round(100-(produto.valorPromocional*100/produto.valorOriginal)) %>%
-                                    </td>
-
-                                    <td>
-                                        <div class="editar-remover">
-                                        <a href="/admin/editarOferta/<%= produto.id %>" class="acao" id="editarOferta"> Editar</a>
-                                        <a href="/admin/removeOferta/<%= produto.id %>" class="acao" id="removerOferta">Remover</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            
-                            <% }) %>
-
-                        </table>
+                    <div>
+                        <label for="imagemProduto"> Imagem do produto: </label>
+                        <br>
+                        <input type="file" name="imagemProduto" id='imagemProduto' onchange="validaExtensao(this)"
+                            required>
                     </div>
-                </div>
 
+                    <div>
+                        <label for="nomeProduto"> Título do produto: </label>
+                        <br>
+                        <input type="text" name="nomeProduto" id="nomeProduto" required style="text-transform: uppercase">
+                    </div>
 
-                <br>
+                    <div>
+                        <label for="valorOriginal"> Valor original: </label>
+                        <br>
+                        <input type="number" step="0.01" name="valorOriginal" min="0.01" id="valorOriginal"
+                            required>
+                    </div>
 
-                <div class="incluirOferta">
+                    <div>
+                        <label for="valorPromocional"> Valor promocional: </label>
+                        <br>
+                        <input type="number" step="0.01" name="valorPromocional" min="0.01" id="valorPromocional"
+                            required>
+                    </div>
 
-                    <span class="incluir"> INCLUIR PRODUTO </span>
+                    <button type="submit" class="btn-ofertas"> Incluir na lista </button>
 
-                    <br> <br>
+                </form>
 
-                    <form action="/admin/envioOfertas" method="post" enctype="multipart/form-data""
-                        class="produtoOferta">
+            </div>
 
-                        <div>
-                            <label for="imagemProduto"> Imagem do produto: </label>
-                            <br>
-                            <input type="file" name="imagemProduto" id='imagemProduto' onchange="validaExtensao(this)"
-                                required>
-                        </div>
+        </section>
 
-                        <div>
-                            <label for="nomeProduto"> Título do produto: </label>
-                            <br>
-                            <input type="text" name="nomeProduto" id="nomeProduto" required style="text-transform: uppercase">
-                        </div>
+    </main>
 
-                        <div>
-                            <label for="valorOriginal"> Valor original: </label>
-                            <br>
-                            <input type="number" step="0.01" name="valorOriginal" min="0.01" id="valorOriginal"
-                                required>
-                        </div>
+</body>
 
-                        <div>
-                            <label for="valorPromocional"> Valor promocional: </label>
-                            <br>
-                            <input type="number" step="0.01" name="valorPromocional" min="0.01" id="valorPromocional"
-                                required>
-                        </div>
+<%- include('../partials/chat') %>
 
-                        <button type="submit" class="btn-ofertas"> Incluir na lista </button>
+<%- include('../partials/footer') %>
 
-                    </form>
-
-                </div>
-
-            </section>
-
-        </main>
-
-        <%- include('../partials/chat') %>
-
-        <%- include('../partials/footer') %>
-
-</body> 
-
-<script type="text/javascript">
-
-    function validaExtensao() {
-
-        var arquivoInput = document.getElementById('imagemProduto');
-        var caminhoArquivo = arquivoInput.value;
-        var extensoesPermitidas = /(.jpg|.jpeg|.png)$/i;
-
-        if (!extensoesPermitidas.exec(caminhoArquivo)) {
-
-            alert('Por favor, envie um arquivo que tenha as extensões .jpeg, .jpg, ou .png ');
-            arquivoInput.value = '';
-
-            return false;
-
-        } else {
-
-            if (arquivoInput.files && arquivoInput.files[0]) {
-                var reader = new FileReader();
-
-                reader.readAsDataURL(arquivoInput.files[0]);
-
-                console.log(arquivoInput.files[0].size / 1024 / 1024);
-                console.log(arquivoInput.files[0].size);
-
-                if (arquivoInput.files[0].size > 2097152) {
-                    alert("Tamanho do arquivo deve ser 2 MB");
-                    return false;
-                }
-            }
-        }
-    }
-
-</script>
+<script type="text/javascript" src="/assets/scripts/validaArquivo.js"></script>
 
 </html>

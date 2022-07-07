@@ -23,17 +23,6 @@ module.exports = (connection, DataTypes) => {
       tableName: 'usuarios'
     })
   
-    // model.associate = models => {
-  
-    //   model.belongsToMany(models.Produto, {
-    //     through: models.ProdutoFavoritoUsuario,
-    //     foreignKey: 'usuario_id',
-    //     as: 'favoritos'
-    //   })
-  
-    //   model.sync({ alter: true })
-    // }
-  
     return model
   }
   

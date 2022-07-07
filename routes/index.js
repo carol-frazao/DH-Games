@@ -31,7 +31,8 @@ router.post('/login', async function validaLogin (req, res, next) {
   try {
     const usuarioLogin = await Usuario.findOne({
       where: {
-        email: req.body.email
+        email: req.body.email,
+        senha: req.body.senha
       }
     })
 
@@ -108,6 +109,7 @@ router.get('/produtos/clashRoyale', function(req, res, next) {
   res.render('./produtos/clashRoyale', {title: 'Clash Royale', games})
 })
 
+//teste, temporario
 const games = {
 
   freeFire: {

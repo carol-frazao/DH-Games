@@ -21,7 +21,7 @@
                 <form action="/users/registraUsuario" method="POST" id="card-signUp" name="formRegister" onsubmit="return envioFormRegistro();">
 
                     <span> 
-                        <img src="/img/icons/person_outline_black_24dp.svg" alt="">
+                        <img src="/assets/img/icons/person_outline_black_24dp.svg" alt="">
                         Registre-se
                     </span>
 
@@ -63,21 +63,21 @@
 
             <div id="return_homePage">
                 <a href="/">
-                    <img src="/img/icons/homePage_black_18dp.svg" alt="">
+                    <img src="/assets/img/icons/homePage_black_18dp.svg" alt="">
                     <p> Página Inicial </p>    
                 </a>
             </div>
 
             <div id="redirect_segurancaGarantida">
                 <a href="/segurancaGarantida/">
-                    <img src="/img/icons/lock_black_18dp.svg" alt="">
+                    <img src="/assets/img/icons/lock_black_18dp.svg" alt="">
                     <p> Segurança garantida </p>    
                 </a>
             </div>
             
             <div id="redirect_suporte">
                 <a href="/suporte/">
-                    <img src="/img/icons/headset_mic_black_18dp.svg" alt="">
+                    <img src="/assets/img/icons/headset_mic_black_18dp.svg" alt="">
                     <p> Suporte </p>    
                 </a>
             </div>
@@ -86,75 +86,13 @@
 
     </main>
 
-    <%- include('./partials/chat') %>
-
-    <%- include('./partials/footer') %>
-
 </body>
 
-<script>
 
-    function envioFormRegistro() {
+<%- include('./partials/chat') %>
 
-        if(document.formRegister.nome.value == "")
-        {
-            alert( "Preencha seu nome" );
-            document.formRegister.nome.focus();
-            return false;
-        }
+<%- include('./partials/footer') %>
 
-
-        if(document.formRegister.nome.value.length < 3)
-        {
-            alert( "O nome precisa ter no mínimo 3 caracteres" );
-            document.formRegister.nome.focus();
-            return false;
-        }
-
-        if(document.formRegister.email.value == "") {
-            alert("O e-mail é obrigatório")
-            return false
-        }
-
-        if( document.formRegister.email.value.indexOf('@')==-1 ||
-            document.formRegister.email.value.indexOf('.')==-1 )
-        {
-            alert( "Insira um e-mail válido" );
-            document.formRegister.email.focus();
-            return false;
-        }
-
-        if (document.formRegister.senha.value=="")
-        {
-            alert( "Crie uma senha" );
-            document.formRegister.senha.focus();
-            return false;
-        }
-
-        if (document.formRegister.senha.value.length < 4 || document.formRegister.senha.value.length > 8)
-        {
-            alert("A senha deve ter entre 4 e 8 caracteres");
-            document.formRegister.senha.focus();
-            return false;
-        }
-
-        if (document.formRegister.confirmaSenha.value == "") {
-            alert("Confirme sua senha");
-            document.formRegister.confirmaSenha.focus();
-            return false
-        }
-
-        if (document.formRegister.confirmaSenha.value != document.formRegister.senha.value) {
-            alert("As senhas não conferem")
-            document.formRegister.confirmaSenha.focus();
-            return false
-        }
-
-        return true;
-    }
-    
-</script>
-
-
+<script type="text/javascript" src="/assets/scripts/registraUsuario.js"></script>
 
 </html>
